@@ -1,12 +1,11 @@
 package report.jjh.r0001;
 
-
+//GIT테스트용으로 커밋한건입니다.
 public class Test2 {
 	int a = 0;
 	int b = 0;
 	int c = 0;
-	// 占쏙옙 占쌥븝옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹댐옙 占쌉쇽옙 占쏙옙占쏙옙트占쏙옙占쏙옙, 占쏙옙占쏙옙트占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 c占쏙옙 占쏙옙占쏙옙占쏙옙占� 占쏙옙占싶곤옙占쏙옙 占쏙옙占� 占쌘듸옙
-
+	
 	public void printLoop() {
 		int count = 0;
 		for (int i = a; i <= b; i++) {
@@ -23,7 +22,7 @@ public class Test2 {
 		int count = 0;
 		for (int i = a; i >= b; i--) {
 			count += 1;
-			//占쏙옙占쏙옙 占쌕듸옙 i==b占쏙옙 占십울옙占쌀깍옙占�?
+			
 			if (count % c == 0 || i == b) {
 				System.out.println(i);
 			} else {
