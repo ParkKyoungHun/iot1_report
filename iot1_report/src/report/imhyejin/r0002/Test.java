@@ -20,6 +20,7 @@ public class Test {
 		for (int i = initNum; i <= maxNum; i++) {
 			int j = initNum;
 			
+			
 			for (j = initNum; j < maxNum; j++) {
 				System.out.print(i + " X " + j + " = " + (i * j) + ", ");
 			}

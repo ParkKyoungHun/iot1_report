@@ -15,6 +15,7 @@ public class ArrayExam3 {
 		// }
 		// return a;
 
+		
 		// 방법2
 		int[] a = new int[maxNum - initNum];
 

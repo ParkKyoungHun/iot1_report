@@ -12,4 +12,6 @@ public class ArrayExam2 {
 		System.out.println("a의 마지막 값 : " + a[a.length - 1]);
 	}
 
+	
 }
+

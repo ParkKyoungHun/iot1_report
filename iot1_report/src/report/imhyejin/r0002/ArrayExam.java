@@ -14,6 +14,7 @@ public class ArrayExam {
 		}
 	}
 
+	
 	public static void main(String[] args) {
 		// int[] a = new int[9]; // 배열을 표현하는 방법1
 		// int[] b = { 1, 2, 3, 4, 5, 7, 10, 20 }; // 배열을 표현하는 방법2
