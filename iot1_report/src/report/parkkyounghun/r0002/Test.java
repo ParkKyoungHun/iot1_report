@@ -13,6 +13,7 @@ public class Test {
 	}
 	public static void main(String[] args){
 		Test t = new Test();
-		t.printMultipleTable(1, 5);
+		t.printMultipleTable(1, 9);
+		
 	}
 }

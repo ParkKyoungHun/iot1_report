@@ -1,12 +1,18 @@
 package report.parkkyounghun.r0002;
 
 public class ArrayExam {
-
+	public void printMultipleTable(int[] a, int[] b){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<b.length;j++){
+				System.out.print(a[i] + " X " + b[j]  + " = " + (b[j] * a[i]) +", ");
+			}
+			System.out.println();
+		}
+	}
 	public static void main(String[] args){
-		int[] a = new int[4];
-		int[] b = {1,2,3,4};
-		System.out.println("a의길이 = " + a.length);
-		System.out.println("b의길이 = " + b.length);
-		System.out.println("b의 첫번째 방의 값 = " + b[0]);
+		int[] a = {1,2,3,4,5,6,7,8,9};
+		int[] b = {1,2,3,4,5,6,7,8,9};
+		ArrayExam ae = new ArrayExam();
+		ae.printMultipleTable(a, b);
 	}
 }
