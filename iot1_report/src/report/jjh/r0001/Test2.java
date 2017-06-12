@@ -1,6 +1,6 @@
 package report.jjh.r0001;
 
-//GIT테스트용으로 커밋한건입니다.
+//GIT�뀒�뒪�듃�슜�쑝濡� 而ㅻ컠�븳嫄댁엯�땲�떎.
 public class Test2 {
 	int a = 0;
 	int b = 0;
