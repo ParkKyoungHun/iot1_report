@@ -1,5 +1,7 @@
 package report.kimsangcheol.r0002;
 
+import java.util.Scanner;
+
 public class ArrayExam3 {
 
 	public int[] getArrayVar(int initNum, int maxNum){
@@ -18,7 +20,21 @@ public class ArrayExam3 {
 
 	public static void main(String[] args){
 		ArrayExam3 ae3 = new ArrayExam3();
-		int[]a = ae3.getArrayVar(23,35);
+		Scanner num = new Scanner(System.in);	
+		System.out.println("시작 값을 입력하세요.>");
+		int b= Integer.parseInt(num.nextLine());
+		System.out.println("종료 값을 입력하세요.>");
+		int c= Integer.parseInt(num.nextLine());
+		int tmp=0;
+		if(b>c){					
+			tmp=b;
+			b=c;
+			c=tmp;
+
+		}else{
+			
+		}
+		int[]a = ae3.getArrayVar(b,c);
 		ae3.printArrayVar(a);
 
 	}
