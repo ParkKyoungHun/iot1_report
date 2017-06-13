@@ -26,7 +26,7 @@ public class Test04 {
 		Test04 num1 = new Test04();
 		int[] a = num1.getArrayVar(0, 5);
 		num1.printArrayVar(a);
-		num1.revPrintArrayVar(a);
+		//num1.revPrintArrayVar(a);
 		
 	}
 }
