@@ -3,9 +3,9 @@ package report.leekihyun.r0002;
 public class ArrayExam3 {
 
 	public int[] getArrayVar(int initNum, int maxNum) {
-		// initNumÀ¸·Î ½ÃÀÛÇØ¼­ maxNumÁ¾·áµÇ´Â ¹İº¹¹®À» »ç¿ëÇÏ¿©
-		// ¹è¿­º¯¼ö a°ªÀ» Áı¾î³Ö°í ¹è¿­º¯¼öa¸¦ Ãâ·ÂÇØÁÖ½Ã¸é µË´Ï´Ù.
-		// Ãâ·ÂÀº mainÇÔ¼ö¿¡¼­ Ãâ·ÂÇØÁÖ¼¼¿ä.
+		// initNumìœ¼ë¡œ ì‹œì‘í•´ì„œ maxNumì¢…ë£Œë˜ëŠ” ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•˜ì—¬
+				// ë°°ì—´ë³€ìˆ˜ aê°’ì„ ì§‘ì–´ë„£ê³  ë°°ì—´ë³€ìˆ˜aë¥¼ ì¶œë ¥í•´ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.
+				// ì¶œë ¥ì€ mainí•¨ìˆ˜ì—ì„œ ì¶œë ¥í•´ì£¼ì„¸ìš”.
 
 		int[] a = new int[maxNum - initNum];
 		for (int i = initNum - initNum; i < maxNum - initNum; i++) {
@@ -19,7 +19,7 @@ public class ArrayExam3 {
 
 	public void printArrayVar(int[] a) {
 		for (int i =  a.length-1; i>=0;  i--) {
-			System.out.println("aÀÇ" + i + "¹øÂ° ¹æÀÇ °ª =" + a[i]);
+			System.out.println("aì˜" + i + "ë²ˆì§¸ ë°©ì˜ ê°’ =" + a[i]);
 		}
 	}
 
