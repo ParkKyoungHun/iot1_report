@@ -2,12 +2,12 @@ package report.umwoosung.r0002;
 
 public class ArrayExam {
 	public void printmultipleTable(int[]a , int[]b){
-		for(int i = int[]a;i<=b.length;i++){
-			int a = 0;
-			for(a =  a.length; a<b.length;a++])
-				System.out.print(i + "X" + a + " = " + (i * a) + ",");//3
-		}
-		System.out.println(i + "X" + a + " = " + (i * a));//4
+//		for(int i = int[]a;i<=b.length;i++){
+//			int a = 0;
+//			for(a =  a.length; a<b.length;a++])
+//				System.out.print(i + "X" + a + " = " + (i * a) + ",");//3
+//		}
+//		System.out.println(i + "X" + a + " = " + (i * a));//4
 	}
 	
 	public static void main(String[]args){

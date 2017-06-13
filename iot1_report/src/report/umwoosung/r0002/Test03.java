@@ -7,7 +7,8 @@ public class Test03 {
 		for (int j = 0; j < b.length; j++) {
 			System.out.println(b[j] + "X" + a[i] + " = " + (b[j] * a[i]) + ",");
 		}
-		System.out.println();
+		}
+//		System.out.println();
 
 	}
 
