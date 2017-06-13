@@ -1,4 +1,4 @@
-package report.songwoojae.roo2;
+package report.songwoojae.r002;
 
 public class ArrayExam3 {
 
