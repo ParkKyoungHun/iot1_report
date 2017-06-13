@@ -1,4 +1,5 @@
-package report.ChaSungwoo.r0002;
+package report.chasungwoo.r0002;
+
 
 public class ArrayExam3 {
 	
