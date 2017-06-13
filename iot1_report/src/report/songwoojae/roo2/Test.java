@@ -1,4 +1,4 @@
-package SongWooJae.r0002;
+package report.songwoojae.roo2;
 
 public class Test {
 	public void printMultipleTable(int initNum, int maxNum) {
