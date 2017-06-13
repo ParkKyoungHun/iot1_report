@@ -11,9 +11,9 @@ public class ArrayExam6 {
 			}
 		}
 	}
-	public int[] arrayCal(int maxNum){
-		int[]a= new int[maxNum];
-		for(int i=1;i<=a.length;i++){
+	public int[] arrayCal(int length, int initNum,int maxNum){
+		int[]a= new int[length];
+		for(int i=initNum;i<=maxNum;i++){
 			a[maxNum-i] = i*2;
 		}
 		return a;
@@ -39,7 +39,7 @@ public class ArrayExam6 {
 	public static void main(String[] args){
 		ArrayExam6 ae6 = new ArrayExam6();
 
-		ae6.arrayPrint(ae6.arrayCal(10));
+		ae6.arrayPrint(ae6.arrayCal(10,0,9));
 		ae6.arrayLotto();
 	}
 }
