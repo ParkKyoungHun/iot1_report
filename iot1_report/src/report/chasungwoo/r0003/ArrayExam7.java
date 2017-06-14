@@ -8,9 +8,9 @@ public class ArrayExam7 {
 
 		for(int i=0; i<size; i++){
 			a[i] = (int)(Math.random()*45)+1;
-			for(int j = 0; j<i; j++){
-				if(a[i] == a[j]){
-					i--;
+			for(int j = 0; j<i; j++){ //for(int j=i+1; j>=0; j--){
+				if(a[i] == a[j]){		//	if(j<20 && a[j]==a[i] && i!=j){
+					i--; 				//		j=0; 	j--;
 				}
 			}
 		}
