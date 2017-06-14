@@ -20,4 +20,4 @@ public class TTTTTTttt {
 	      System.out.println("더한 결과값 :" + result);
 	   }
 	}
-}
+
