@@ -8,13 +8,11 @@ public class Test {
 
 	public void printLoop() {
 		for (int i = a; i <= b; i++) {
-			System.out.print(i + ",");
-			
+			System.out.print(i);
+
 			if (i % c == 0) {
 				System.out.println();
 			}
- 
-			
 		}
 	}
 
@@ -25,7 +23,6 @@ public class Test {
 			if (num % c == 0) {
 				System.out.println();
 			}
-			System.out.print(",");
 		}
 	}
 

@@ -1,8 +1,9 @@
-package report.ChaSungwoo.r0002;
+package report.chasungwoo.r0002;
+
 
 import java.util.Scanner;
 
-public class test {
+public class Test2 {
 	public void printMultipleTable(int initNum, int maxNum){
 		for(int a = initNum; a<=maxNum; a++){
 			for(int b = initNum; b<maxNum; b++){
@@ -20,7 +21,7 @@ public class test {
 		int initNum = Integer.parseInt(scan.nextLine());
 		int maxNum = Integer.parseInt(scan.nextLine());
 		
-		test t = new test();
+		Test2 t = new Test2();
 		t.printMultipleTable(initNum, maxNum);
 		
 		scan.close();

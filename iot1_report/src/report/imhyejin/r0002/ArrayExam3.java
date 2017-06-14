@@ -15,7 +15,6 @@ public class ArrayExam3 {
 		// }
 		// return a;
 
-		
 		// 방법2
 		int[] a = new int[maxNum - initNum];
 
@@ -30,7 +29,7 @@ public class ArrayExam3 {
 			System.out.println(pav[i]);
 		}
 	}
-	
+
 	public void reversePrintArrayVar(int[] rpav) {
 		for (int i = rpav.length - 1; i >= 0; --i) {
 			System.out.println(rpav[i]);
@@ -44,7 +43,7 @@ public class ArrayExam3 {
 		finish = 50;
 
 		int[] ae = ae3.getArrayVar(start, finish);
-		//		ae3.printArrayVar(ae);
+		// ae3.printArrayVar(ae);
 		ae3.reversePrintArrayVar(ae);
 
 		// for (int i = 0; i < ae.length; i++) {
