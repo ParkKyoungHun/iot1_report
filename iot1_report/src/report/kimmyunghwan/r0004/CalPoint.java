@@ -7,11 +7,11 @@ public class CalPoint {
 	// Scanner클래스를 사용하여 6명의 학생의 점수를 직접 입력 받아주세요.
 	// 6명의 학생의 총점을 출력해주세요.
 
-  int sum;
+  int sum=0;
 
 	public void plus(int num1, int num2, int num3, int num4, int num5, int num6) {
 		sum = num1 + num2 + num3 + num4 + num5 + num6;
-		System.out.print(sum);
+		System.out.print("6학생의 총점은 = " + sum);
 	}
 
 	public static void main(String[] args) {
