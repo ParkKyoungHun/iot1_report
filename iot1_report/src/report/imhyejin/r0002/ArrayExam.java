@@ -13,7 +13,6 @@ public class ArrayExam {
 			System.out.println(a[i] + "X" + b[j - 1] + "=" + (a[i] * b[j - 1]));
 		}
 	}
-
 	
 	public static void main(String[] args) {
 		// int[] a = new int[9]; // 배열을 표현하는 방법1
@@ -33,11 +32,13 @@ public class ArrayExam {
 		// }
 		int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int[] b = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		
 		// System.out.println("방의 갯수 : " + b.length + "\n");
 		//
 		// for (int i = 0; i < b.length; i++) {
 		// System.out.println((i + 1) + "번째의 방 값: " + b[i]); // b[i] 인덱스
 		// }
+		
 		ArrayExam ae = new ArrayExam();
 		ae.printMultipleTable(a, b);
 	}
