@@ -1,7 +1,7 @@
 package report.umwoosung.r0003;
 
 public class ArrayExam6 {
-	public int[] getArrVar(int[]params) {
+	public int[] getArrVar(int[] params) {
 		int[] a = new int[params[0]];
 		for (int i = params[1]; i <= params[2]; i++) {
 			a[i] = (i + 1) * 2;
@@ -19,8 +19,12 @@ public class ArrayExam6 {
 
 	public static void main(String[] args) {
 		ArrayExam6 ae = new ArrayExam6();
+<<<<<<< HEAD
 		int[]params = {10,0,9};
+=======
+		int[] params = { 10, 0, 9 };
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 		int[] a = ae.getArrVar(params);
 		ae.printArrVar(a);
 	}
-	}
+}
