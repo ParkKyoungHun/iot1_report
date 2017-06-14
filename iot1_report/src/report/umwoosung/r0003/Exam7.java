@@ -7,7 +7,7 @@ public class Exam7 {
 			a[i] = (i+1)*2;
 			
 		}
-		return i;//1
+		return a;//1
 				
 	}
 	public void  printArrVar(int[] a){

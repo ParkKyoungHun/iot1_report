@@ -19,7 +19,7 @@ public class ArrayExam6 {
 
 	public static void main(String[] args) {
 		ArrayExam6 ae = new ArrayExam6();
-		int[]params = (10,0,9);
+		int[]params = {10,0,9};
 		int[] a = ae.getArrVar(params);
 		ae.printArrVar(a);
 	}
