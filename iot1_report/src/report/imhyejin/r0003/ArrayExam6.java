@@ -21,9 +21,7 @@ public class ArrayExam6 {
 					i--;
 					break;
 				}
-				
 			} 
-			
 		}
 		return a;
 	}
