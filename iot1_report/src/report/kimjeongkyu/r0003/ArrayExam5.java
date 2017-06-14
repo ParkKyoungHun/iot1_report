@@ -4,7 +4,7 @@ public class ArrayExam5 {
 
 	public void lotto(){
 		int Lotto[] = new int[6];
-		System.out.print("Lotto ���� ���ڴ� ");
+		System.out.print("Lotto numbers are "); m    
 
 		for(int i=0;i<Lotto.length;i++){
 			Lotto[i] = (int)(Math.random()*45)+1;
@@ -19,7 +19,7 @@ public class ArrayExam5 {
 				for(int i=0; i<Lotto.length; i++){
 					System.out.print(Lotto[i] + " ");
 				}
-				System.out.print(" �Դϴ�.");
+				System.out.print(".");
 	
 	}
 	
