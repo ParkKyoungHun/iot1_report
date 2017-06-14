@@ -15,8 +15,8 @@ public class ArrayExam5 {
 
 			int rand = (int)(Math.random()*45)+1;
 			a[i]=rand;
-			for(int j=i+1;j>=0;j--){
-				if(j<6&&a[j]==a[i]&&i!=j){
+			for(int j=i;j>=0;j--){
+				if(a[j]==a[i]&&i!=j){
 					j=0;
 					j--;
 				}
