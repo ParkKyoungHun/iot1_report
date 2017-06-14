@@ -3,18 +3,25 @@ package report.parkkyounghun.r0004;
 import java.util.Scanner;
 
 public class Exam3 {
-
-	public int getPlusExam(int a){
-		a+=2;
-		a+=1;
-		a+=1;
-		return a;
+	int a = 0;
+	int b = 0;
+	int result = 0;
+	public Exam3(){
+		this.result  = 0;
 	}
+	public Exam3(int a, int b){
+		this.a = a;
+		this.b = b;
+		this.result = this.a + this.b;
+		int c = 1;
+	}
+	
 	public static void main(String[] args){
-		Exam3 a =new Exam3();
-		int num = a.getPlusExam(3);
-		System.out.println(num);
-		Scanner scan = new Scanner(System.in);
+		Exam3 e = new Exam3(1,2);
+		e.b = 4;
+		System.out.println(e.result);
 		
+		Exam3 e2 = new Exam3(2,2);
+		System.out.println(e2.result);
 	}
 }
