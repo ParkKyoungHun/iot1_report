@@ -15,24 +15,28 @@ public class ArrayExam5 {
 		// 총 6번 반복하는 반복문에서
 		//아래에서 나오는 랜덤값을 배열변수 a에 0번째 방부터 차례로 입력하시면 됩니다.
 		
-		int[] a = new int[6];
+		int[] a = new int[20];
 		
-		for(int i = 0; i< 6; i++){
+		for(int i = 0; i< 20; i++){
 			int random = (int)(Math.random()*45)+1;
 			a[i] = random;
 			
-			for(int j = i+1; j >= 0; j--){
-				if(a[j] == a[i]){
-					random = (int)(Math.random()*45)+1;
-					a[j] = random;
+			for(int j = i; j >= 0; j--){
+				if(i<20 && a[j]==a[i] && i!=j){
+					j = 0;
+					i--;
 				}
 			}
-			System.out.println((i+1) + "번째 로또 번호는 :"+ a[i]);				}	
+			
 		}
-			
-			
-		
+		for(int i=0; i<20; i++){
+			System.out.println((i+1) + "번째 로또 번호는 :"+ a[i]);	
+		}
+		}			
 	}
+
+		
+	
 				
 			
 		
