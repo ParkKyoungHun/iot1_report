@@ -16,6 +16,18 @@ public class Restore {
 			}
 		}
 	}
+	public void upArr(int[]a){
+		int tmp=0;
+		for(int i=0; i<a.length;i++){
+			for (int j = i+1 ; j <a.length; j++){			//오름차순 정렬 시작													
+				if(a[i] > a[j]){
+					tmp =a [i];
+					a[i] = a [j];
+					a [j] = tmp;
+				}
+			}
+		}
+	}
 	public void arrayPrint(int []a){
 		for(int f=0;f<a.length;f++){
 			System.out.println((f+1) + "의 점수 : " + a[f]);
@@ -25,7 +37,7 @@ public class Restore {
 
 	public static void main(String[] args){
 		Scanner scr = new Scanner(System.in);
-		Restore dA = new Restore();
+		Restore rS = new Restore();
 		int[]a = new int[5];
 		int sum=0;	
 		for(int i=0; i<a.length;i++){
@@ -34,8 +46,10 @@ public class Restore {
 			a[i] = Integer.parseInt(num);
 			sum += a[i];								//합계
 		}
-		dA.downArr(a);
-		dA.arrayPrint(a);
+		rS.downArr(a);
+		rS.arrayPrint(a);
+		rS.upArr(a);
+		rS.arrayPrint(a);
 		System.out.println("모든 점수의 합 : " + sum);
 	}
 
