@@ -8,13 +8,13 @@ public class Test03 {
 			System.out.println(b[j] + "X" + a[i] + " = " + (b[j] * a[i]) + ",");
 		}
 		}
-//		System.out.println();
+		System.out.println();
 
 	}
 
 	public static void main(String[] args) {
-		int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int[] b = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		int[] a = { 1, 2, 3, 4,  6, 7, 8, 9 };
+		int[] b = { 1, 2, 3, 4,  6, 7, 8, 9 };
 		Test03 ae = new Test03();
 		ae.printmultipleTable(a, b);
 
