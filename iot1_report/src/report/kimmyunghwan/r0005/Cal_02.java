@@ -15,6 +15,15 @@ public class Cal_02 {
 	int b;
 	String str;
 
+	Cal_02() {
+
+	}
+
+	Cal_02(int a) {
+		System.out.println(a + "인트형 변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");
+		this.a=a;
+	}
+
 	Cal_02(int a, int b, String str) {
 		this.a = a;
 		this.b = b;
@@ -23,10 +32,10 @@ public class Cal_02 {
 
 	void printCal() {
 		if (str.equals("+")) { // == 은 메모리를 비교 equals는 값을 비교
-			System.out.println("a + b= " + (a + b));
-		} else if (str.equals("-")) { 
+			System.out.println(a + "+" + b + "=" + (a + b));
+		} else if (str.equals("-")) {
 			System.out.println("a - b= " + (a - b));
-		} else if (str.equals("*")) {  
+		} else if (str.equals("*")) {
 			System.out.println("a * b= " + (a * b));
 		} else if (str.equals("/")) {
 			System.out.println("a / b= " + (a / b));
@@ -40,7 +49,7 @@ public class Cal_02 {
 
 	public static void main(String[] args) {
 		Cal_02 c = new Cal_02(10, 2, "*");
-		
+
 		c.printCal();
 
 	}
