@@ -15,8 +15,6 @@ public class ExamList
 			list.add(num1);
 		}
 		
-		list.get(1);
-		
 		for(int i = 0; i < 10; i++)
 		{
 			list.add(i);
