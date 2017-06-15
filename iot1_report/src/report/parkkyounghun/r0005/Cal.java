@@ -20,6 +20,7 @@ public class Cal {
 		this.operator = operator;
 	}
 	void printCal(){
+		
 		if(operator.equals("+")){
 			System.out.println(a + " + " + b + " = " + (a + b));
 		}else if(operator.equals("*")){
@@ -31,10 +32,6 @@ public class Cal {
 		}else{
 			System.out.println("연산자가 틀렸어요");
 		}
-	}
-	
-	void printPlus(){
-		System.out.println("a + b = " + a + b);
 	}
 	
 	public static void main(String[] args){

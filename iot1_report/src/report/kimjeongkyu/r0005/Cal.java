@@ -2,6 +2,7 @@ package report.kimjeongkyu.r0005;
 
 import java.util.Scanner;
 
+
 public class Cal {
 	//인트타입 2개의 파라메터 변수를 받는 생성자를 하나 만들어 주세요.
 	// 클래스안에 인트타입의 변수 2개를 선언하고
@@ -14,53 +15,36 @@ public class Cal {
 	
 	int a;
 	int b;
-	String op;
-	
+	String operator;
+	Cal(){
+		
+	}
 	Cal(int a){
-		System.out.println(a + "인트형변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");
 		this.a = a;
 	}
 	
-	
-	Cal(int n1, int n2, String inputO){
-		this.a = n1;
-		this.b = n2;
-		
-		//이게 중요함
-		this.op = inputO;
-	}	
+	Cal(int a, int b, String operator){
+		this.a = a;
+		this.b = b;
+		this.operator = operator;
+	}
 	void printCal(){
 		
-		if(op.equals("+")){
-			System.out.println(a + "+"+  b +"= " +( a + b));
-		}else if(op.equals("-")){
-			System.out.println(a +" - " + b +" = " + (a - b));
-		}else if(op.equals("*")){
-			System.out.println(a +" * " + b +" = " + (a * b));
-		}else if(op.equals("/")){
-			System.out.println(a +" / " + b +" = " + (a / b));
+		if(operator.equals("+")){
+			System.out.println(a + " + " + b + " = " + (a + b));
+		}else if(operator.equals("*")){
+			System.out.println("a * b = " + (a * b));
+		}else if(operator.equals("/")){
+			System.out.println("a / b = " + (a / b));
+		}else if(operator.equals("-")){
+			System.out.println("a - b = " + (a - b));
+		}else{
+			System.out.println("연산자가 틀렸어요");
 		}
-		
-	}	
-	
-	void printPlus(){
-		System.out.println("a + b =" + a + b);
-}
-	public static void main(String[] args){
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("첫번째 숫자를 입력해주세요.");
-		String num1= scanner.nextLine();
-		int n1  = Integer.parseInt(num1);
-		
-		System.out.print("원하시는 연산자를 입력해주세요.");
-		String inputO= scanner.nextLine();
-		
-		System.out.print("두번째 숫자를 입력해주세요.");
-		String num2= scanner.nextLine();
-		int n2  = Integer.parseInt(num2);
-		Cal call = new Cal(n1, n2, inputO);
-		call.printCal();
-
 	}
 	
+	public static void main(String[] args){
+		Cal c = new Cal(2,3, "+");
+		c.printCal();
+	}
 }
