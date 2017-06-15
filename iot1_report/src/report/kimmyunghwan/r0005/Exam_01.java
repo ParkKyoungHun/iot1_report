@@ -21,6 +21,7 @@ public class Exam_01 {
 		r01.doChange();
 		
 		Cal_02 c02 = new Cal_02(10,2,"+"); 
+		c02 = new Cal_02(10,2,"-");
 		c02 = new Cal_02(10,2,"*");
 		c02 = new Cal_02(10,2,"/");
 		
