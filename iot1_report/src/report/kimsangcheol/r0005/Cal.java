@@ -3,6 +3,9 @@ package report.kimsangcheol.r0005;
 import java.util.Scanner;
 
 public class Cal {
+	Cal(){
+	
+	}
 	int num;
 	int num2;
 	int a;
@@ -22,7 +25,9 @@ public class Cal {
 		this.cl=a;
 		}
 	void printCal(){
-		if(cl.equals("+")){
+		if(cl==null){
+			System.out.println("연산자 확인 필요");
+		}else if(cl.equals("+")){
 			System.out.println(num+num2); 
 		}else if(cl.equals("-")){
 			System.out.println(num-num2);
