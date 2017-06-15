@@ -15,7 +15,7 @@ public class Calpoint {
 		num[i]=Integer.parseInt(numStr); // 배열변수에 입력값받은걸 값입력
 		result += num[i]; // +=가 위에서 받은값 하나씩 더하는 역할
 		
-	}
+	} 
 	System.out.println("학생들의 총점수="+(result));
 	for(int i=0;i<num.length;i++){ // num.length  선언한 num[]의 배열변수의 길이
 		System.out.println((i+1)+"번째 학생들의 점수"+num[i]);

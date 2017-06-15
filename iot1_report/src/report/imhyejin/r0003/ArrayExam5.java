@@ -1,27 +1,10 @@
 package report.imhyejin.r0003;
 
 public class ArrayExam5 {
-
 	// 재귀호출
-
 	public static void main(String[] args) {
 
-		// int[][] ap = new int[5][2];
-		// int[] f0= {1,2};
-		// ap[0]=f0;
-
-		// System.out.println("ap[0]의 값 : "+ap[0]);
-		// System.out.println("ap[0][0]의 값 : "+ap[0][0]);
-		// System.out.println("ap[0][1]의 값 : "+ap[0][1]);
-
-		// int[] a = new int[10];
-		//
-		// for (int i = 0; i < a.length; i++) {
-		// a[i] = 10 - i;
-		// System.out.println(a[i]);
-		// }
-
-		int[] a = new int[6];
+		int[] a = new int[46];
 
 		for (int i = 0; i < 6; i++) {
 			int random = (int) (Math.random() * 45) + 1;

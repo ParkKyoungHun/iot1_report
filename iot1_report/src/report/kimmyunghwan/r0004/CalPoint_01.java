@@ -20,15 +20,12 @@ public class CalPoint_01 {
 			String input = scanner.nextLine();
 			int num = Integer.parseInt(input);
 			System.out.println("입력하신 " + (i + 1) + " 번째 학생의 점수=" + num);
-			result += num; //합계
+			result += num; // 합계
 		}
-		
+
 		System.out.println("입력하신 6 학생의 총점=" + (result));
-		
+
 		// 아래 구문은 없어도 될거 같음.
-		for (int i = 0; i <= 5; i++) {
-			System.out.println("입력하신 " + (i + 1) + " 번째 학생의 점수=" + result);
-		}
 
 	}
 

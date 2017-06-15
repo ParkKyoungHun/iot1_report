@@ -10,16 +10,21 @@ public class ArrayExam5 {
 		 * i <= 10; i++) { System.out.println(a[i - 1]); } for (int i = 1; i <=
 		 * 100; i++) { if (i % 10 == 0) { System.out.println(); }
 		 */
-		int[] a = new int[6];
+		int[] a = new int[20];
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 20; i++) {
 			int random = (int) (Math.random() * 45) + 1;
 			a[i] = random;
-			System.out.print(a[i] + "	");
-			for (int j = i + 1; j > 0; j++) {
-				if (a[j] == a[i]);
-				i--;
+			// System.out.print(a[i] + " ");
+			for (int j = i + 1; j >= 0; j--) {
+				if (a[j] == a[i] && i != j) {
+					j = 0;
+					i--;
+				}
 			}
+		}
+		for (int i = 0; i < 20; i++) {
+			System.out.println((i + 1) + "번째 로또번호는 : " + a[i]);
 		}
 	}
 }
