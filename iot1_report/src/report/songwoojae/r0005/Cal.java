@@ -4,6 +4,11 @@ public class Cal {
 	int a; // 멤버 변수
 	int b;
 	String c;
+	
+	
+	Cal(){
+		
+	}
 
 	Cal(int a){
 		System.out.println(a + "인트형 변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");

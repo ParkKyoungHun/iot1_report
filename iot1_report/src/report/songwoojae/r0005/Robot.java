@@ -11,16 +11,16 @@ public class Robot {
 	}
 
 	void doKick() {
-		System.out.println(age + "살먹은 로봇" + name + "이 발차기를 하다");
+		System.out.println(age + "살 된 로봇" + name + "이 발차기를 하다");
 	}
 
 	void doRun() {
-		System.out.println(age + "살먹은 로봇" + name + "이 달리기를 하다");
+		System.out.println(age + "살 된 로봇" + name + "이 달리기를 하다");
 
 	}
 
 	void doChange() {
-		System.out.println(age + "살먹은 로봇" + name + "이 변신 하다");
+		System.out.println(age + "살 된 로봇" + name + "이 변신 하다");
 
 	}
 
