@@ -1,4 +1,4 @@
-package report.kimjeongkyu.r0003;
+package report.kimjeongkyu.r0002;
 
 import java.util.Scanner;
 
