@@ -16,6 +16,12 @@ public class Exam2 {
 		for(int i=0; i<c.length;i++){
 			System.out.println(c[i].cl);
 		}
-
+		for(int i=0; i<c.length;i++){
+			c[i] = new Cal(i+1);
+		}
+			
+		for(int i=0; i<c.length;i++){
+			System.out.println(c[i].a);
+		}
 	}
 }
