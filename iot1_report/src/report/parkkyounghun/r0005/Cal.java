@@ -11,9 +11,9 @@ public class Cal {
 		
 	}
 	Cal(int a){
-		System.out.println(a+ "인트형변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");
 		this.a = a;
 	}
+	
 	Cal(int a, int b, String operator){
 		this.a = a;
 		this.b = b;
