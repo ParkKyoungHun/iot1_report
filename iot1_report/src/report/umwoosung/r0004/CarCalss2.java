@@ -12,7 +12,12 @@ public class CarCalss2 {
 			System.out.println((i+1)+"번째 학생의 점수를 입력해주세요");//4
 			String numStr = scan.nextLine();//5
 			num[i] = Integer.parseInt(numStr);//6
-			result +=num[i];//7
+			if(num[i] >100){
+				System.out.println("이시꺄 니점수가 100점이 넘는다고? 다시 입력해 임마!!");
+				i--;
+			}else{
+				result +=num[i];//7
+			}
 	
 		}
 		System.out.println("입력하신5명의 점수수의 총점은 ="+ (result));
