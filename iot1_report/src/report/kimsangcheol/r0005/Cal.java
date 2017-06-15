@@ -14,6 +14,7 @@ public class Cal {
 	}
 	Cal(String b){
 		System.out.println(b+" 스트링~~");
+		this.cl=b;
 	}
 	Cal( int num,  int num2 , String a){						//생성자님
 		this.num=num;
