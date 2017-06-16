@@ -2,7 +2,7 @@ package report.umwoosung.r0004;
 
 import java.util.Scanner;
 
-public class Carclass {
+public class _Carclass {
 	
 	
 	public static void main(String[]args){
