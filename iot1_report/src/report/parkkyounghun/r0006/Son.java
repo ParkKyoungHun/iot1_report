@@ -11,6 +11,5 @@ public class Son extends Father{
 		System.out.println(s.getName());
 		s.setName("박경훈");
 		System.out.println(s.getName());
-		
 	}
 }
