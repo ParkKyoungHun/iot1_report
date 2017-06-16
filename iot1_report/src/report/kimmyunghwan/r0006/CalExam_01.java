@@ -2,7 +2,7 @@ package report.kimmyunghwan.r0006;
 
 import java.util.Scanner;
 
-public class CalExam {
+public class CalExam_01 {
 	// 반복문을 사용하여 Scanner클래스를 이용해
 	// 총 10명의 학생의 점수를 받아주세요.
 	// 10명의 학생의 총점과 평균을 구해주세요
@@ -37,8 +37,9 @@ public class CalExam {
 				}
 			}
 		}
-			for (int i = 0; i < num.length; i++) {
-				System.out.println("입력하신 " + (i + 1) + " 번째 학생의 점수=" + num[i]);
+			for (int i = 0; i < 10; i++) {
+				System.out.print((i+1) + "등=" + num[i]);
+				System.out.println("입력하신 " + (i + 1) + " 번째 학생의 점수=" + num[i]); //????확인 필요
 			}
 		}
 	}
