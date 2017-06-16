@@ -31,7 +31,5 @@ public class Robot {
 		r.doKick();
 		r.doRun();
 		r.doChange();
-
 	}
-
 }
