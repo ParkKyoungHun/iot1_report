@@ -18,26 +18,23 @@ public class CalPoint01 {
 
 		}
 		System.out.println("입력하신 5학생의 점수의 총점 = " + (result));
-		System.out.println("입력하신 5학생의 점수의 평균점수 = " + (result/num.length));
-		
-		for(int i = 0; i<num.length;i++){
-			int tmep;
-			if(num[0]>num[0+1]){
-				tmep = num[0];
-				num[0]=num[0+1];
-				num[0+1] = tmep;
-			}
-			
-		}
-			System.out.println("작은 수부터 출력:");
-			for(int i = 0;i<num.length;i++){
-				System.out.println(num[i]+"");
-			}
-			System.out.println();
-			
-			
-			
-			
-		}
-	}
+		System.out.println("입력하신 5학생의 점수의 평균점수 = " + (result / num.length));
 
+		for (int i = 0; i < num.length; i++) {
+			for (int j = i + 1; j < num.length; j++) {
+				if (num[i] > num[j]) {
+					int tmep = num[i];
+					num[i] = num[j];
+					num[j] = tmep;
+				}
+
+			}
+		}
+		System.out.println("작은 수부터 출력:");
+		for (int i = 0; i < num.length; i++) {
+			System.out.println(num[i] + "");
+		}
+		System.out.println();
+
+	}
+}

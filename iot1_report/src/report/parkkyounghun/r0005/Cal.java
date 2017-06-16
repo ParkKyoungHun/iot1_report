@@ -11,16 +11,18 @@ public class Cal {
 		
 	}
 	Cal(int a){
-		System.out.println(a+ "인트형변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");
 		this.a = a;
 	}
+	
 	Cal(int a, int b, String operator){
 		this.a = a;
 		this.b = b;
 		this.operator = operator;
 	}
 	void printCal(){
-		if(operator.equals("+")){
+		if(operator==null){
+			System.out.println("연산자가 틀렸어요");
+		}else	if(operator.equals("+")){
 			System.out.println(a + " + " + b + " = " + (a + b));
 		}else if(operator.equals("*")){
 			System.out.println("a * b = " + (a * b));
