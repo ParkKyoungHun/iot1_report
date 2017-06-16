@@ -15,6 +15,7 @@ public class Switch {
 			switch (text) {
 			case "시작":
 				System.out.println("동작 시작!");
+				state=0;
 				break;
 
 			case "종료":
@@ -25,6 +26,7 @@ public class Switch {
 			default:
 
 				System.out.println("정의 되지 않는 명령어입니다.");
+				state =0;
 			}
 		}while(state!=1);
 
