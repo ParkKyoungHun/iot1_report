@@ -4,7 +4,6 @@ public class Son extends Father{			//Father 를 상속 받음. <다중 상속 �
 	int a;
 	
 											//상속 받은 함수들은 재정의를 할 수 있음. Overriding[함수의 재정의]
-
 	public static void main(String[] args){
 		Son s = new Son();
 		s.a = 3;
