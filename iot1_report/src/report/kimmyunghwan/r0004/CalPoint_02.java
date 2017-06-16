@@ -15,11 +15,11 @@ public class CalPoint_02 {
 		for (int i = 0; i < num.length; i++) {
 			System.out.println((i + 1) + "번째 학생의 점수를 입력해주세요 ==> ");
 
-			String input = scanner.nextLine(); // nextLine에서 input에 string으로
-												// 넘겨준다
-			num[i] = Integer.parseInt(input); // Integer.parseInt는 숫자를 문자로 13라인에 넘겨준다
+			String input = scanner.nextLine(); 	// nextLine에서 input에 string으로
+															// 넘겨준다
+			num[i] = Integer.parseInt(input); 	// Integer.parseInt는 숫자를 문자로 13라인에 넘겨준다
 
-			result += num[i];// 합계
+			result += num[i];							// 합계
 		}
 		System.out.println("입력하신 5 학생의 총점=" + (result));
 
