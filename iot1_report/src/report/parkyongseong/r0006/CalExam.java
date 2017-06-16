@@ -13,21 +13,38 @@ public class CalExam
 		
 		System.out.print("학생 수를 입력해 주세요 : ");
 		String input1 = scanner.nextLine();
-		int people = Integer.parseInt(input1);
+		int num1 = Integer.parseInt(input1);
+		int[] people = new int[num1];
 		
 		//총 학생의 점수를 담을 변수
 		int sumNum = 0;
 		
-		for(int i = 1; i <= people; i++)
+		for(int i = 0; i < people.length; i++)
 		{
-			System.out.print("학생의 점수를 입력해 주세요 : ");
+			System.out.print((i + 1) + "번째 학생의 점수를 입력해 주세요 : ");
 			String input2 = scanner.nextLine();
-			int num2 = Integer.parseInt(input2);
-			sumNum += num2;
+			people[i] = Integer.parseInt(input2);
+			sumNum += people[i];
 		}
 		
-		System.out.println(people + " 명의 학생 총점 값은 = " + (sumNum));
-		System.out.println(people + " 명의 학생 평균 값은 = " + (sumNum / people));
+		System.out.println(people.length + " 명의 학생 총점 값은 = " + (sumNum));
+		System.out.println(people.length + " 명의 학생 평균 값은 = " + (sumNum / people.length));
+		
+		int temp = 0;
+		
+		for(int i = 0; i < people.length; i++)
+		{
+			for(int j = (i + 1); j < people.length; j++)
+			{
+				if(people[i] < people[j])
+				{
+					temp = people[i];
+					people[i] = people[j];
+					people[j] = temp;
+				}
+			}
+			System.out.println((i + 1) + "등의 점수는 = " + people[i]);
+		}
 	
 	}
 }
