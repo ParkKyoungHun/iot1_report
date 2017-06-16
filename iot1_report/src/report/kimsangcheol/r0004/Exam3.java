@@ -8,7 +8,7 @@ public class Exam3 {
 	public Exam3(){						//Exam3 <= 생성자 클래스와 이름이 같아야 하고 변수타입이 없다.
 		//return 타입이 없기 때문에 void도 쓸 필요가 없다.
 	}
-	public Exam3(int a,int b){			//파라메터가 다르면 다른 함수이다.=>overloading
+	public Exam3(int a,int b){			//같은 명의 파라메터가 다르면 다른 함수이다.=>overloading
 		this.a = a;						//this는 Class에 선언된 변수
 		this.b = b;					
 		this.result = this.a+this.b ;						

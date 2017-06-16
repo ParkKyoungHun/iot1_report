@@ -1,4 +1,4 @@
-package report.parkkyounghun.r0006;
+package report.kimseunghun.r0006;
 
 public class Father {
 	private String address = "서울시 강서구 가양동";
@@ -6,18 +6,15 @@ public class Father {
 	private String name = "박철수";
 
 	int getAge() {
-		return this.age;
+		return age;
 	}
 
 	String getAdress() {
 		return address;
 	}
-
-	String getName() {
-		return name;
-	}
-
-	void setName(String name) {
-		this.name = name;
+	void setName(){
+		String name;
+		this.name=name;
+		return this.name;
 	}
 }
