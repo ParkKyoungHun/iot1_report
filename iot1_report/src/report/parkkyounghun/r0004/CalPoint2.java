@@ -11,7 +11,7 @@ public class CalPoint2 {
 			System.out.println((i+1) + "번째 학생의 점수를 입력해주세요=>:");
 			String numStr = scan.nextLine();
 			num[i] = Integer.parseInt(numStr);
-			result += num[i];
+			result += num[i]; //result = result + num[i];
 		}
 		System.out.println("입력하신 5학생의 점수의 총점 = " + (result));
 		System.out.println("입력하신 5학생의 평균 점수 = " + (result/num.length));
