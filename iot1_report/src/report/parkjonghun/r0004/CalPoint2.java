@@ -20,7 +20,7 @@ public class CalPoint2 {
 		System.out.println("입력하신 5학생의 점수의 총점 = " + result);
 		
 		System.out.println("모든 학생들의 평균은 >" +  result / 5);
-		for(int i=0; i<num.length; i++){
+		for(int i=0; i<num.length; i++){   //이 부분 좀 더 공부
 			for(int j = i+1;j<num.length; j++){
 				if(num[i]<num[j]){
 					int temp = num[i];
