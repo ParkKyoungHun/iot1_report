@@ -38,9 +38,4 @@ public class Father
 		this.name = name;
 		return this.name;
 	}
-	
-	public static void main(String[] args)
-	{
-		
-	}
 }
