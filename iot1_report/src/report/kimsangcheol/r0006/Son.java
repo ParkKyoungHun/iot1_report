@@ -1,5 +1,7 @@
 package report.kimsangcheol.r0006;
 
+import java.util.ArrayList;
+
 public class Son extends Father{			//Father 를 상속 받음. <다중 상속 불가능>
 	int a;
 	
@@ -15,6 +17,11 @@ public class Son extends Father{			//Father 를 상속 받음. <다중 상속 �
 	
 		Father f = new Father();
 		System.out.println(f.getAddress());
-		
+		ArrayList<String> manKind = new ArrayList<String>();
+		manKind.add(s.getAddress());
+		manKind.add(s.getName());
+		for(int i=0;i<manKind.size();i++){
+		System.out.println(manKind.get(i));
+		}
 	}
 }
