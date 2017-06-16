@@ -19,7 +19,7 @@ public class ArrayExam6 {//강사님 파일 보고 다시 공부하기 (로또 �
 	
 	public static void main(String[] args){
 		ArrayExam6 ae = new ArrayExam6();
-		int[] a = ae.getArrVar(10,0,9);
+		int[] a = ae.getArrVar(10,0,9); 
 		//int ran = (int)(Math.random()*5)+1;
 		ae.printArrVar(a);
 		

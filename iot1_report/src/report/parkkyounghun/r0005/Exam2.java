@@ -9,9 +9,18 @@ public class Exam2 {
 		for(int i=0;i<=4;i++){
 			c[i] = new Cal(i+1);
 		}
-
+		c[0] = new Cal(1);
+		c[1] = new Cal(2);
+		c[2] = new Cal(3);
+		c[3] = new Cal(4);
+		c[4] = new Cal(5);
 		for(int i=0;i<=4;i++){
 			System.out.println(c[i].a);
 		}
+		System.out.println(c[0].a);
+		System.out.println(c[1].a);
+		System.out.println(c[2].a);
+		System.out.println(c[3].a);
+		System.out.println(c[4].a);
 	}
 }
