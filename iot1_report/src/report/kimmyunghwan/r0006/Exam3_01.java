@@ -2,12 +2,12 @@ package report.kimmyunghwan.r0006;
 
 public class Exam3_01 {
 
-	// Exam3 클래스를 함수를 넣어 변환한 클래스 다시 만든것
+	// Exam3 클래스를 함수를 넣어 변환한 클래스 다시 예제
 
 	int getIndexFromArray(int[] arr, int num) {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == num) {
-				return i;
+				return i;								// 조건에 만족하면 끝낸다.
 			}
 		}
 		return -1;
