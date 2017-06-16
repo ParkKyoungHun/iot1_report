@@ -21,7 +21,7 @@ public class Cal_02 {
 
 	Cal_02(int a) {
 		System.out.println(a + "인트형 변수 파라메터를 한개를 가진 생성자를 호출하셨네요!");
-		this.a=a;
+		this.a = a;
 	}
 
 	Cal_02(int a, int b, String str) {
@@ -48,7 +48,7 @@ public class Cal_02 {
 	// }
 
 	public static void main(String[] args) {
-		Cal_02 c = new Cal_02(10, 2, "*");
+		Cal_02 c = new Cal_02(10, 2, "+");
 
 		c.printCal();
 
