@@ -1,11 +1,12 @@
-package report.parkkyounghun.r0005;
+package report.kimsangcheol.r0006;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class EXamList {
+public class ExamList {
 	public static void main(String[] args){
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		list.add(1);
+		
 	}
+
 }

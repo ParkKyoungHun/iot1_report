@@ -11,19 +11,19 @@ public class List1 {
         numbers.add(100);
         numbers.add(40);
  
-        // Retrieving
+        // 0번 주소의 값을 불러옴
         System.out.println(numbers.get(0));
  
         System.out.println("nIteration #1: ");
-        // Indexed for loop iteration
+        // 0번 부터 리스트 사이즈 만큼 반복하면서 출력
         for (int i = 0; i < numbers.size(); i++) {
             System.out.println(numbers.get(i));
         }
  
-        // Removing items (careful!)
+        // List 하나를 없앤다
         numbers.remove(numbers.size() - 1);
  
-        // This is VERY slow
+        // List 0번을 없앤다
         numbers.remove(0);
  
         System.out.println("nIteration #2: ");
@@ -31,7 +31,7 @@ public class List1 {
             System.out.println(value);
         }
  
-        // List interface ...
+        // List interface ...[스트링형]
         ArrayList<String> values = new ArrayList<String>();
         values.add("야");
         values.add("호");
