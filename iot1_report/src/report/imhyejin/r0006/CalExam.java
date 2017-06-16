@@ -8,7 +8,7 @@ public class CalExam {
 	// 총 10명의 학생의 점수를 받아주세요..
 	// 10명의 학생의 총점과 평균을 구해주세요.
 
-	int getGradeFromArray(int num, int[] arrNum) {
+	int getGradeFromArray(int[] arrNum, int num) {
 		for (int i = 0; i < arrNum.length; i++) {
 			if (arrNum[i] == num) {
 				return (i + 1);
@@ -58,8 +58,7 @@ public class CalExam {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			
-			int a = c.getGradeFromArray(students[i], students);
+			int a = c.getGradeFromArray(students, number[i]);
 			System.out.println(a + "번째 수 " + students[i]);
 		}
 		//
