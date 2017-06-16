@@ -9,7 +9,7 @@ public class ArrayListExam {
 	public static void main(String[] args){
 		ArrayList<ArrayExam3> aLE3 = new ArrayList<ArrayExam3>();
 		ArrayExam3 aE3= new ArrayExam3();
-		
+		;
 		
 		
 		aLE3.add(aE3);
