@@ -8,15 +8,12 @@ public class Exam9 {
 	private int result;
 	Scanner scan = new Scanner(System.in);
 	
-	int getA(){
+	void getAB(){
 		System.out.println("초기값을 입력해주세요.>");
 		a=Integer.parseInt(scan.nextLine());
-		return a;
-	}
-	int getB(){	
 		System.out.println("종료값을 입력해주세요.>");
 		b=Integer.parseInt(scan.nextLine());
-		return b;
+		
 	}
 	
 	public int doLoop(){
