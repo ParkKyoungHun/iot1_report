@@ -3,9 +3,9 @@ package report.kimsangcheol.r0007;
 import java.util.Scanner;
 
 public class Exam11 {
-	int a;
-	int b;
-	int result;
+	protected int a;
+	protected int b;
+	protected int result;
 	Scanner scan = new Scanner(System.in);
 	public Exam11(){
 		System.out.println("연산할 수를 입력해주세요.>");
@@ -29,7 +29,7 @@ public class Exam11 {
 		result = a/b;
 		return result;
 	}
-	public void printResult(){
+	protected void printResult(){
 		
 		this.calcPlus();
 		System.out.println("더하기 연산 결과는 :" + result);
