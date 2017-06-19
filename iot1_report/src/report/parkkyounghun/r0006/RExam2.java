@@ -18,4 +18,6 @@ public class RExam2 {
 	public int getB(){
 		return b;
 	}
-}
+}//public void setA(int a){
+ //this.a = a;
+ //this.a<<<int a = 1;선언한것에 
