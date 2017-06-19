@@ -2,7 +2,7 @@ package report.kimmyunghwan.r0007;
 
 public class Exam11 {
 
-	protected int a; //상속 받는곳에서 사용하려고
+	protected int a; //상속 받는곳에서 사용하려고 // 자식에게 물려주겠다.
 	protected int b;
 	int result;
 	public Exam11(){}
