@@ -14,7 +14,7 @@ public class CalExam {
 			Scanner scan = new Scanner(System.in);
 			int input = Integer.parseInt(scan.nextLine());// 스캔으로 입력받고 정수로 변경
 		result += a[i];
-		for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
 			if (a[i] > a[i + 1]) {
 				int temp = a[i];
 				a[i] = a[i + 1];
