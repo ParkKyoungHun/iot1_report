@@ -11,16 +11,16 @@ public class Exam {
 
 		String[] a = { "+", "-", "*", "/" };
 		Robot r = new Robot("지로봇", 10);
-
 		r.doKick();
 		r.doRun();
 		r.doChange();
-
 		Cal c;
+		
 		// for (int i = 0; i < 4; i++) {
 		// c = new Cal(10, 2, a[i]);
 		// c.printCal();
 		// }
+		
 		System.out.println("");
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 10; j++) {
@@ -29,9 +29,7 @@ public class Exam {
 			}
 			System.out.println("");
 		}
-
 	}
-
 }
 
 // Cal c = new Cal(10, 2, a[0]);

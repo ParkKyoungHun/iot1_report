@@ -2,7 +2,7 @@ package report.parkjonghun.r0004;
 
 import java.util.Scanner;
 
-public class Exam3 {
+public class Exam3 { // 
 	int a = 0 ;
 	public Exam3(){  //생성자 = 클래스명과 동일한 이름이어야 한다. 
 		//return 타입이 없기 때문에 void도 쓸 필요가 없음.
