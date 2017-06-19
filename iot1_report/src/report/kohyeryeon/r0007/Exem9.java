@@ -9,24 +9,24 @@ public class Exem9 {
 	//해당연산결과는 printResult()라는 함수를 호출했을때 나오게 프로그램을 작성해주시면됩니다.
 	//호출은 Exem10이라는 클래스에서!
 	
-	Exem9(int a, int b){
+	public Exem9(int a, int b){
 		this.a = a;
 		this.b = b;
 	}
 	
-	public void getPlus(){
+	protected void getPlus(){
 		result = a+b;
 	}
-	public void getMinus(){
+	protected void getMinus(){
 		result = a-b;
 	}
-	public void getDivision(){
+	protected void getDivision(){
 		result = a/b;
 	}
-	public void getMultipl(){
+	protected void getMultipl(){
 		result = a*b;
 	}
-	public int printResult(){
+	protected int printResult(){
 		return result;
 		
 	}
