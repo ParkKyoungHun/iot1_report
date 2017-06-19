@@ -8,7 +8,6 @@ public class Exam11 {
  //해당연산결과는 printResult()라는 함수를 호출햇을때 나오게 프로그램을 작성해주시면 됩니다.
  //호출은 Exam12라는 클래스를 만들어서 그안에서 해주시기 바랍니다.
  
- int result=0;
  Exam11(int a, int b){
  this.a=a;
  this.b=b;
