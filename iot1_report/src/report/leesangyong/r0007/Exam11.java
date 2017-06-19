@@ -1,8 +1,8 @@
-package report.leesangyong.r0008;
+package report.leesangyong.r0007;
 
 public class Exam11 {
- int a;
- int b;
+ protected int a;
+ protected int b;
  //a와 b값을 초기화 하는 Exam11생성자를 만들어주세요
  //a와 b값을 더하기, 빼기, 나누기, 곱하기 하는 함수를 각각 4개 작성해주시고
  //해당연산결과는 printResult()라는 함수를 호출햇을때 나오게 프로그램을 작성해주시면 됩니다.
