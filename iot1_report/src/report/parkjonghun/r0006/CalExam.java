@@ -30,7 +30,7 @@ public class CalExam {
 		
 		for(int i = 0; i < 3; i++){		//오름 차순 이해안됨.
 			for(int j = i+1; j < 3; j++){
-				if(result[i]<result[j]){
+				if(j<3 && result[i]<result[j]){
 					int temp = result[i];
 					result[i] = result[j];
 					result[j] = temp;

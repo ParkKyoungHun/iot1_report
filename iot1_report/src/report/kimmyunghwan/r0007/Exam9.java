@@ -28,9 +28,12 @@ public class Exam9 {
 		for (int i = a; i <= b; i++) {
 			result += i;
 		}
+	}
+		public int getResult(){
+			return result;
 		
 	//public void getResult(){
-		System.out.println();
+//		System.out.println();
 		}
 	}
 //}
