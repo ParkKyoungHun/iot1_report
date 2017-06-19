@@ -25,26 +25,3 @@ public class ArrayExam6 {
 	}
 }	
 
-/*
-	public void formula(int initNum, int maxNum){
-		int[] a = new int[10];
-		for(int i =initNum; i<=maxNum; i++){
-			a[10-i] = i*2;
-		}
-		for(int i=initNum; i<=maxNum; i++){
-		System.out.println(a[i-1]);
-		}
-	
-	}
-	
-	public static void main(String[] args){
-		ArrayExam6 ae6 = new ArrayExam6();
-		ae6.formula(3,8);
-		
-		System.out.println("�Ʒ��� �ζ��Լ� �ҷ��°��Դϴ�");
-		ArrayExam5 ae5 = new ArrayExam5();
-		ae5.lotto();
-	}
-}	
-
-*/
