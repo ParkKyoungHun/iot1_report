@@ -29,17 +29,17 @@ class Thing {
 
 public class App {
 	public static void main(String[]args){
-		Thing.description = "I am a thing!";		//description에 값을 입력
+		Thing.description = "This is a thing!";		//description에 값을 입력
 		
 		Thing.showInfo();						//description 값을 출력
 
-		System.out.println("Before creating objects, count is: " + Thing.count);
+		System.out.println("생성 전, count is: " + Thing.count);
 		Thing thing1 = new Thing();
 		Thing thing2 = new Thing();
-		System.out.println("After creating objects, count is: "+ Thing.count);
+		System.out.println("생성 후, count is: "+ Thing.count);
 		
-		thing1.name = "Bob";
-        thing2.name = "Sue";
+		thing1.name = "닭";
+        thing2.name = "오리";
          
         thing1.showName();								//입력한 이름과 Description과 ID의 값을 출력
         thing2.showName();
