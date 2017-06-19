@@ -7,29 +7,29 @@ public class Exam11 {
 	int b;
 	int result;
 	Scanner scan = new Scanner(System.in);
-	Exam11(){
+	public Exam11(){
 		System.out.println("연산할 수를 입력해주세요.>");
 		a= Integer.parseInt(scan.nextLine());
 		System.out.println("연산할 수를 입력해주세요.>");
 		b= Integer.parseInt(scan.nextLine());
 	}
-	int calcPlus(){
+	protected int calcPlus(){
 		result = a+b;
 		return result;
 	}
-	int calcMinus(){
+	protected int calcMinus(){
 		result = a-b;
 		return result;
 	}
-	int calcMultiple(){
+	protected int calcMultiple(){
 		result = a*b;
 		return result;
 	}
-	int calcDivision(){
+	protected int calcDivision(){
 		result = a/b;
 		return result;
 	}
-	public void printResult(){
+	protected void printResult(){
 		
 		this.calcPlus();
 		System.out.println("더하기 연산 결과는 :" + result);
