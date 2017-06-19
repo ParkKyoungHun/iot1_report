@@ -20,14 +20,11 @@ public class Cal {
 		this.operator = operator;
 	}
 	void printCal(){
-<<<<<<< HEAD
 		
 		if(operator.equals("+")){
-=======
 		if(operator==null){
 			System.out.println("연산자가 틀렸어요");
 		}else	if(operator.equals("+")){
->>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 			System.out.println(a + " + " + b + " = " + (a + b));
 		}else if(operator.equals("*")){
 			System.out.println("a * b = " + (a * b));
@@ -37,9 +34,8 @@ public class Cal {
 			System.out.println("a - b = " + (a - b));
 		}else{
 			System.out.println("연산자가 틀렸어요");
-		}
-	}
 	
+		}
 	public static void main(String[] args){
 		Cal c = new Cal(2,3, "+");
 		c.printCal();
