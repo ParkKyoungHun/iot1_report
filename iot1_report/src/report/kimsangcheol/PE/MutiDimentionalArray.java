@@ -50,7 +50,6 @@ public class MutiDimentionalArray {
         // Can set a values in the sub-array we
         // just created.
         words[0][1] = "hi there";
-         
         System.out.println(words[0][1]);
         words[1][0] = "What the";
         System.out.println(words[1][0]);
