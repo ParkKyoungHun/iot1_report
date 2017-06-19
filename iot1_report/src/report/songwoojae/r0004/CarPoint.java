@@ -8,6 +8,7 @@ public class CarPoint {
 		Scanner scanner = new Scanner(System.in);
 		int result = 0;
 		int[] num = new int[5];
+	
 
 		for (int i = 0; i < num.length; i++) {
 			System.out.println("점수 입력");
@@ -17,21 +18,27 @@ public class CarPoint {
 			result += num[i];
 
 		}
-
-		for (int i = 0; i < num.length; i++) {
-			System.out.println("입력하신" + (i + 1) + "번 째 학생의 점 수 =" + num[i]);
-			if(num[i+1]<num[i]){
-				int tmp;
-				tmp = num[i+1];
-				num[i+1]=num[i];
-				num[i] = tmp;
-				
-			}
-			System.out.println(num[i]);
-		}
-		
 		System.out.println("입력하신 학생의 총점= " + result);
 		System.out.println("평균 :" + (result / num.length));
+
+		for (int i = 0; i < num.length; i++) {
+			for (int j = i + 1; j < num.length; j++) {
+
+				if (num[i] < num[j]) {
+
+					int tmp = num[i];
+					num[i] = num[j];
+					num[j] = tmp;
+				}
+
+			}
+
+		}
+		for (int i = 0; i < num.length; i++) {
+
+			System.out.println(num[i]);
+
+		}
 
 		/*
 		 * String input1 = scanner.nextLine(); int num1 =
