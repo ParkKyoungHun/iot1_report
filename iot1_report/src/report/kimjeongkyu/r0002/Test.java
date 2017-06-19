@@ -20,11 +20,11 @@ public class Test {
 		
 		/*
 		Scanner scan = new Scanner(System.in);
-		System.out.println("?��?��?�� 값을 ?��?��?��주세?��");
+		System.out.println("Enter initNum");
 		String intNum = scan.nextLine();
 		int geta = Integer.parseInt(intNum);
 
-		System.out.println("?��값을 ?��?��?��주세?��");
+		System.out.println("Enter maxNum");
 		String maxNum = scan.nextLine();
 		int getb = Integer.parseInt(maxNum);
 		*/
