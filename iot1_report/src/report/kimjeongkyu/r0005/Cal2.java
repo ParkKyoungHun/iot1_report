@@ -7,8 +7,8 @@ public class Cal2 {
 	String operator;
 	
 	Cal2(int num1, int num2, String operator) {
-		this.num1 = 3;
-		this.num2 = 5;
+		this.num1 = num1;
+		this.num2 = num2;;
 	}
 
 	void printPlus() {
@@ -45,5 +45,19 @@ public class Cal2 {
 		int num2  = Integer.parseInt(n2);
 		
 		Cal2 c2 = new Cal2(num1, num2, operator);
+	
+		if(operator.equals("+")){
+			c2.printPlus();
+		}else if(operator.equals("*")){
+			c2.printMultiple();
+		}else if(operator.equals("/")){
+			c2.printDivision();
+		}else if(operator.equals("-")){
+			c2.printMinus();
+		}else{
+			System.out.println("연산자가 틀렸어요");
+		}
+		
+		
 	}
 }
