@@ -9,17 +9,14 @@ public class Exam7 {
 		this.b = b;
 		this.c = c;
 	}
-	int getA(){
+	public int getA(){
 		return a;
 	}
-	int getB(){
+	public int getB(){
 		return b;
 	}
-	int getC(){
+	public int getC(){
 		return c;
-	}
-	public static void main(String[]args){
-		
 	}
 	
 }
