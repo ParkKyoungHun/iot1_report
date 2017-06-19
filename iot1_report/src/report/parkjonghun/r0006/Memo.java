@@ -28,13 +28,20 @@ public class Memo {
 //	두개를 참으로 할려면 if문을 하나 더 만들어야함.
 //	if(a == 1){
 //
-//	}esle if(b==3){
+//	}esle if(b == 3){
 //	}
 //
 //	접근 변경자 공부하기.
-//	public, protected, default, private
-//  참고 자료 주소 : http://uniksy1106.tistory.com/173
-
-
-//	
+//	public : 클래스, 변수, 메소드 생성자 등의 모든 접근을 허용한다.
+//   		보통 상수(static final 변수), 메소드(get/set) 등에 많이 사용.
+//
+//  protected : default와 같으나 추가적으로, 다른 패키지의 하위클래스에서도 상속 가능.
+//      
+//	default : 같은 패키지에 있는 (클래스, 변수, 메소드, 내부클래스)에서 접근 가능하다.
+//     		   접근 변경자가 없는 선언되지 않은 것이 default
+//
+//  private : 같은 클래스에서만 접근이 가능하다. 
+//             보통 인스턴스 변수, 외부에서 호출해서는 안되는 메소드
+//  출처: http://uniksy1106.tistory.com/173 [* 루이지노의 행복한 이야기 : )]
+	
 }

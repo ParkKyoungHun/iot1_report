@@ -1,0 +1,12 @@
+package report.parkkyounghun.r0007;
+
+import report.parkjonghun.r0006.RExam2;
+
+public class Exam6 extends RExam2{
+	
+	public static void main(String[] args){
+		Exam6 e6 = new Exam6();
+		e6.a = 3;
+	}
+
+}
