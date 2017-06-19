@@ -3,9 +3,9 @@ package report.kimsangcheol.r0007;
 import java.util.Scanner;
 
 public class Exam11 {
-	protected int a;
-	protected int b;
-	protected int result;
+	int a;
+	int b;
+	int result;
 	Scanner scan = new Scanner(System.in);
 	public Exam11(){
 		System.out.println("연산할 수를 입력해주세요.>");
