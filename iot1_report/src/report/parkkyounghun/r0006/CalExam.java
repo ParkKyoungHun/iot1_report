@@ -35,6 +35,7 @@ public class CalExam {
 					int tmp = num[i];
 					num[i] = num[j];
 					num[j] = tmp;
+					
 				}
 			}
 		}

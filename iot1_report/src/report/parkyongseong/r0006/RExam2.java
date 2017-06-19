@@ -2,8 +2,8 @@ package report.parkyongseong.r0006;
 
 public class RExam2 
 {
-	int a = 1;
-	int b = 2;
+	protected int a = 1;
+	protected int b = 2;
 	
 	public int getA()
 	{
