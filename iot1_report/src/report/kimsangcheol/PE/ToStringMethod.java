@@ -9,13 +9,13 @@ class Things{
 		this.name = name;
 	}
 	public String toString(){
-		return String.format("%-3d : %s", id, name);
+		return String.format("%-3d : %s", id, name);					//스트링 형태로 format
 	}
 }
 public class ToStringMethod {
 	public static void main(String[]args){
-	Things thing1 = new Things(1,"Bob");
-	Things thing2 = new Things(2, "John");
+	Things thing1 = new Things(9,"Bob");
+	Things thing2 = new Things(45, "John");
 	System.out.println(thing1);
 	System.out.println(thing2);
 	}
