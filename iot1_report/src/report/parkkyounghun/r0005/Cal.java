@@ -7,7 +7,7 @@ public class Cal {
 	int a;
 	int b;
 	String operator;
-	Cal(){
+	Cal(){ 
 		
 	}
 	Cal(int a){
