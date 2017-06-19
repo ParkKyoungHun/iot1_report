@@ -18,15 +18,18 @@ public class Exam9
 	
 	Exam9()
 	{
-		System.out.print("초기값을 입력해주세요 : ");
-		String input1 = this.scanner.nextLine();
-		this.a = Integer.parseInt(input1);
-		System.out.print("맥스값을 입력해주세요 : ");
-		String input2 =  this.scanner.nextLine();
-		this.b = Integer.parseInt(input2);
+		
 	}
 	
-	void doLoop()
+	public void printScanner()
+	{
+		System.out.print("초기 값을 입력해주세요 : ");
+		this.a = Integer.parseInt(scanner.nextLine());
+		System.out.print("맥스 값을 입력해주세요 : ");
+		this.b = Integer.parseInt(scanner.nextLine());
+	}
+	
+	public void doLoop()
 	{
 		for(int i = a; i <= b; i++)
 		{
@@ -34,7 +37,7 @@ public class Exam9
 		}
 	}
 	
-	int getResult()
+	public int getResult()
 	{
 		return result;
 	}
