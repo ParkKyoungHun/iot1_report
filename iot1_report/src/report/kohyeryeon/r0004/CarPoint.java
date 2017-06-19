@@ -7,6 +7,7 @@ public class CarPoint {
 	//6명의 학생의 총점을 출력해주세요
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
+		
 		System.out.print("1학생의 점수를 입력해주세요.");
 		String input1 = scanner.nextLine();
 		int num1 = Integer.parseInt(input1);
