@@ -3,44 +3,44 @@ package report.kimmyunghwan.r0008;
 import java.util.Scanner;
 
 public class Father1_3 {
-	int a = 3;
 	Scanner scan;
 	String str1, str2;
-	int num1, num2;
-
-	Father1_3() {
+	int initNum, maxNum;
+	int[] arrNum = new int[10];
+	
+	Father1_3(){
 		scan = new Scanner(System.in);
-		System.out.println("아빠 기본생성자 호출!!");
-		inputFormScanner1();
-		inputFormScanner2();
-		castStringToInt();
+		System.out.println("학생의 인원수를 입력해주세요 => ");
+		int studentCnt = Integer.parseInt(scan.nextLine());
+		arrNum = new int[studentCnt];
+		System.out.println(studentCnt + "명 학생의 점수를 입력해주세요!!");
+		inputPoint();
 	}
-
-	void castStringToInt() {
-		num1 = Integer.parseInt(str1);
-		num2 = Integer.parseInt(str2);
+	
+	void inputPoint(){
+		for(int i=0;i<arrNum.length;i++){
+			arrNum[i] = Integer.parseInt(scan.nextLine());
+		}
 	}
-
-	void inputFormScanner1() {
-		System.out.println("초기 값을 입력해 주세요 ==> ");
-
+	void printPoint(){
+		for(int i=0;i<arrNum.length;i++){
+			System.out.println(arrNum[i]);
+		}
+	}
+	void castStringToInt(){
+		initNum = Integer.parseInt(str1);
+		maxNum = Integer.parseInt(str2);
+	}
+	void inputFormScanner1(){
 		str1 = scan.nextLine();
-
 	}
-
-	void inputFormScanner2() {
-		System.out.println("맥스 값을 입력해 주세요 ==> ");
-
+	void inputFormScanner2(){
 		str2 = scan.nextLine();
-
 	}
-
-	void printIWithLoop() {
-
-		for (int i = num1; i <= num2; i++) {
-
+	
+	void printIWithLoop(){
+		for(int i=initNum;i<=maxNum;i++){
 			System.out.println(i);
 		}
-
 	}
 }
