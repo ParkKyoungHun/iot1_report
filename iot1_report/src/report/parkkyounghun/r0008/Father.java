@@ -6,12 +6,26 @@ public class Father {
 	Scanner scan;
 	String str1, str2;
 	int initNum, maxNum;
+	int[] arrNum = new int[10];
+	
 	Father(){
 		scan = new Scanner(System.in);
-		System.out.println("아빠 기본생성자 호출!!");
-		inputFormScanner1();
-		inputFormScanner2();
-		castStringToInt();
+		System.out.println("학생의 인원수를 입력해주세요 => ");
+		int studentCnt = Integer.parseInt(scan.nextLine());
+		arrNum = new int[studentCnt];
+		System.out.println(studentCnt + "명 학생의 점수를 입력해주세요!!");
+		inputPoint();
+	}
+	
+	void inputPoint(){
+		for(int i=0;i<arrNum.length;i++){
+			arrNum[i] = Integer.parseInt(scan.nextLine());
+		}
+	}
+	void printPoint(){
+		for(int i=0;i<arrNum.length;i++){
+			System.out.println(arrNum[i]);
+		}
 	}
 	void castStringToInt(){
 		initNum = Integer.parseInt(str1);

@@ -14,6 +14,11 @@ public class Father {
 		inputFromScanner1();
 		inputFromScanner2();
 		castToInt();
+		System.out.println("학생의 인원수를 입력해주세요.");
+		int studCnt = Integer.parseInt(scan.nextLine());
+		stud = new int[studCnt];
+		score = new int[studCnt];
+		System.out.println(studCnt + "명 학생의 점수를 입력해주세요.");
 		scoreArr();
 	}
 	void castToInt(){
@@ -40,9 +45,9 @@ public class Father {
 	}
 	void scoreArr(){
 		for(int i=0;i<score.length;i++){
-			System.out.println((i) + "번째 학생의 점수를 입력해 주세요.>");
+			System.out.println((i+1) + "번째 학생의 점수를 입력해 주세요.>");
 			score[i]=Integer.parseInt(scan.nextLine());
-			stud[i]=i;
+			stud[i]=i+1;
 		}
 		for(int i=0;i<score.length;i++){
 			for(int j=i+1;j<score.length;j++){

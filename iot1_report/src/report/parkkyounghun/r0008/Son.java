@@ -10,16 +10,22 @@ public class Son extends Father{
 	// 호출만 아들 클래스에서 해주시기 바랍니다.
 >>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 	Son(){
+<<<<<<< HEAD
 		
 		System.out.println("아들 기본생성자 호출!!");
+=======
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 	} 
 	Son(int a){
+<<<<<<< HEAD
 		
 		System.out.println("오버로딩 개념으로 추가된 아들 생성자 호출!!");
+=======
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 	}
 
 	public static void main(String[] args){
 		Son s = new Son();
-		s.printIWithLoop();
+		s.printPoint();
 	}
 }
