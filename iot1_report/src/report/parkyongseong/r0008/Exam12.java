@@ -6,6 +6,7 @@ public class Exam12 extends Exam11
 {
 	Exam12(int a, int b)
 	{
+		super(a, b);
 		this.a = a;
 		this.b = b;
 	}
