@@ -27,7 +27,7 @@ public class Exam9 {
 
 	public int getResult() {
 		return result;
-
+ 
 	}
 
 }
