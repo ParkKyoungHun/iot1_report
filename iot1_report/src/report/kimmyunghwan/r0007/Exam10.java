@@ -17,7 +17,7 @@ public class Exam10 {
 		
 				
 		e9.doLoop();
-		//System.out.println(e9.getResult);
+		System.out.println(e9.getResult());
 
 	}
 
