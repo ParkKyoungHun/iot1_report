@@ -4,7 +4,6 @@ public class Exam10 {
 
 	protected int a, b, result;
 
-
 	public Exam10() {
 	}
 
