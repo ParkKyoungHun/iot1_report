@@ -13,9 +13,9 @@ public class ExamList {
 		}
 		
 			list.get(1); // c배열의 0번째방에서 어레이리스트 빼오기
-			int temp=ArrayList.
+			
 					
-			System.out.println(temp);
+			System.out.println(list.get(1));
 		}
 	}
 

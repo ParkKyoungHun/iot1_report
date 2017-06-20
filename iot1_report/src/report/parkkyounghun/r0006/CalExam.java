@@ -17,9 +17,9 @@ public class CalExam {
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
 		int result = 0;
-		int[] num = new int[3];
-		int[] num1 = new int[3];
-		for(int i=0;i<3;i++){
+		int[] num = new int[10];
+		int[] num1 = new int[10];
+		for(int i=0;i<10;i++){
 			String numStr = scan.nextLine();
 			num[i] = Integer.parseInt(numStr);
 			num1[i] = Integer.parseInt(numStr);
@@ -35,6 +35,7 @@ public class CalExam {
 					int tmp = num[i];
 					num[i] = num[j];
 					num[j] = tmp;
+					
 				}
 			}
 		}
