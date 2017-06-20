@@ -5,6 +5,7 @@ import report.nayoungwoo.r0007.Exam11;
 public class Exam12 extends Exam11 {
 
 	Exam12(int a, int b) {
+		super(a,b);
 		this.a = a;
 		this.b = b;
 	}
@@ -14,7 +15,14 @@ public class Exam12 extends Exam11 {
 		Exam12 e2 = new Exam12(1,2);
 		e2.printPlus();
 		e2.printResult();
-
+		e2.printMinus();
+		e2.printResult();
+		e2.printMultiple();
+		e2.printResult();
+		e2.printDivision();
+		e2.printResult();
+		
+		
 	}
 
 }
