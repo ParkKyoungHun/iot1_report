@@ -12,6 +12,7 @@ public class Exam11 {
 	public Exam11() {
 
 	}		//Exam12에서 상속받기 위해 빈 생성자를 만들어야함
+	//빈 생성자를 쓰지 않을 때는 자손클래스에 super(a,b); 써야 됨
 
 	public Exam11(int a, int b) {
 		this.a = a;
