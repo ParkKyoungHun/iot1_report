@@ -9,7 +9,7 @@ public class Son extends Father {
 		System.out.println(s.getAdress());
 		System.out.println(s.getAge());
 		System.out.println(s.getName());
-		s.setName("박경훈");
+		s.setName("Kim");
 		System.out.println(s.getName());
 	}
 }
