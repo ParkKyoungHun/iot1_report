@@ -1,4 +1,4 @@
-package report.parkkyounghun.r0008;
+package report.kimjeongkyu.r0008;
 
 public class Father {
 	int a = 3;
@@ -10,3 +10,4 @@ public class Father {
 		System.out.println("오버로딩 개념으로 추가된 아빠 생성자 호출!!");
 	}
 }
+
