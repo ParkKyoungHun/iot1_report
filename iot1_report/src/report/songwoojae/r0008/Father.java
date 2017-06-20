@@ -12,35 +12,33 @@ public class Father {
 	int initNum;
 	int maxNum;
 
-	int[] arr = new int[10];
-
 	Father() {
 
 	}
-/*
-	void getSet() {
-		System.out.println("초기값 =  ");
+	/*
+	 * void getSet() { System.out.println("초기값 =  "); String str1 =
+	 * scan.nextLine(); initNum = Integer.parseInt(str1);
+	 * 
+	 * System.out.println("맥스값 =  "); String str2 = scan.nextLine(); maxNum =
+	 * Integer.parseInt(str2); }
+	 */
 
-		initNum = Integer.parseInt(scan.nextLine());
-		
-		System.out.println("맥스값 =  ");
-		maxNum = Integer.parseInt(scan.nextLine());
-	}
-	*/
+	int[] arr = new int[10];
 
 	void getResult() {
-		for (int i = 0 ;i <= 10; i++) {
 
-			arr[i] = scan.nextInt();
-			
+		System.out.println("10명 학생의 점수 입력 = ");
+		for (int i = 0; i < 10; i++) {
+			System.out.println((i + 1) + " 번 째 학생 점수 = ");
+			arr[i] = Integer.parseInt(scan.nextLine());
+
 		}
 
-		for(int i = 0; i<= arr.length-1;i++){
-			
+		for (int i = 0; i < 10; i++) {
+
 			System.out.print(arr[i] + "  ");
 		}
 	}
-
 
 	void inputFormScanner1() {
 		str1 = scan.nextLine();

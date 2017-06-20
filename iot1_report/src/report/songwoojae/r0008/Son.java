@@ -9,7 +9,7 @@ public class Son extends Father {
 
 	Son() {
 
-		System.out.println("기본 아들 생성자 호출!");
+		//System.out.println("기본 아들 생성자 호출!");
 	}
 
 	Son(int a) {

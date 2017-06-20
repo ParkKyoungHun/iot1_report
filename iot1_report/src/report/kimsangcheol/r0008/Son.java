@@ -3,7 +3,6 @@ package report.kimsangcheol.r0008;
 public class Son extends Father{
 	
 	Son(){
-		super(1);
 		System.out.println("기본 아들 생성자 호출!!!");
 		
 	}
@@ -12,7 +11,8 @@ public class Son extends Father{
 	}
 	public static void main(String[]args){
 		Son s = new Son();
-		System.out.println(s);
+		s.printInput();
+		s.printScore();
 	}
 
 }
