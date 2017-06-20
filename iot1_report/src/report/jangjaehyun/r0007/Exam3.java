@@ -12,8 +12,8 @@ public class Exam3 {
 		System.out.println(re2.getB());
 		re2.setA(3);
 		re2.setB(4);
-		System.out.println(re2.printA));
-		System.out.println(re2.printA));
+		System.out.println(re2.setA);
+		System.out.println(re2.setB);
 	}
 	
 }
