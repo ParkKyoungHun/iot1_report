@@ -10,14 +10,14 @@ public class Exam11
 	
 	protected int a;
 	protected int b;
-	protected int result;
+	int result;
 	
-	protected Exam11()
+	public Exam11()
 	{
 		
 	}
 	
-	protected Exam11(int a, int b)
+	public Exam11(int a, int b)
 	{
 		this.a = a;
 		this.b = b;
