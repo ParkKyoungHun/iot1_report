@@ -40,9 +40,9 @@ public class Father {
 	}
 	void scoreArr(){
 		for(int i=0;i<score.length;i++){
-			System.out.println((i) + "번째 학생의 점수를 입력해 주세요.>");
+			System.out.println((i+1) + "번째 학생의 점수를 입력해 주세요.>");
 			score[i]=Integer.parseInt(scan.nextLine());
-			stud[i]=i;
+			stud[i]=i+1;
 		}
 		for(int i=0;i<score.length;i++){
 			for(int j=i+1;j<score.length;j++){
