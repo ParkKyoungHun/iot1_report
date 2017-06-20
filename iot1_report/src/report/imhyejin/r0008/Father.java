@@ -11,10 +11,11 @@ public class Father {
 
 	Father() {
 		scan = new Scanner(System.in);
-		System.out.println("아빠 기본생성자 호출");
-		inputFormScanner();
+
+		// System.out.println(ㄴ셔 + "명의 사람의 점수를 입력해주세요===>: ");
 		// inputFormScanner2();
 		// castingStringToInt();
+		inputFormScanner();
 	}
 
 	Father(int a) {
@@ -34,7 +35,6 @@ public class Father {
 
 	void inputFormScanner() {
 		for (int i = 0; i < 10; i++) {
-			System.out.println(i + 1 + "번째 사람의 점수를 입력해주세요===>: ");
 			this.str = scan.nextLine();
 			numbers[i] = Integer.parseInt(this.str);
 		}
