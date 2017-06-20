@@ -46,7 +46,6 @@ public class Father {
 					z1[j]=z1[i];
 					z1[i]=c3;
 				}
-
 			}
 		}
 		for(int i=0;i<z1.length;i++){

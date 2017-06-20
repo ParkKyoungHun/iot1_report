@@ -4,9 +4,9 @@ import report.kimhonggeun.r0008.Father;
 
 public class Son extends Father{
 
-	
-	
-	
+
+
+
 	Son(){
 		System.out.println("아들 기본생성자 호출!!");
 	}
@@ -19,8 +19,5 @@ public class Son extends Father{
 		s.inputFormScanner2();
 		s.doLoop();
 		s.arr();
-		
-
-
 	}
 }
