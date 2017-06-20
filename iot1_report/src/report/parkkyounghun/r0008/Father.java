@@ -1,6 +1,7 @@
 package report.parkkyounghun.r0008;
 
 public class Father {
+	int a = 3;
 
 	Father(){
 		System.out.println("아빠 기본생성자 호출!!");
