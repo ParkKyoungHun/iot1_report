@@ -1,5 +1,6 @@
 package report.kohyeryeon.r0009;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ListMapExem {
@@ -13,12 +14,19 @@ public class ListMapExem {
 	public static void main(String[] args){
 		
 		HashMap<String, Integer> pointHm = new HashMap<String, Integer>();
+		pointHm.put("A군", 10);
+		pointHm.put("B군", 20);
+		pointHm.put("C군", 30);
+		pointHm.put("D군", 40);
+		pointHm.put("E군", 50);
 		
-		for(int i=1;i<=10;i++){
-			HashMap<String, Integer> pointm = new HashMap<String, Integer>();
+		ArrayList<HashMap<String, Integer>> arr = new ArrayList<HashMap<String, Integer>>();
+		//pointHm의 데이터타입이  HashMap<String, Integer> ArrayList<>안에 써야된다.
+		for(int i=1;i<=5;i++){
+		//	arr = pointHm.get(i);
+			System.out.println(i);
 		}
 		
-		pointHm.put("A", 50);		
 	}
 	
 }
