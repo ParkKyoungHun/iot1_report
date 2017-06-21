@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package report.umwoosung.r007;
+=======
+package report.umwoosung.r0007;
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 
 // private 접근제어자를 사용하여 int a,bc 3개의 변수를 선언해주세요.
 //Exam7 생성자에서 위의 3개의 변수의 값을 바꿔주세요

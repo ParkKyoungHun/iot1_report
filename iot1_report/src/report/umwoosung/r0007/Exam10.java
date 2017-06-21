@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package report.umwoosung.r007;
+=======
+package report.umwoosung.r0007;
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 //!!Exam9에 private int a,b reslut를 선언해주세요
 //Exam9 생성자에서 a값과 b값을 Scanner클래스의
 //nextLine()함수를 사용하여 대입해주세요

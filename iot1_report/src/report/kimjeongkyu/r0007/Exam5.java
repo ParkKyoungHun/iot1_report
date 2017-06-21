@@ -1,6 +1,6 @@
 package report.kimjeongkyu.r0007;
 
-public class Exma5 {
+public class Exam5 {
 
 	public static void main(String[] args){
 		long[] a = new long[11];

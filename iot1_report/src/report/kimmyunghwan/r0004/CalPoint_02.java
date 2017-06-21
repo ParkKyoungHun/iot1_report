@@ -26,8 +26,8 @@ public class CalPoint_02 {
 		// 아래 구문은 없어도 될거 같음.
 		for (int i = 0; i < num.length; i++) {
 			System.out.println("입력하신 " + (i + 1) + " 번째 학생의 점수=" + num[i]);
-		}
 
+	}
 	}
 
 }
