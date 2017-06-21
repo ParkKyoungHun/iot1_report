@@ -14,6 +14,11 @@ public class Father {
 		inputFromScanner1();
 		inputFromScanner2();
 		castToInt();
+		System.out.println("학생의 인원수를 입력해주세요.");
+		int studCnt = Integer.parseInt(scan.nextLine());
+		stud = new int[studCnt];
+		score = new int[studCnt];
+		System.out.println(studCnt + "명 학생의 점수를 입력해주세요.");
 		scoreArr();
 	}
 	void castToInt(){

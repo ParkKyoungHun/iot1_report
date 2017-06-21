@@ -9,7 +9,6 @@ public class Exam11 {
 	protected int b;
 	int result;
 
-	public Exam11(){}
 	
 	public Exam11(int a, int b, String c) {
 		this.a = a;

@@ -1,4 +1,4 @@
-package report.umwoosung.r007;
+package report.umwoosung.r0007;
 
 import report.umwoosung.r0006.RExam4;
 

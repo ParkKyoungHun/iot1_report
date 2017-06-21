@@ -21,6 +21,5 @@ public class Exam12 extends Exam11{
 		e2.printResult();
 		e2.divCal();
 		e2.printResult();
-		
 	}
 }
