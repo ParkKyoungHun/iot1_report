@@ -16,6 +16,7 @@ public class CalExam {
 			System.out.println((i + 1) + "번째 숫자 입력");
 			String input = scanner.nextLine();
 			a[i] = Integer.parseInt(input);
+			//a[i] = Integer.parseInt(scanner.nextLine());
 
 			sum += a[i];
 		}
