@@ -4,7 +4,8 @@ import report.jangjihun.r0008.Exam11;
 
 
 public class Exam12 extends Exam11{ //Exam11을 상위 클래스로 상속
-Exam12(int a, int b){                   //밑에 메인에서 생성자 값을 넣어주기위해 
+Exam12(int a, int b){                   //밑에 메인에서 생성자 값을 넣어주기위해
+	super(a,b);
 	this.a=a;
 	this.b=b;
 }

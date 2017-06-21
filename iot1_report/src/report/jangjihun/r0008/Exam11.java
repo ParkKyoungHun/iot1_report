@@ -4,7 +4,7 @@ public class Exam11 {
 protected int a;                 //protected 를 써줌으로써, 상속받은 클래스로 접근 가능해진다.
 protected int b;
 	
-	public Exam11(){} //빈 생성자를 초기화한다.
+	
 	 public Exam11(int num1, int num2){
 		this.a=num1;
 		this.b=num2;

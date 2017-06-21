@@ -32,7 +32,7 @@ public class CalPoint2 {
 				
 		}
 		for(int i = 0; i < num.length; i++){
-			System.out.println("입력하신 " + (i+1) + " 번째 학생의 점수 = " + num[i]);
+			System.out.println("높은 순서의 점수는 => " + num[i]);
 			
 		}
 	}
