@@ -1,14 +1,18 @@
-package report.kimmyunghwan.r0008;
+package report.jangjaehyun.r0008;
 
 import java.util.Scanner;
 
-public class Father1_3 {
+// 아빠 클래스에서 배열변수를 선언하시고 10명 학생의 점수를 입력받아주세요.
+// 단 배열변수의 데이터 타입은 int 형이어야 합니다.
+// 출력함수는 아빠클래스에서 선언해주시고
+// 호출만 아들 클래스에서 해주시기 바랍니다.
+public class Father1 {
 	Scanner scan;
 	String str1, str2;
 	int initNum, maxNum;
 	int[] arrNum = new int[10];
-	
-	Father1_3(){
+
+	Father1() {
 		scan = new Scanner(System.in);
 		System.out.println("학생의 인원수를 입력해주세요 => ");
 		int studentCnt = Integer.parseInt(scan.nextLine());
@@ -16,31 +20,16 @@ public class Father1_3 {
 		System.out.println(studentCnt + "명 학생의 점수를 입력해주세요!!");
 		inputPoint();
 	}
-	
-	void inputPoint(){
-		for(int i=0;i<arrNum.length;i++){
+
+	void inputPoint() {
+		for (int i = 0; i < arrNum.length; i++) {
 			arrNum[i] = Integer.parseInt(scan.nextLine());
 		}
 	}
-	void printPoint(){
-		for(int i=0;i<arrNum.length;i++){
+
+	void printPoint() {
+		for (int i = 0; i < arrNum.length; i++) {
 			System.out.println(arrNum[i]);
-		}
-	}
-	void castStringToInt(){
-		initNum = Integer.parseInt(str1);
-		maxNum = Integer.parseInt(str2);
-	}
-	void inputFormScanner1(){
-		str1 = scan.nextLine();
-	}
-	void inputFormScanner2(){
-		str2 = scan.nextLine();
-	}
-	
-	void printIWithLoop(){
-		for(int i=initNum;i<=maxNum;i++){
-			System.out.println(i);
 		}
 	}
 }
