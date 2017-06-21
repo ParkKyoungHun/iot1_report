@@ -15,4 +15,4 @@ public class Son extends Father{
 		s.printScore();
 	}
 
-}
+}				//너무 더워............더워.....하지.....일년중 낮의 길이가 최대.....
