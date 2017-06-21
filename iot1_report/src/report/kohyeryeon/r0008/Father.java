@@ -21,6 +21,13 @@ public class Father {
 			 a[i-1] = Integer.parseInt(this.str1);
 		}return a;
 	}
+	void scoreLoop(int i){
+		
+	}
+	void scoreLoop(int a, String b){
+				
+	}	
+	
 //	void inputFromScanner1(){
 //		this.str1 = scan.nextLine();
 //		this.initNum = Integer.parseInt(this.str1);

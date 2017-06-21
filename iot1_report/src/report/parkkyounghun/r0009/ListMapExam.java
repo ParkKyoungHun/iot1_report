@@ -2,6 +2,7 @@ package report.parkkyounghun.r0009;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class ListMapExam {
 	// 스트링,인티져로 구성된 HashMap 변수를 선언해주세요
@@ -12,17 +13,38 @@ public class ListMapExam {
 	// 반복문을 사용하여 ArrayList에 추가된 pointHm을 출력해주세요.
 
 	public static void main(String[] args){
+<<<<<<< HEAD
 		String[] str = {"A","B","C"};
 		ArrayList<HashMap<String, Integer>> arrList = new ArrayList<HashMap<String, Integer>>();
 		for(int i=0;i<str.length;i++){
 			HashMap<String, Integer> hm1 = new HashMap<String, Integer>();
 			hm1.put(str[i] ,(i+1)*10);
+=======
+		ArrayList<HashMap<String, Object>> arrList = new ArrayList<HashMap<String, Object>>();
+			HashMap<String, Object> hm1 = new HashMap<String, Object>();
+			Scanner scan = new Scanner(System.in);
+			System.out.println("이름을 입력해주세요");
+			String name = scan.nextLine();
+			System.out.println("나이 입력해주세요");
+			String age = scan.nextLine();
+			System.out.println("성별 입력해주세요");
+			String gender = scan.nextLine();
+			hm1.put("name", name );
+			hm1.put("age", Integer.parseInt(age) );
+			hm1.put("gender", gender );
+			Object str = new String("adasdfasdf");
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 			arrList.add(hm1);
+<<<<<<< HEAD
 		}
 
 		for(int i=0;i<arrList.size();i++){
 			System.out.println(arrList.get(i));
 
+=======
+		for(HashMap<String, Object> hm : arrList){
+			System.out.println(hm);
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 		}
 	}
 }
