@@ -11,10 +11,11 @@ public class ListMapExam {
 	// 해당 pointHm을 ArrayList에 추가해주세요.
 	// 반복문을 사용하여 ArrayList에 추가된 pointHm을 출력해주세요.
 	public static void main(String[] args){
+		String[] a = {"A군","B군","C군","D군","E군","F군","G군","H군","I군","J군"};
 		ArrayList<HashMap<String, Integer>> arrList = new ArrayList<HashMap<String, Integer>>();
 		for(int i=0;i<10;i++){
 			HashMap<String, Integer> hm1 = new HashMap<String, Integer>();
-			hm1.put("" + i, i);
+			hm1.put(a[i] , i*10);
 			arrList.add(hm1);
 		}
 		for(HashMap<String, Integer> hm : arrList){
