@@ -15,3 +15,4 @@ public class MapExam2 {
 		me.hm.put("1",1);
 	}
 }
+    
