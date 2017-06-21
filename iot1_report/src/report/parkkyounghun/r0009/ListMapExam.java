@@ -10,15 +10,19 @@ public class ListMapExam {
 	// 학생이름은 A군, B군, C군..... 으로 입력해주세요.
 	// 해당 pointHm을 ArrayList에 추가해주세요.
 	// 반복문을 사용하여 ArrayList에 추가된 pointHm을 출력해주세요.
+
 	public static void main(String[] args){
+		String[] str = {"A","B","C"};
 		ArrayList<HashMap<String, Integer>> arrList = new ArrayList<HashMap<String, Integer>>();
-		for(int i=0;i<10;i++){
+		for(int i=0;i<str.length;i++){
 			HashMap<String, Integer> hm1 = new HashMap<String, Integer>();
-			hm1.put("" + i, i);
+			hm1.put(str[i] ,(i+1)*10);
 			arrList.add(hm1);
 		}
-		for(HashMap<String, Integer> hm : arrList){
-			System.out.println(hm);
+
+		for(int i=0;i<arrList.size();i++){
+			System.out.println(arrList.get(i));
+
 		}
 	}
 }
