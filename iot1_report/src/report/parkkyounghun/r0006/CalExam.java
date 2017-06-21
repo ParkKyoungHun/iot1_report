@@ -3,6 +3,7 @@ package report.parkkyounghun.r0006;
 import java.util.Scanner;
 
 public class CalExam {
+	
 	int getGradeFromArray(int[] arrNum, int num){
 		for(int i=0;i<arrNum.length;i++){
 			if(arrNum[i]==num){
