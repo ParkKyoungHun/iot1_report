@@ -19,7 +19,6 @@ public class Father {
 		System.out.print("처음값");
 		str1 = scan.nextLine();
 		s1=Integer.parseInt(str1);
-
 	}
 	void inputFormScanner2(){
 		System.out.print("마지막값");
@@ -56,7 +55,6 @@ public class Father {
 		for(int j=0;j<z1.length;j++){
 			System.out.print(z1[j]+", ");
 		}
-
 	}
 }
 //아빠 클래스에서 값을 str1, str2를 scanner클래스의 nextLine()함수를 사용하여 값을 입력받아 주세요.
