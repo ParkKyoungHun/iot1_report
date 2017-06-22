@@ -1,14 +1,19 @@
 package report.songwoojae.r0009;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class ListExam<T> extends ArrayList{
+public class ListExam {
 
 	public static void main(String[] args){
-		ListExam<MapExam> list = new ListExam<MapExam>();
-		MapExam me = new MapExam();
-		me.put("test", "test");
-		list.add(me);
-		System.out.println(me);
+		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		for(int i=4;i>=0;i--){
+			arrList.add(((int)(Math.random()*45)+1));
+		}
+		Collections.sort(arrList);
+
+		for(int i=0;i<arrList.size();i++){
+			System.out.println(arrList.get(i));
+		}
 	}
 }

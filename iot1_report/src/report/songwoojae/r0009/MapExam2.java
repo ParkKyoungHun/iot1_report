@@ -1,33 +1,29 @@
 package report.songwoojae.r0009;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Iterator;
 
-public class MapExam2 extends HashMap<String, Integer>{
-// HashMap을 상속 받아 주세요.
-// 키타입은 String, 밸류 타입은 Integer로 선언해주세요.
-// 키는 아무거나 넣으셔도 되지만 밸류는 반드시 숫자만 입력하셔야 합니다.
-// 총 10개의 키값을 생성해주세요.
-// toString()함수를 오버라이딩 하여서 
-// 해당 해쉬맵이 가지고 있는 전체 숫자를 더한값을 출력해주세요.
+public class MapExam2 {
+	HashMap<String, Integer> hm;
 	
-	public String toString(){
-		String result ="";
-		ArrayList<String> keyList = new ArrayList<String>(keySet());
-		int sum = 0;
-		for(int i=0;i<keyList.size();i++){
-			String key = keyList.get(i);
-			sum += get(key);
-		}
-		result += sum;
-		return result;
+	MapExam2(){
+		hm = new HashMap<String, Integer>();
 	}
+	
 	public static void main(String[] args){
-		MapExam2 me2 = new MapExam2();
-		for(int i=1;i<=10;i++){
-			me2.put(""+i, i);
-		}
-		System.out.println(me2);
+		MapExam2 me = new MapExam2();
+		me.hm.put("1",1);
+		me.hm.put("2",2);
+		me.hm.put("3",3);
+		me.hm.put("4",4);
+		me.hm.put("5",5);
+		me.hm.toString();
+		System.out.println(me.hm.containsKey("6"));
+//		Iterator it = me.hm.keySet().iterator();
+//		while(it.hasNext()){
+//			String key = (String)it.next();
+//			System.out.print(key + ",");
+//			System.out.println(me.hm.get(key));
+//		}
 	}
 }

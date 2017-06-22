@@ -1,12 +1,22 @@
 package report.songwoojae.r0009;
 
-import java.util.HashMap;
-
 public class Exam {
 
+	String[] str;
+	Exam(){
+		str[0] = "1";
+	}
+	
+	Exam(int a){
+		str = new String[3];
+	}
+	
 	public static void main(String[] args){
-		HashMap hm = new HashMap();
-		hm.put("test", "test");
-		System.out.println(hm.containsKey("test"));
+		Exam e = new Exam(2);
+		e = new Exam();
+		System.out.println(e.str[0]);
+		int a = 1;
+		a = 2;
+		System.out.println(a==1);
 	}
 }
