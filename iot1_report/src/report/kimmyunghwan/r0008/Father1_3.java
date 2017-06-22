@@ -12,14 +12,14 @@ public class Father1_3 {
 		scan = new Scanner(System.in);
 		System.out.println("학생의 인원수를 입력해주세요 => ");
 		int studentCnt = Integer.parseInt(scan.nextLine());
-		arrNum = new int[studentCnt];
+		arrNum = new int[studentCnt];		//배열 
 		System.out.println(studentCnt + "명 학생의 점수를 입력해주세요!!");
 		inputPoint();
 	}
 	
 	void inputPoint(){
 		for(int i=0;i<arrNum.length;i++){
-			arrNum[i] = Integer.parseInt(scan.nextLine());
+			arrNum[i] = Integer.parseInt(scan.nextLine()); //인원수
 		}
 	}
 	void printPoint(){
@@ -27,16 +27,19 @@ public class Father1_3 {
 			System.out.println(arrNum[i]);
 		}
 	}
-	void castStringToInt(){
-		initNum = Integer.parseInt(str1);
-		maxNum = Integer.parseInt(str2);
-	}
+	
 	void inputFormScanner1(){
 		str1 = scan.nextLine();
 	}
 	void inputFormScanner2(){
 		str2 = scan.nextLine();
 	}
+	
+	void castStringToInt(){
+		initNum = Integer.parseInt(str1);
+		maxNum = Integer.parseInt(str2);
+	}
+	
 	
 	void printIWithLoop(){
 		for(int i=initNum;i<=maxNum;i++){
