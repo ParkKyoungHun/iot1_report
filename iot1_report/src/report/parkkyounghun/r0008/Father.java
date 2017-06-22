@@ -27,7 +27,6 @@ public class Father {
 			System.out.println(arrNum[i]);
 		}
 	}
-	/*
 	void castStringToInt(){
 		initNum = Integer.parseInt(str1);
 		maxNum = Integer.parseInt(str2);
@@ -44,6 +43,5 @@ public class Father {
 			System.out.println(i);
 		}
 	}
-	*/
 	
 }
