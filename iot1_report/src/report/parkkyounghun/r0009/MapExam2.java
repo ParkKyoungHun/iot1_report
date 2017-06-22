@@ -17,12 +17,13 @@ public class MapExam2 {
 		me.hm.put("3",3);
 		me.hm.put("4",4);
 		me.hm.put("5",5);
-		
-		Iterator it = me.hm.keySet().iterator();
-		while(it.hasNext()){
-			String key = (String)it.next();
-			System.out.print(key + ",");
-			System.out.println(me.hm.get(key));
-		}
+		me.hm.toString();
+		System.out.println(me.hm.containsKey("6"));
+//		Iterator it = me.hm.keySet().iterator();
+//		while(it.hasNext()){
+//			String key = (String)it.next();
+//			System.out.print(key + ",");
+//			System.out.println(me.hm.get(key));
+//		}
 	}
 }
