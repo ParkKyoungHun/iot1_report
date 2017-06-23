@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Practice extends HashMap<String, Integer> {
 	public String toString() {
-		String reuslt = "";
+		String result = "";
 		ArrayList<String> hey = new ArrayList<>(keySet());
 		int sum = 0;
-		for (int i = 0; i < hey.size(); i++) {
+		for(int i = 0; i < hey.size(); i++) {
 			String key = hey.get(i);
 			Integer value = (int)get(key);
 			sum += value;
