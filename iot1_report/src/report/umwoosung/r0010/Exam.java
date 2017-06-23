@@ -7,7 +7,7 @@ public class Exam {
 		
 		HashMap hm = new HashMap();
 		hm.put("test", "test");
-		System.out.println("test");
+		System.out.println(hm);
 	}
 
 }
