@@ -6,6 +6,7 @@ public class ExceptionExam3 {
 	final int initNum;
 	int[] arrNum;
 	ExceptionExam3(int initNum){
+		//final 선언하면 아래 새로 선언해야함!!
 		this.initNum = initNum;
 	}
 	
