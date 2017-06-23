@@ -6,7 +6,6 @@ public class Father {
 	Scanner scan;
 	int[] arr = new int[10];
 	
-	
 	Father() {
 		System.out.println("학생의 점수를 입력해주세요");
 		scan = new Scanner(System.in);

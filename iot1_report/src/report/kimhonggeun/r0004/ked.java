@@ -44,5 +44,4 @@ public class ked {
 		ked k1 = new ked();
 		k1.Scan();
 	}
-
 }
