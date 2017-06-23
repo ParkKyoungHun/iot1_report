@@ -1,8 +1,7 @@
-package report.parkjonghun.r0008;
+package report.parkjonghun.memo;
 
-public class Memo {
-	
-	
+public class Memo2 {
+
 //  윈도우 와 유닉스 리눅스 설명.	
 	
 //	CMD 사용 방법
@@ -17,6 +16,9 @@ public class Memo {
 //	파일 열기 : notepad 파일명.파일타입
 //  
 //	윈도우에서 작업관리자에서 우선순위 높이기 (실행중인 프로그램 오른쪽 클릭 -> 프로세스 이동 -> 우선순위 우클릭 변경)
-//  
-
+//
+// 1. MY - SQL이란? : 관계형 데이터 베이스 시스템.
+// 2. MY - SQL의 설치 방법? : 마리아나 디비 org 홈페이지에서 다운로드 후 링크 복사 -> 윈도우 64비트 중 Msi 파일을 다운로드한다.
+//	-> 실행 후 next 두번 후 비밀번호 구간에서 루트 어쩌구 를 체크하지 않으며 비밀번호 2개를 입력 후 UTF-8 관련된 항목을 체크 후 next입력
+//	포트번호는 변경하지 않고 next 후 설치한다.
 }

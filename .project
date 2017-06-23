@@ -3,6 +3,7 @@
 	<name>iot1_report</name>
 	<comment></comment>
 	<projects>
+		<project>RemoteSystemsTempFiles</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

@@ -37,7 +37,5 @@ public class MapExam extends HashMap{
 		me.put("A군", 50);
 		me.put("B군", 60);
 		System.out.println(me);
-
-
 	}
 }

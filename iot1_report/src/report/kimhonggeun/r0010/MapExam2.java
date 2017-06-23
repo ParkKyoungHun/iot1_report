@@ -19,9 +19,10 @@ public class MapExam2 extends HashMap{
 		for(int i=0;i<keyList.size();i++){
 			String key = keyList.get(i);
 			Integer value = (Integer)get(key);
-			result += "해쉬맵 "+key+", " + value+"!\n";
+			
 			num+=value;
-		}System.out.println("벨류값을 더한값 ="+num);
+		}result +=num;
+
 		return result;
 	}
 	
@@ -44,16 +45,24 @@ public class MapExam2 extends HashMap{
 }
 
 
-//네트워크에 대해 서술하시오
+
 //내컴퓨터속성 눌러서 os 랑 비트값확인, jdk 웹에서 다운, 이클립스 웹에서 다운, 톰캣 다운
 //이클립스에 톰캣설정 - 아파치선택-톰캣8.5-피니쉬!
 //http의 기본포트 =80
 //톰캣에서 포트를 바꾸는 방법 서술 = 서버 톰캣더블클릭 포트에있는 숫자 변경
-//오버로딩서술
-//생성자 함수의 차이
+//오버로딩서술 = 메서드의 이름은 하나만 주고 매개변수(parameter)를 다르게 함으로써 메서드를 여러개 만드는 것을 말한다.
+//LAN에 대해 서술해 = 한정된 지역에서 컴퓨터를 기본으로하는 여러가지 전자기기사이의 정뵤교환
+//생성자 함수의 차이 = 대소문자 구별
 
 //총점 평균 차순
 //국제네트워크 표준모델인 osi7 계층도를 작성해주세요
+//계층 1: 물리 계층
+//계층 2: 데이터 링크 계층
+//계층 3: 네트워크 계층
+//계층 4: 전송 계층
+//계층 5: 세션 계층
+//계층 6: 표현 계층
+//계층 7: 응용 계층
 //mysql이란 개인으로 쓰면 무료
 //관계형 데이터베이스 시스템
 //mysql설치방법 서술
@@ -61,7 +70,8 @@ public class MapExam2 extends HashMap{
 
 //fsutil file createnew test.txt 1 
 //mkdir test
-//cd \w
+//cd /w
+//cd \
 
 //iot_test라는 데이터베이스를 생성하는 sql을 작성해주셈
 //iot_test에서 아래의구조를 가진 테이블을 생성해주세요.
