@@ -14,7 +14,8 @@ public class MapExam2 extends HashMap {
 	
 	public String toString() {
 		String result = "";
-		List<String> keyList = new ArrayList<>(keySet());
+		List<String> keyList = new ArrayList<String>(keySet());
+		
 		int a=0;
 		for (int i = 0; i < keyList.size(); i++) {
 			String key = keyList.get(i);
