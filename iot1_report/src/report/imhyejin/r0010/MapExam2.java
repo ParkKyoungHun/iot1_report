@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MapExam2 extends HashMap {
+public class MapExam2 extends HashMap<String, Integer> {
 	// HashMap 을 상속 받아주세요.
 	// 키타입은 String, 밸류 타입은 integer로 선언해주세요.
 	// 키는 아무거나 넣으셔도 되지만 밸류는 반드시 숫자만 입력하셔야 합니다.
@@ -23,8 +23,7 @@ public class MapExam2 extends HashMap {
 
 		for (int i = 0; i < keySet().size(); i++) {
 			String key = keyList.get(i);
-			Integer value = (Integer) get(key);
-			a += value;
+			a += get(key);
 			result = a + "";
 		}
 		return result;
