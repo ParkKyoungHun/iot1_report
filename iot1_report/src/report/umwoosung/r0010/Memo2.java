@@ -1,4 +1,4 @@
-package report.parkjonghun.r0008;
+package report.umwoosung.r0010;
 
 public class Memo2 {
 //	운영체제 설명.

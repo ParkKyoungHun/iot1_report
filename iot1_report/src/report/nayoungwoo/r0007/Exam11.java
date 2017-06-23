@@ -13,6 +13,12 @@ public class Exam11 {
 	protected int b;
 	protected int result;
 	
+	
+	public Exam11(int a , int b){
+		this.a = a;
+		this.b = b;
+	}
+	
 	protected void printPlus() {
 		result = a + b;
 	}
@@ -31,7 +37,7 @@ public class Exam11 {
 
 	protected void printResult() {
 
-		System.out.print(result);
+		System.out.println(result);
 	}
 
 	public static void main(String[] args) {
