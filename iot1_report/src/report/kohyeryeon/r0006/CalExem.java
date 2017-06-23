@@ -8,8 +8,6 @@ public class CalExem {
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
 		int[] a = new int[10];
-		int[] b = new int[10];
-		
 		int result = 0;
 		
 		for(int i=0;i<a.length;i++){
@@ -17,7 +15,6 @@ public class CalExem {
 			String str = scan.nextLine();         
 			a[i] = Integer.parseInt(str);
 			result += a[i];
-			
 		}
 		System.out.println("학생들의 총점 :" + result);
 		System.out.println("학생들의 평균 :" + result/10);
@@ -30,6 +27,9 @@ public class CalExem {
 					a[j] = tmp;
 				}
 			}
+		}
+		for(int i=0;i<10;i++){
+		System.out.println(a[i]);
 		}
 	}
 }
