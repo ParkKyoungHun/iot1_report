@@ -7,7 +7,7 @@ public class Cal {
 	int a;
 	int b;
 	String operator;
-	Cal(){
+	Cal(){ 
 		
 	}
 	Cal(int a){
@@ -20,6 +20,11 @@ public class Cal {
 		this.operator = operator;
 	}
 	void printCal(){
+<<<<<<< HEAD
+		
+		if(operator.equals("+")){
+=======
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 		if(operator==null){
 			System.out.println("연산자가 틀렸어요");
 		}else	if(operator.equals("+")){
@@ -32,13 +37,15 @@ public class Cal {
 			System.out.println("a - b = " + (a - b));
 		}else{
 			System.out.println("연산자가 틀렸어요");
-		}
-	}
 	
+<<<<<<< HEAD
+		}
+=======
 	void printPlus(){
 		System.out.println("a + b = " + a + b);
 	}
 	
+>>>>>>> branch 'master' of https://github.com/ParkKyoungHun/iot1_report.git
 	public static void main(String[] args){
 		Cal c = new Cal(2,3, "+");
 		c.printCal();

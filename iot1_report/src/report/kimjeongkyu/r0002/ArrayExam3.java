@@ -3,8 +3,6 @@ package report.kimjeongkyu.r0002;
 public class ArrayExam3 {
 
 	public int[] getArrayVar(int initNum, int maxNum){
-		//initNum?���? ?��?��?��?�� maxNum?���? 종료?��?�� 반복문을 ?��?��?��?��
-		//배열�??�� a?�� 값을 집어?���?, 배열�??�� a�? 출력?��?��.
 		// by the way, output might be from the main formula.
 		int[] a= new int[maxNum-initNum];
 		for(int i=initNum-initNum; i<maxNum-initNum; i++){
@@ -31,11 +29,11 @@ public class ArrayExam3 {
 	public static void main(String[] args){
 		ArrayExam3 ae3 = new ArrayExam3();
 		
-		// a값을 구하�? ?��?�� ???��?��?�� getArrayVar �?
+		
 		int[]a = ae3.getArrayVar(0, 5);
 		
 		
-		// getArrayVar?��?��?��?�� 처리?�� a값을 받아 printArrayVar?��?���?
+	
 		ae3.printArrayVar(a);
 		System.out.println("-----------");
 		ae3.printArrayVarReverse(a);
