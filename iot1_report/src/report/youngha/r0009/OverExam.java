@@ -1,6 +1,5 @@
 package report.youngha.r0009;
 
-import report.youngha.r0009.OverExam;
 
 public class OverExam {
 	public String toString(int a){
