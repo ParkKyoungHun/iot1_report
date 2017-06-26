@@ -36,14 +36,14 @@ public class CalExam
 		{
 			for(int j = (i + 1); j < people.length; j++)
 			{
-				if(people[i] < people[j])
+				if(people[i] > people[j])
 				{
 					temp = people[i];
 					people[i] = people[j];
 					people[j] = temp;
 				}
 			}
-			System.out.println((i + 1) + "등의 점수는 = " + people[i]);
+			System.out.println("내림차순정렬 점수 :  " + people[i]);
 		}
 	
 	}
