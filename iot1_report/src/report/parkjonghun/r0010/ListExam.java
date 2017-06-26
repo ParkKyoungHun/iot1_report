@@ -12,9 +12,6 @@ public class ListExam<T> extends ArrayList{
 		list.add(me);
 		System.out.println(me);
 		
-			
-		
-		
 		
 	}
 
