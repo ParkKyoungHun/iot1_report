@@ -35,8 +35,7 @@ package report.umwoosung.r0010;
  * 함수. 리턴타입 있어도되고 없어도되고 없으면 void써줘야됨.
  * 2.오버로딩에 대해서 서술해주세요.
  * 함수명이 같아야한다.
- * 매개변수가 달라야한다.
- * 갯수가 달라야한다.
+ * 매개변수가 달라야한다.갯수가 달라야한다.
  * 
  * -----------
  * 1.MY-SQL 이란 무엇인가 서술해주세요
@@ -44,6 +43,7 @@ package report.umwoosung.r0010;
  * 2.MY-SQL설치방법을 서술해주세요
  * - 구글mariadb검색.
  * -다운로드(Msi로 다운)
+ * 2.my-aql설치방법
  *  -https://downloads.mariadb.org/interstitial/mariadb-10.2.6/winx64-packages/mariadb-10.2.6-winx64.msi/from/http%3A//ftp.kaist.ac.kr/mariadb/
  * -윈도우 64비트 설치
  * -비밀번호입력,비밀번호확인 UTF8체크

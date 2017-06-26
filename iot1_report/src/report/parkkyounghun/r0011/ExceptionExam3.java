@@ -15,7 +15,6 @@ public class ExceptionExam3 {
 		Scanner scan = new Scanner(System.in);
 		for (int i = 0; i < ee2.arrNum.length; i++) {
 			try {
-				System.out.printf("%d번방의 값을 입력해주세요.\n",i);
 				ee2.arrNum[i] = Integer.parseInt(scan.nextLine());
 			} catch (Exception e) {
 				i--;
