@@ -2,6 +2,7 @@ package report.parkkyounghun.r0011;
 
 public class Exam3 {
 	final int a;
+	int[] arr;
 	Exam3(){
 		a = 1;
 	}
@@ -11,6 +12,7 @@ public class Exam3 {
 	
 	public static void main(String[] args){
 		Exam3 e = new Exam3();
+		e.arr[0]=1;
 		System.out.println(e.a);
 		
 	}
