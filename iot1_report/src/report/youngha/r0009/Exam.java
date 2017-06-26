@@ -1,6 +1,6 @@
 package report.youngha.r0009;
 
-import report.parkkyounghun.r0009.Exam;
+import report.youngha.r0009.Exam;
 
 public class Exam {
 
@@ -23,4 +23,4 @@ public class Exam {
 	}
 }
 
-}
+
