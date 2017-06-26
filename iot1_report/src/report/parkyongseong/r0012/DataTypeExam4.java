@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class DataTypeExam4 
+public final class DataTypeExam4 
 {
 	Scanner scanner = new Scanner(System.in);
 	
