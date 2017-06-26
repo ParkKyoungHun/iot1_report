@@ -24,7 +24,7 @@ public class CalExam {
 		CalExam c = new CalExam();
 		s = new Scanner(System.in);
 		int[] students = new int[10];
-		int[] number = new int[10];
+//		int[] number = new int[10];
 		String stu;
 		int result = 0;
 
@@ -33,23 +33,23 @@ public class CalExam {
 		for (int i = 0; i < 10; i++) {
 			stu = s.nextLine();
 			students[i] = Integer.parseInt(stu);
-			number[i] = Integer.parseInt(stu);
+//			number[i] = Integer.parseInt(stu);
 		}
 
 		for (int i = 0; i < 10; i++) {
 			result += students[i];
 		}
 
-		for (int i = 0; i < 10; i++) {
-			System.out.println(number[i]);
-		}
+//		for (int i = 0; i < 10; i++) {
+//			System.out.println(number[i]);
+//		}
 
 		System.out.println("학생들의 총점은 " + result + " 입니다.");
 		System.out.println("학생들의 평균은 " + (result / 10) + " 입니다");
 
 		for (int i = 0; i < students.length; i++) {
 			for (int j = i + 1; j < students.length; j++) {
-				if (j < students.length && students[i] < students[j]) {
+				if (j < students.length && students[i] > students[j]) {
 					int change = students[j];
 					students[j] = students[i];
 					students[i] = change;
@@ -58,8 +58,11 @@ public class CalExam {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			int a = c.getGradeFromArray(students, number[i]);
-			System.out.println(a + "번째 수 " + students[i]);
+//			int a = c.getGradeFromArray(students, number[i]);
+//			System.out.println(a + "번째 수 " + students[i]);
+
+			System.out.println(students[i]);
+			
 		}
 		//
 	}

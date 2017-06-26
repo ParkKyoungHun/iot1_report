@@ -3,7 +3,6 @@ package report.umwoosung.r0008;
 import java.util.Scanner;
 
 public class Father {
-	int a = 3;
 	Scanner scan;
 	String str1;
 	String str2;
@@ -17,14 +16,14 @@ public class Father {
 	}
 
 	void InpuFromScanner1() {
-		System.out.print("맥스값을 입력해주세요");
+		System.out.print("최소값을 입력해주세요");
 		str1 = scan.nextLine();
 		s1 = Integer.parseInt(str1);
 
 	}
 
 	void InpuFromScanner2() {
-		System.out.print("최소값을 입력해주세요");
+		System.out.print("최대값을 입력해주세요");
 		str2 = scan.nextLine();
 		s2 = Integer.parseInt(str2);
 
@@ -37,11 +36,9 @@ public class Father {
 
 		}
 
-	void arr(){
-		for(int i = 0;i<10;i++);
 		
 		
 	}
-	}
+	
 
 }

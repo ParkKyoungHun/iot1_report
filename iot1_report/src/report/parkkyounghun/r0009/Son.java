@@ -1,14 +1,16 @@
 package report.parkkyounghun.r0009;
 
 public class Son extends Father{
-	public String toString(){
+
+	public String getStr(){
 		return "아부지 아들입니다.";
 	}
-	
 	public static void main(String[] args){
 		Father f = new Father();
-		System.out.println(f);
-		Father s = new Son();
-		System.out.println(s);
+		Son s = new Son();
+		String str = s.getStr();
+		String str2 = s.toString();
+		
+		System.out.println(f.equals(s));
 	}
 }
