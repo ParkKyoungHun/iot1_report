@@ -7,7 +7,7 @@ public class Father {
 	String str1;
 	String str2;
 	int s1;
-	int s2;
+	
 	int result;
 	int [] arr = new int [10];
 
@@ -25,7 +25,7 @@ public class Father {
 	void InpuFromScanner2() {
 		System.out.print("최대값을 입력해주세요");
 		str2 = scan.nextLine();
-		s2 = Integer.parseInt(str2);
+		int s2 = Integer.parseInt(str2);
 
 	}
 
