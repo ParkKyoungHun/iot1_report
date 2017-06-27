@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.HashMap;
 

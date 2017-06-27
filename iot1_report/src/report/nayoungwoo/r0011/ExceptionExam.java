@@ -1,7 +1,5 @@
 package report.nayoungwoo.r0011;
 
-import java.util.Scanner;
-
 import report.nayoungwoo.r0010.MapExam2;
 
 public class ExceptionExam {

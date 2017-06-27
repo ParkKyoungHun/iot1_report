@@ -39,7 +39,7 @@ public class DateTypeExam4 {
 		for(int i=0;i<numList.size();i++){
 			
 			HashMap resultHm = numList.get(i);
-		//	System.out.println(numList.get(i));
+			//System.out.println(numList.get(i));
 			System.out.print(resultHm.get("클래스") + ",");
 			System.out.print(resultHm.get("이름") + ",");
 			System.out.print(resultHm.get("나이") + ",");

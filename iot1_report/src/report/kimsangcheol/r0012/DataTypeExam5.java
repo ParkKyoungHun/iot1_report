@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,14 +10,14 @@ public class DataTypeExam5 {
 	public HashMap getHashMap(){
 
 		HashMap hm = new HashMap();
-		System.out.println("클래스를 입력하세요.>");
-		hm.put("클래스",scan.nextLine());
-		System.out.println("이름을 입력하세요.>");
-		hm.put("이름",scan.nextLine());
-		System.out.println("나이를 입력하세요.>");
-		hm.put("나이",scan.nextLine());
-		System.out.println("성별를 입력하세요.>");
-		hm.put("성별",scan.nextLine());
+		System.out.println("Ŭ������ �Է��ϼ���.>");
+		hm.put("Ŭ����",scan.nextLine());
+		System.out.println("�̸��� �Է��ϼ���.>");
+		hm.put("�̸�",scan.nextLine());
+		System.out.println("���̸� �Է��ϼ���.>");
+		hm.put("����",scan.nextLine());
+		System.out.println("������ �Է��ϼ���.>");
+		hm.put("����",scan.nextLine());
 		return hm;
 	}
 
@@ -30,10 +30,10 @@ public class DataTypeExam5 {
 		}
 
 		for(HashMap lists1 : aL){
-			System.out.print(lists1.get("클래스") + "\t");
-			System.out.print(lists1.get("이름") + "\t");
-			System.out.print(lists1.get("나이") + "\t");
-			System.out.println(lists1.get("성별") + "\t");
+			System.out.print(lists1.get("Ŭ����") + "\t");
+			System.out.print(lists1.get("�̸�") + "\t");
+			System.out.print(lists1.get("����") + "\t");
+			System.out.println(lists1.get("����") + "\t");
 		}		
 	}
 }
