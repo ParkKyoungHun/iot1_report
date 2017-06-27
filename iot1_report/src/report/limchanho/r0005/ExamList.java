@@ -1,7 +1,6 @@
 package report.limchanho.r0005;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ExamList {
 

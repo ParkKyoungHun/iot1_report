@@ -1,7 +1,5 @@
 package report.jangjihun.r0007;
 
-import java.util.Scanner;
-
 public class Exam10 {
 	public static void main(String[] args){
 		

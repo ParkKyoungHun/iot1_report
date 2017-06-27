@@ -1,7 +1,5 @@
 package report.kimsangcheol.PE;
 
-import report.kimsangcheol.PE.Car;
-
 public class Car {
 	String color;
 	String gearType;

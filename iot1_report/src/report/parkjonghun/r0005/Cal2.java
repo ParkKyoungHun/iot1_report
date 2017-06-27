@@ -1,7 +1,5 @@
 package report.parkjonghun.r0005;
 
-import java.util.Scanner;
-
 public class Cal2 {
 	// int형 변수 2개를 멤버변수로 {클래스안에서 생성하시오.)
 	// string형 변수 1개를 생성해주세요.

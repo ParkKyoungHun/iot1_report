@@ -1,7 +1,5 @@
 package report.kimmyunghwan.r0007;
 
-import java.util.Scanner;
-
 public class Exam10 {
 	// Exam9에 private int a,b,result를 선언해주세요
 	// Exam9 생성자에서 a값과 b값을 Scanner클래스의 nextLine() 함수를 사용하여 대입

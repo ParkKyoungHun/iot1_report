@@ -1,7 +1,5 @@
 package report.youngha.r0008;
 
-import report.youngha.r0008.Exam1;
-
 public class Exam1{
 	int a = 1;
 	int b = 2;

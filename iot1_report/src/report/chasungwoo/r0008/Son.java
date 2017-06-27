@@ -1,7 +1,5 @@
 package report.chasungwoo.r0008;
 
-import report.chasungwoo.r0008.Father;
-
 public class Son extends Father{
 	//아빠 클래스에서 값을 str1, str2를 scanner클래스의 nextLine()함수를 사용하여 값을 입력받아
 	//숫자값을 입력받아 정수로 변환해 주시고

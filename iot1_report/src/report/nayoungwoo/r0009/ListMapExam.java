@@ -9,7 +9,6 @@ package report.nayoungwoo.r0009;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class ListMapExam {

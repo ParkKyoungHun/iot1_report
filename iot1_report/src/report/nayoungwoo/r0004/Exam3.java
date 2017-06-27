@@ -1,7 +1,5 @@
 package report.nayoungwoo.r0004;
 
-import java.util.Scanner;
-
 public class Exam3 {
 	
 	int a = 0;
