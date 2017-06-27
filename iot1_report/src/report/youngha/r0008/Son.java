@@ -1,9 +1,5 @@
 package report.youngha.r0008;
 
-import report.youngha.r0008.Father;
-import report.youngha.r0008.Son;
-
-
 public class Son extends Father{
 //	<<<<<<< HEAD
 

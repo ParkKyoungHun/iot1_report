@@ -2,7 +2,6 @@ package report.leesangyong.r0010;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class MapExam2 extends HashMap<String,Integer>{
 

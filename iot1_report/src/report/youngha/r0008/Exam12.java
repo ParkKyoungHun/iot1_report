@@ -1,7 +1,6 @@
 package report.youngha.r0008;
 
 import report.youngha.r0007.Exam11;
-import report.youngha.r0008.Exam12;
 
 public class Exam12 extends Exam11{
 

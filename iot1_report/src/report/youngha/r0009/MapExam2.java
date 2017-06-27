@@ -2,8 +2,6 @@ package report.youngha.r0009;
 
 import java.util.HashMap;
 
-import report.youngha.r0009.MapExam2;
-
 public class MapExam2 {
 	HashMap<String,Integer> hm;
 

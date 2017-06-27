@@ -2,7 +2,6 @@ package report.kimjeongkyu.r0012;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class DataTypeExam6 extends DataTypeExam5 {
 	public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package report.kimhonggeun.r0008;
 
-import report.kimhonggeun.r0008.Father;
-
 public class Son extends Father{
 
 

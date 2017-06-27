@@ -1,7 +1,5 @@
 package report.umwoosung.r0001;
 
-import java.util.Scanner;
-
 public class Test02 {
 	
 

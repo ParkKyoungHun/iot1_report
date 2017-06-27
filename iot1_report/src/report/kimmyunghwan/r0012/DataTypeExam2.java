@@ -1,6 +1,5 @@
 package report.kimmyunghwan.r0012;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DataTypeExam2 {
