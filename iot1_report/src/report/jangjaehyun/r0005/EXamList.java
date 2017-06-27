@@ -1,7 +1,6 @@
 package report.jangjaehyun.r0005;
 
 import java.util.ArrayList;
-import java.util.List;
 public class EXamList {
 
 	public static void main(Stringp[] args){

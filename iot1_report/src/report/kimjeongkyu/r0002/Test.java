@@ -1,7 +1,5 @@
 package report.kimjeongkyu.r0002;
 
-import java.util.Scanner;
-
 public class Test {
 
 	public void printMultipleTable(int initNum, int maxNum) {

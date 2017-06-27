@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.HashMap;
 
@@ -10,8 +10,8 @@ public class DataTypeExam2 {
 		arrNum[0]= 1;
 		arrNum[1]= 2;
 		String[] arrStr1 = new String[2];
-		arrStr1[0] = "가";
-		arrStr1[1] = "나";
+		arrStr1[0] = "��";
+		arrStr1[1] = "��";
 		String[] arrStr2 = new String[2];
 		arrStr2[0] = "a";
 		arrStr2[1] = "b";

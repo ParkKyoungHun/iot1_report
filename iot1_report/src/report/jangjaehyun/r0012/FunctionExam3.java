@@ -2,8 +2,6 @@ package report.jangjaehyun.r0012;
 
 import java.util.HashMap;
 
-import report.jangjaehyun.r0012.FunctionExam3;
-
 public class FunctionExam3 {
 	public void setHashMap(HashMap hm){
 		hm.put("number", 4);

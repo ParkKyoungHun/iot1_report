@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,11 +13,11 @@ public class DataTypeExam {
 		list1.add(4);
 		list1.add(5);
 		ArrayList<String> list2=new ArrayList<String>();
-		list2.add("가");
-		list2.add("나");
-		list2.add("다");
-		list2.add("라");
-		list2.add("마");
+		list2.add("��");
+		list2.add("��");
+		list2.add("��");
+		list2.add("��");
+		list2.add("��");
 		ArrayList<String> list3=new ArrayList<String>();
 		list3.add("a");
 		list3.add("b");

@@ -1,7 +1,6 @@
 package report.songwoojae.r0009;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class MapExam2 {
 	HashMap<String, Integer> hm;

@@ -1,8 +1,5 @@
 package report.jangjihun.r0006;
 
-import report.jangjihun.r0006.Father;
-import report.jangjihun.r0006.Son;
-
 public class Son extends Father{
 	int a;
 	

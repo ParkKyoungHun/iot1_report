@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ public class DataTypeExam6 extends DataTypeExam5{
 
 	public HashMap getHashMap(){
 		HashMap hm = new HashMap();
-		System.out.println("클래스 정보를 입력하세요.");
-		hm.put("클래스", scan.nextLine());
+		System.out.println("Ŭ���� ������ �Է��ϼ���.");
+		hm.put("Ŭ����", scan.nextLine());
 		return hm;
 	}
 
@@ -22,10 +22,10 @@ public class DataTypeExam6 extends DataTypeExam5{
 		}
 
 		for(HashMap lists1 : aL){
-			System.out.print(lists1.get("클래스") + "\t");
-			System.out.print(lists1.get("이름") + "\t");
-			System.out.print(lists1.get("나이") + "\t");
-			System.out.println(lists1.get("성별") + "\t");
+			System.out.print(lists1.get("Ŭ����") + "\t");
+			System.out.print(lists1.get("�̸�") + "\t");
+			System.out.print(lists1.get("����") + "\t");
+			System.out.println(lists1.get("����") + "\t");
 		}	
 	}
 }

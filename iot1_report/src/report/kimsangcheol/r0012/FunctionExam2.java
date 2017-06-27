@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 public class FunctionExam2 {
 	

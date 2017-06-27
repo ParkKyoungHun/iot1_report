@@ -1,4 +1,4 @@
-package r0012;
+package report.kimsangcheol.r0012;
 
 import java.util.Scanner;
 
@@ -10,12 +10,12 @@ public class FunctionExam {
 	int getNumberFromString(){
 		try{
 			
-			System.out.println(a + "번째 숫자 넣어 주세요.");
+			System.out.println(a + "��° ���� �־� �ּ���.");
 			a++;
 			return Integer.parseInt(scan.nextLine());
 			
 		}catch(Exception e){
-			System.out.println("누가 문자 넣으래...");
+			System.out.println("���� ���� ������...");
 			a--;
 			return getNumberFromString();
 		}
@@ -28,7 +28,7 @@ public class FunctionExam {
 		}
 
 		for(int i = 0 ; i<ee2.arrNum.length;i++){
-			System.out.println((i+1)+ "번째 주소의 값은 : " + ee2.arrNum[i]);
+			System.out.println((i+1)+ "��° �ּ��� ���� : " + ee2.arrNum[i]);
 		}
 	}
 }

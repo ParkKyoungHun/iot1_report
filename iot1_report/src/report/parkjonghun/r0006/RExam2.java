@@ -1,7 +1,5 @@
 package report.parkjonghun.r0006;
 
-import java.util.Scanner;
-
 public class RExam2 {
 	protected int a = 1;
 	protected int b = 2;
