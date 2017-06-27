@@ -21,7 +21,7 @@ public class DataTypeExam2 {
 		
 		HashMap hm = new HashMap();
 		
-		hm.put(arrNum[0],arrNum[1]);
+		hm.put(arrNum[0],arrNum[0]);
 		
 		
 		System.out.println(hm);		

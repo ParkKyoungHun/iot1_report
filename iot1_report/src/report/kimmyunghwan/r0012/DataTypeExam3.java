@@ -16,8 +16,6 @@ public class DataTypeExam3 {
 		numList.add(str);
 
 		// String str ="abc"; 14열 주석으로 설명
-		
-		
 
 		// ArrayList<Integer> numList = new ArrayList<Integer>(); // ArrayList는
 		// 방 갯수를 선언안해줘도 된다

@@ -14,7 +14,7 @@ public class FunctionExam_1 {
 		try {
 			// System.out.println("숫자를 입력해주세요");  //FunctionExam_1
 			
-			System.out.println((num+=1)+"번째 숫자를 입력해주세요"); //FunctionExam2
+			System.out.println((num+=1)+"번 숫자를 입력해주세요"); //FunctionExam2
 			
 			return Integer.parseInt(scan.nextLine());  //숫자를 입력했을때 리턴 18열로 간다
 		} catch (Exception e) {
