@@ -4,7 +4,7 @@ public class Son extends Father{
 	int a;
 	
 	int getAget(){ //오버라이딩
-		age =25;
+		int age =25;
 		return age;
 	}
 
