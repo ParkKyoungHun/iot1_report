@@ -46,10 +46,32 @@ public class Exam {
 		}
 		return false;
 	}
+	public boolean deleteUser(int num){
+		try {
+			Connection con = DBConn2.getCon();			
+			String sql = "delete from user where num=" + num;
+			PreparedStatement prestmt = con.prepareStatement(sql);
+			int result = prestmt.executeUpdate();
+			DBConn2.closeCon();
+			if(result>0){
+				return true;
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	public static void main(String[] args){
 		Exam e = new Exam();
-		e.insertUser();
+		if(e.insertUser()){
+			System.out.println("오~ 잘들어갔네요 유저테이블에!!");
+		}
+		
+		boolean isDel = e.deleteUser(1);
+		if(isDel){
+			System.out.println("유저테이블에 잘 삭제가 됬네요!!");
+		}
 		List<String> userList = e.getUserIDLists("");
 		for(int i=0;i<userList.size();i++){
 			System.out.println(userList.get(i));
