@@ -20,7 +20,7 @@ public class DataTypeExam {
 		
 		HashMap<Object,ArrayList> hm = new HashMap<Object,ArrayList>();
 		
-		hm.put(list1.get(0),list1);
+		hm.put(list1,list1);
 		hm.put(list2.get(0),list2);
 		hm.put(list3.get(0),list3);
 		

@@ -38,7 +38,7 @@ public class DataTypeExam3_1 {
 			System.out.println(resultHm.get("작성자")+ ",");
 			
 			
-			//hashMap 대신 dto사용
+			//hashMap 대신 dto
 			
 		}
 		

@@ -3,7 +3,7 @@ package report.kimmyunghwan.r0012;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DataTypeExam6 extends DataTypeExam5_1 {
+public class DataTypeExam6 {
 
 	public static void main(String[] args) {
 

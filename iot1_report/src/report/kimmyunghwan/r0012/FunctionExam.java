@@ -3,7 +3,7 @@ package report.kimmyunghwan.r0012;
 import java.util.Scanner;
 
 public class FunctionExam {
-	
+
 	int[] arrNum = new int[5];
 
 	public static void main(String[] args) {

@@ -12,7 +12,7 @@ public class MapExam2 extends HashMap<String, Integer> {
 	// toString()함수를 오버라이딩 하여서
 	// 해당 해쉬맵이 가지고 있는 전체 숫자를 더한 값을 출력해주세요.
 
-	public MapExam2() {
+	MapExam2() {
 
 	}
 

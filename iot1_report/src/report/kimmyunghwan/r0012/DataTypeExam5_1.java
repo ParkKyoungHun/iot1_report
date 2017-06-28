@@ -31,14 +31,5 @@ public class DataTypeExam5_1 {
 			HashMap hm = dta5.getHashMap();
 			arrList.add(hm);
 		}
-		for (HashMap hmR : arrList) {
-
-			System.out.println(hmR.get("클래스")+ ",");
-			System.out.println(hmR.get("이름")+ ",");
-			System.out.println(hmR.get("나이")+ ",");
-			System.out.println(hmR.get("성별"));
-			
-
-		}
 	}
 }

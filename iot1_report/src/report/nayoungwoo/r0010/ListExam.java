@@ -1,7 +1,6 @@
 package report.nayoungwoo.r0010;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ListExam<T> extends ArrayList{
 

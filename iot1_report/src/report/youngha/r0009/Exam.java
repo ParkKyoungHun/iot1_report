@@ -1,7 +1,5 @@
 package report.youngha.r0009;
 
-import report.youngha.r0009.Exam;
-
 public class Exam {
 
 	String[] str;
@@ -21,6 +19,5 @@ public class Exam {
 		a = 2;
 		System.out.println(a==1);
 	}
-}
 
 }

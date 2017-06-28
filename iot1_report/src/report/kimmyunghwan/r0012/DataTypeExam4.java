@@ -39,10 +39,10 @@ public class DataTypeExam4 {
 
 		
 		for (HashMap hm4 : arrList){
-			hm4.put("클래스"," ");
-			hm4.put("이름"," ");
-			hm4.put("나이"," " );
-			hm4.put("성별"," ");
+			hm4.put("클래스", "D");
+			hm4.put("이름", "둥둥이");
+			hm4.put("나이", "5");
+			hm4.put("성별", "여자");
 		}
 		
 		

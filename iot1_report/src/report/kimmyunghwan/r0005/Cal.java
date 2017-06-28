@@ -1,7 +1,5 @@
 package report.kimmyunghwan.r0005;
 
-import java.util.Scanner;
-
 public class Cal {
 	// 인트타입의 2개의 파라메터 변수를 받는 생성자를 하나 만들어주세요
 	// 클래스안에 인트타입의 변수 2개를 선언해주시고(int a; int b; <-- 멤버변수_어디에든 사용할수 있기때문에)
