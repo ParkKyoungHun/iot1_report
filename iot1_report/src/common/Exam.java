@@ -53,9 +53,12 @@ public class Exam {
 			hm.put("age", scan.nextLine());
 			
 			String sql = "insert into user(id, pwd, name, age)"
-					+ "values('" + hm.get("id") + "','" + hm.get("pwd") + "','" + hm.get("name") + "',"
-							+ Integer.parseInt(hm.get("age")) + ")";
+					+ "values(?,?,?,?)";
 			PreparedStatement prestmt = con.prepareStatement(sql);
+			prestmt.setString(1, hm.get("id"));
+			prestmt.setString(2, hm.get("pwd"));
+			prestmt.setString(3, hm.get("name"));
+			prestmt.setString(4, hm.get("age"));
 			int result = prestmt.executeUpdate();
 			DBConn2.closeCon();
 			if(result==1){
@@ -92,7 +95,7 @@ public class Exam {
 //		if(isDel){
 //			System.out.println("유저테이블에 잘 삭제가 됬네요!!");
 //		}
-		List<String> userList = e.getUserIDLists("blackgildong");
+		List<String> userList = e.getUserIDLists("greengildong");
 		for(int i=0;i<userList.size();i++){
 			System.out.println(userList.get(i));
 		}
