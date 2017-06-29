@@ -15,6 +15,7 @@ public class UserDAO {
 		try {
 			Connection con = DBConn2.getCon();
 			PreparedStatement prestmt = con.prepareStatement(sql);
+			//"select *  from user";
 			ResultSet rs = prestmt.executeQuery();
 			ResultSetMetaData rsmd = rs.getMetaData();
 			while (rs.next()) {
@@ -36,17 +37,20 @@ public class UserDAO {
 	
 	public static void main(String[] args){
 		UserDAO ud = new UserDAO();
-		String sql = "select num, id, pwd, name, age from user";
+		String sql = "select * from user order by age desc";
 		List<HashMap> userList = ud.doSelect(sql);
 		System.out.println(" = 유저 리스트 = ");
 		for(HashMap hm : userList){
 			System.out.println(hm);
 		}
-		sql = "select num, id, pwd, name, age from user_info";
-		userList = ud.doSelect(sql);
-		System.out.println(" = 유저 인포리스트 = ");
-		for(HashMap hm : userList){
-			System.out.println(hm);
-		}
+		
+		sql = "insert into user_info";
+		
+		HashMap<String, String> hm = new HashMap<String, String>();
+		hm.put("id", "green");
+		hm.put("pwd", "green");
+		hm.put("name", "녹길동");
+		hm.put("age", "21");
+		hm.put("class_num", "3");
 	}
 }
