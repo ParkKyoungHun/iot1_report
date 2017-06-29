@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,9 +19,13 @@ public class Exam {
 			Connection con = DBConn2.getCon();			
 			String sql = "select ID,PWD,NAME,age from user";
 			if(!name.equals("")){
-				sql += " WHERE NAME='" + name + "'";
+				sql += " WHERE NAME=?";
 			}
+			
 			PreparedStatement prestmt = con.prepareStatement(sql);
+			if(!name.equals("")){
+				prestmt.setString(1, name);
+			}
 			ResultSet rs = prestmt.executeQuery();
 			while (rs.next()) {		
 				userlist.add(rs.getString(1) + "," + rs.getString(2) + "," + rs.getString(3) + "," +rs.getInt(4));
@@ -87,7 +92,7 @@ public class Exam {
 //		if(isDel){
 //			System.out.println("유저테이블에 잘 삭제가 됬네요!!");
 //		}
-		List<String> userList = e.getUserIDLists("");
+		List<String> userList = e.getUserIDLists("blackgildong");
 		for(int i=0;i<userList.size();i++){
 			System.out.println(userList.get(i));
 		}
