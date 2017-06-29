@@ -10,26 +10,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Exam {
-	public List<String> getUserIDLists(String name){
-		//String result = "";
+
+
+	public List<String> getUserIDLists(String name) {
+		// String result = "";
 		List<String> userlist = new ArrayList<String>();
 		try {
-			Connection con = DBConn2.getCon();			
-			String sql = "select ID,PWD,NAME,age from user";
-			if(!name.equals("")){
+			Connection con = DBConn2.getCon();
+			String sql = "select ID,PWD,NAME,age from user ";
+			if (!name.equals("")) {
 				sql += " WHERE NAME=?";
 			}
-			
+
 			PreparedStatement prestmt = con.prepareStatement(sql);
-			if(!name.equals("")){
+			if (!name.equals("")) {
 				prestmt.setString(1, name);
 			}
 			ResultSet rs = prestmt.executeQuery();
-			while (rs.next()) {		
-				userlist.add(rs.getString(1) + "," + rs.getString(2) + "," + rs.getString(3) + "," +rs.getInt(4));
-			}			
+			while (rs.next()) {
+				userlist.add(rs.getString(1) + "," + rs.getString(2) + "," + rs.getString(3) + "," + rs.getInt(4));
+			}
 			DBConn2.closeCon();
 			return userlist;
 		} catch (SQLException | ClassNotFoundException e) {
@@ -37,8 +38,8 @@ public class Exam {
 		}
 		return null;
 	}
-	
-	public boolean insertUser(){
+
+	public boolean insertUser() {
 		try {
 			Connection con = DBConn2.getCon();
 			Scanner scan = new Scanner(System.in);
@@ -51,9 +52,8 @@ public class Exam {
 			hm.put("name", scan.nextLine());
 			System.out.println("나이를 입력해주세요");
 			hm.put("age", scan.nextLine());
-			
-			String sql = "insert into user(id, pwd, name, age)"
-					+ "values(?,?,?,?)";
+
+			String sql = "insert into user(id, pwd, name, age)" + "values(?,?,?,?)";
 			PreparedStatement prestmt = con.prepareStatement(sql);
 			prestmt.setString(1, hm.get("id"));
 			prestmt.setString(2, hm.get("pwd"));
@@ -61,7 +61,7 @@ public class Exam {
 			prestmt.setString(4, hm.get("age"));
 			int result = prestmt.executeUpdate();
 			DBConn2.closeCon();
-			if(result==1){
+			if (result == 1) {
 				return true;
 			}
 		} catch (SQLException | ClassNotFoundException e) {
@@ -69,14 +69,15 @@ public class Exam {
 		}
 		return false;
 	}
-	public boolean deleteUser(int num){
+
+	public boolean deleteUser(int num) {
 		try {
-			Connection con = DBConn2.getCon();			
+			Connection con = DBConn2.getCon();
 			String sql = "delete from user where num=" + num;
 			PreparedStatement prestmt = con.prepareStatement(sql);
 			int result = prestmt.executeUpdate();
 			DBConn2.closeCon();
-			if(result>0){
+			if (result > 0) {
 				return true;
 			}
 		} catch (SQLException | ClassNotFoundException e) {
@@ -84,19 +85,19 @@ public class Exam {
 		}
 		return false;
 	}
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		Exam e = new Exam();
-//		if(e.insertUser()){
+//		if (e.insertUser()) {
 //			System.out.println("오~ 잘들어갔네요 유저테이블에!!");
 //		}
-//		
-//		boolean isDel = e.deleteUser(1);
-//		if(isDel){
-//			System.out.println("유저테이블에 잘 삭제가 됬네요!!");
-//		}
-		List<String> userList = e.getUserIDLists("greengildong");
-		for(int i=0;i<userList.size();i++){
+		//
+		// boolean isDel = e.deleteUser(1);
+		// if(isDel){
+		// System.out.println("유저테이블에 잘 삭제가 됬네요!!");
+		// }
+		List<String> userList = e.getUserIDLists("blackgildong");
+		for (int i = 0; i < userList.size(); i++) {
 			System.out.println(userList.get(i));
 		}
 	}
