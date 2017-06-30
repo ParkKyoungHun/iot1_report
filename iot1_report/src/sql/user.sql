@@ -38,3 +38,15 @@ values('yellow','yellow','황길동',21, 4);
 select ui.num, ui.name, ui.id, ui.pwd, ui.age, ci.class_name, ci.class_num
 from user_info as ui, class_info as ci
 where ci.class_num=ui.class_num;
+
+
+alter table user_info 
+add unique index(id);
+
+select * from user_info;
+
+delete from user_info 
+where num=6;
+
+ALTER TABLE user_info
+CHANGE COLUMN num user_num int;
