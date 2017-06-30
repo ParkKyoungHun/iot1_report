@@ -16,19 +16,28 @@ public class TestDAO {
 	
 	public boolean insertTest(){
 		try{
+			String writer = "4";
 			Connection con = DBConn2.getCon();
-			String sql = "INSERT INTO TEST(TITLE, CONTENT, WRITER, REG_DATE)";
-			sql += " values(?,?,?,?)";
+			String sql = "select * from user_info where num=?";
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, "게시물4");
-			ps.setString(2, "내용4");
-			ps.setString(3, "1");
-			Date d = new Date();
-			SimpleDateFormat sdt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			ps.setString(4,sdt.format(d));
-			int result = ps.executeUpdate();
-			if(result==1){
-				return true;
+			ps.setString(1, writer);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				sql = "INSERT INTO TEST(TITLE, CONTENT, WRITER, REG_DATE)";
+				sql += " values(?,?,?,?)";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, "게시물4");
+				ps.setString(2, "내용4");
+				ps.setString(3, writer);
+				Date d = new Date();
+				SimpleDateFormat sdt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				ps.setString(4,sdt.format(d));
+				int result = ps.executeUpdate();
+				if(result==1){
+					return true;
+				}
+			}else{
+				System.out.println(writer + "번호를 가진 사람이 유저인포테이블에 없어요 자시가!!");
 			}
 			DBConn2.closeCon();
 		}catch(Exception e){
@@ -80,9 +89,9 @@ public class TestDAO {
 			System.out.println("오~~~ 테스트테이블에 입력이 잘 되었습니다.");
 		}
 		
-		List<Map> list = tdao.selectTest();
-		for(Map m : list){
-			System.out.println(m);
-		}
+//		List<Map> list = tdao.selectTest();
+//		for(Map m : list){
+//			System.out.println(m);
+//		}
 	}
 }
