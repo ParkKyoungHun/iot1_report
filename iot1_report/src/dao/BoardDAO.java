@@ -7,6 +7,9 @@ import java.sql.Statement;
 import common.DBConn2;
 
 public class BoardDAO {
+	// board테이블에 update, insert, delete, select 하는 함수를 각각 4개 생성해주세요
+	// 모두 단일 작업임으로 한개의 함수마다 commit이 이러우져야 하며
+	// 만약 에러날경우 rollback이 되면 됩니다.
 	Connection con;
 	public void setConnection() throws ClassNotFoundException, SQLException{
 		con = DBConn2.getCon();
