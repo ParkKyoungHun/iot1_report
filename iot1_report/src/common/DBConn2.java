@@ -12,13 +12,16 @@ public class DBConn2 {
 		if (con == null) {
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/iot_test", "root", "rjqnrdl82");
+			con.setAutoCommit(false);
 		}
 		return con;
 	}
 	public static void closeCon() throws SQLException {
+		System.out.println(con);
 		if (con != null) {
 			con.close();
 			con = null;
 		}
+		System.out.println(con);
 	}
 }

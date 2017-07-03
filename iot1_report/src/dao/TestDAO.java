@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,15 +16,16 @@ import common.DBConn2;
 public class TestDAO {
 	
 	public boolean insertTest(){
+		Connection con = null ;
 		try{
 			String writer = "4";
-			Connection con = DBConn2.getCon();
+			con = DBConn2.getCon();
 			String sql = "select * from user_info where num=?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, writer);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
-				sql = "INSERT INTO TEST(TITLE, CONTENT, WRITER, REG_DATE)";
+				sql = "INSERT INTO board(TITLE, CONTENT, WRITER, REG_DATE)";
 				sql += " values(?,?,?,?)";
 				ps = con.prepareStatement(sql);
 				ps.setString(1, "게시물4");
@@ -33,15 +35,30 @@ public class TestDAO {
 				SimpleDateFormat sdt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				ps.setString(4,sdt.format(d));
 				int result = ps.executeUpdate();
+				sql = "update 1board set title='냉무' where num=8";
+				ps = con.prepareStatement(sql);
+				result = ps.executeUpdate();
 				if(result==1){
+					con.commit();
 					return true;
 				}
 			}else{
 				System.out.println(writer + "번호를 가진 사람이 유저인포테이블에 없어요 자시가!!");
 			}
-			DBConn2.closeCon();
 		}catch(Exception e){
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
+		}finally{
+//			try {
+//				DBConn2.closeCon();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
 		}
 		return false;
 	}
@@ -51,7 +68,7 @@ public class TestDAO {
 		try{
 			Connection con = DBConn2.getCon();
 			
-			String sql = "SELECT T.*, UI.ID, UI.NAME FROM TEST AS T, USER_INFO AS UI";
+			String sql = "SELECT T.*, UI.ID, UI.NAME FROM board AS T, USER_INFO AS UI";
 			sql += " WHERE T.WRITER = UI.NUM;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			
@@ -85,13 +102,13 @@ public class TestDAO {
 	
 	public static void main(String[] args){
 		TestDAO tdao = new TestDAO();
-		if(tdao.insertTest()){
-			System.out.println("오~~~ 테스트테이블에 입력이 잘 되었습니다.");
-		}
+		tdao.insertTest();
+//		tdao.insertTest();
+//		tdao.insertTest();
 		
-//		List<Map> list = tdao.selectTest();
-//		for(Map m : list){
-//			System.out.println(m);
-//		}
+		List<Map> list = tdao.selectTest();
+		for(Map m : list){  
+			System.out.println(m);
+		}
 	}
 }
