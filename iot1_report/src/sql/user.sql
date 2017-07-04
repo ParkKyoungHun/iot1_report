@@ -92,3 +92,21 @@ values('제목2','내용2',1);
 insert into comment_info(content, reg_date, board_num, user_num)
 values('코멘트2_',now(), 2,1);
 
+#유저 생성 명령어
+create user 'test'@'localhost' identified by 'test';
+
+# test라는 유저 삭제
+drop user test;
+
+# 유저명@'%' 외부 접속이 가능한 유저 생성
+# identified by '비밀번호'
+create user test@'%' identified by 'test';
+
+
+use iot_test;
+
+#해당 데이터 베이스의 모든 권한을 test@'%'에게 주겠다는 명령어
+grant all privileges on * to test@'%';
+
+#권한 명령어 이후 적용사항을 리로드하는 명령어
+flush privileges;
