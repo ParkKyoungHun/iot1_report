@@ -63,3 +63,32 @@ user_num int(5) not null,
 foreign key (board_num) references board(board_num),
 foreign key (user_num) references user_info(user_num)
 );
+
+
+#외래키를 2개 설정해야 할 경우의 예제
+create table comment_info(
+ci_num int(5) AUTO_INCREMENT primary key,
+content text,
+reg_Date datetime not null,
+board_num int(7) not null,
+user_num int(5) not null,
+foreign key (board_num) references board(board_num),
+foreign key (user_num) references user_info(user_num)
+);
+
+select * from comment_info;
+
+create user test identified by 'test';
+
+
+select * from user_info;
+
+insert into user_info(user_id, user_pwd, user_name, class_num, age)
+values('red','red','홍길동',1, 30);
+
+insert into board(title, content, user_num)
+values('제목2','내용2',1);
+
+insert into comment_info(content, reg_date, board_num, user_num)
+values('코멘트2_',now(), 2,1);
+

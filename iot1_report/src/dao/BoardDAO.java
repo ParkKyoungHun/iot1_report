@@ -7,8 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import common.DBConn2;
 
@@ -53,7 +56,7 @@ public class BoardDAO {
 		PreparedStatement ps = con.prepareStatement(sql);
 
 		ResultSet rs = ps.executeQuery();
-		ArrayList boardList = new ArrayList();
+		List boardList = new ArrayList();
 		while (rs.next()) {
 			HashMap hm = new HashMap();
 			hm.put("board_num", rs.getString("board_num"));

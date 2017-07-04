@@ -46,6 +46,7 @@ public class CommentDAO {
 			e.printStackTrace();
 		}
 	}
+	
 	public static void main(String[] args){
 		try {
 			CommentDAO cdao = new CommentDAO();
