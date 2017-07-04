@@ -15,45 +15,29 @@ public class BoardDAO {
 		con = DBConn2.getCon();
 	}
 	
-	public boolean insertBoard() {
+	public boolean insertBoard() throws SQLException {
 		String sql = "insert into board(title, content, writer, reg_Date)values('게시판제목3','게시판내용3',5,now())";
-		try{
+
 			Statement st = con.createStatement();
 			int result = st.executeUpdate(sql);
 			if(result==1){
-				con.commit();
 				st.close();
 				st = null;
 				return true;
 			}
-		}catch(Exception e){
-			try {
-				con.rollback();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		}
 		return false;
 	}
 	
-	public boolean updateBoard(){
+	public boolean updateBoard() throws SQLException{
 		String sql = "update board1 set title='으하하하하' where num='1'";
-		try{
+
 			Statement st = con.createStatement();
 			int result = st.executeUpdate(sql);
 			if(result==1){
-				con.commit();
 				st.close();
 				st = null;
 				return true;
 			}
-		}catch(Exception e){
-			try {
-				con.rollback();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		}
 		return false;
 	}
 	
@@ -63,8 +47,15 @@ public class BoardDAO {
 			bdao.setConnection();
 			bdao.insertBoard();
 			bdao.updateBoard();
+			bdao.con.commit();
 			System.out.println("정상동작 했고 저장까지 완료 했수다!!");
 		} catch (ClassNotFoundException | SQLException e) {
+			try {
+				bdao.con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
