@@ -52,3 +52,14 @@ CHANGE COLUMN num user_num int;
 #id컬럼을 중복불가 인덱스로 추가 하겠다는 문구
 alter table user_info 
 add unique index(user_id);
+
+#외래키를 2개 설정해야 할 경우의 예제
+create table comment_info(
+ci_num int(5) AUTO_INCREMENT primary key,
+content text,
+reg_Date datetime not null,
+board_num int(7) not null,
+user_num int(5) not null,
+foreign key (board_num) references board(board_num),
+foreign key (user_num) references user_info(user_num)
+);
