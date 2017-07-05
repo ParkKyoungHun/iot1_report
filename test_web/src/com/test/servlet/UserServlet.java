@@ -56,6 +56,22 @@ public class UserServlet extends HttpServlet{
 		}else if(command.equals("DELETE")){
 			String user_num = req.getParameter("user_num");
 			System.out.println("삭제할 번호 : " + user_num);
+		}else if(command.equals("UPDATE")){
+			String user_num = req.getParameter("user_num");
+			System.out.println("업데이트할 번호 : " + user_num);
+
+			String name = req.getParameter("name");
+			String class_num = req.getParameter("class_num");
+			String age = req.getParameter("age");
+			
+			//해쉬맵 생성
+			HashMap hm = new HashMap();
+			//html화면에서 던진 name값을 "name"라는 키로 해쉬맵에 저장
+			hm.put("name", name);
+			//html화면에서 던진 class_num값을 "class_num"라는 키로 해쉬맵에 저장
+			hm.put("class_num", class_num);
+			//html화면에서 던진 age값을 "age"라는 키로 해쉬맵에 저장
+			hm.put("age", age);
 		}
 		
 		
