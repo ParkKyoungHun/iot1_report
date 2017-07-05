@@ -12,7 +12,8 @@ public class UserServlet extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public void doGet(HttpServletRequest req, HttpServletResponse resq) throws IOException, ServletException{		
+	public void doGet(HttpServletRequest req, HttpServletResponse resq) throws IOException, ServletException{	
+		req.setCharacterEncoding("UTF-8");
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
 		String name = req.getParameter("name");
