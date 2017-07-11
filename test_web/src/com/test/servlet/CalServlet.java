@@ -20,21 +20,28 @@ public class CalServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resq) throws IOException, ServletException{	
 		req.setCharacterEncoding("UTF-8");
-		int num1 = Integer.parseInt(req.getParameter("num1"));
-		int num2 = Integer.parseInt(req.getParameter("num2"));
-		String op = req.getParameter("op");
 		int result = 0;
-		if(op.equals("+")){
-			result = num1 + num2;
-		}else if(op.equals("-")){
-			result = num1 - num2;
-		}else if(op.equals("/")){
-			result = num1 / num2;
-		}else if(op.equals("*")){
-			result = num1 * num2;
+		String resultStr ="";
+		try{
+			int num1 = Integer.parseInt(req.getParameter("num1"));
+			int num2 = Integer.parseInt(req.getParameter("num2"));
+			String op = req.getParameter("op");
+			
+			if(op.equals("+")){
+				result = num1 + num2;
+			}else if(op.equals("-")){
+				result = num1 - num2;
+			}else if(op.equals("/")){
+				result = num1 / num2;
+			}else if(op.equals("*")){
+				result = num1 * num2;
+			}
+			resultStr = "결과값 = " + result;
+		}catch(Exception e){
+			resultStr = "너 임마!!! 숫자 제대로 입력하랬지!!!";
 		}
 		
-		doProcess(resq, "결과값 = " + result);
+		doProcess(resq, resultStr);
 		
 	}
 	
