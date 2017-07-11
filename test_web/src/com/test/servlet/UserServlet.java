@@ -63,7 +63,16 @@ public class UserServlet extends HttpServlet {
 			}
 		} else if (command.equals("DELETE")) {
 			String user_num = req.getParameter("user_num");
-			System.out.println("삭제할 번호 : " + user_num);
+			HashMap hm = new HashMap();
+			hm.put("user_num", user_num);
+			boolean isDelete = us.deleteUser(hm);
+			String result = "";
+			if(isDelete){
+				result = "삭제 됬다!!";
+			}else{
+				result = "안됬네 안됬어!!";
+			}
+			doProcess(resq, result);
 		} else if (command.equals("UPDATE")) {
 			String user_num = req.getParameter("user_num");
 			System.out.println("업데이트할 번호 : " + user_num);
@@ -88,18 +97,33 @@ public class UserServlet extends HttpServlet {
 				hm.put("name", "%" + name + "%");
 			}
 			List<Map> userList = us.selectUser(hm);
-			String result = "<form action='/test_web/sign.user'>";
+			String result="<script>";
+
+			result += "function deleteUser(userNum){";
+			result += "location.href='delete.user?command=DELETE&user_num=' + userNum;";
+			result += "}";
+			result += "</script>";
+			result += "<form action='/test_web/sign.user'>";
 			result += "이름 : <input type='text' name='name' id='name'/> <input type='submit' value='검색'/>";
 			result += "<input type='hidden' name='command' value='SELECT'/>";
 			result += "</form>";
 			result += "<table border='1'>";
+			result += "<tr>";
+			result += "<td>유저번호</td>";
+			result += "<td>유저아이디</td>";
+			result += "<td>유저비밀번호</td>";
+			result += "<td>유저이름</td>";
+			result += "<td>클래스번호</td>";
+			result += "<td>삭제버튼</td>";
+			result += "</tr>";
 			for (Map m : userList) {
-				result += "<tr>";
+				result += "<tr align='center'>";
 				result += "<td>" + m.get("user_num") + "</td>";
 				result += "<td>" + m.get("user_id") + "</td>";
 				result += "<td>" + m.get("user_pwd") + "</td>";
 				result += "<td>" + m.get("user_name") + "</td>";
 				result += "<td>" + m.get("class_num") + "</td>";
+				result += "<td><input type='button' value='삭제' onclick='deleteUser(" + m.get("user_num") + ")'/></td>";
 				result += "</tr>";
 			}
 			result += "</table>";

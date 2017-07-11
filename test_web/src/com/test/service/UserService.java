@@ -46,6 +46,36 @@ public class UserService {
 		}
 		return false;
 	}
+
+	public boolean deleteUser(HashMap<String, String> hm){
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			con = DBConn.getCon();
+			String sql = "delete from user_info ";
+			sql += " where user_num=?";
+			
+			ps = con.prepareStatement(sql);
+			ps.setString(1, hm.get("user_num"));
+			int result = ps.executeUpdate();
+			if(result==1){
+				con.commit();
+				return true;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				ps.close();
+				DBConn.closeCon();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
 	
 	public List<Map> selectUser(HashMap<String, String> hm){
 		Connection con = null;
