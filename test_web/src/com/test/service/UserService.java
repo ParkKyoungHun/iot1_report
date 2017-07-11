@@ -64,7 +64,11 @@ public class UserService {
 			List userList = new ArrayList();
 			while(rs.next()){
 				HashMap hm1 = new HashMap();
+				hm1.put("user_num", rs.getString("user_num"));
+				hm1.put("user_id", rs.getString("user_id"));
+				hm1.put("user_pwd", rs.getString("user_pwd"));
 				hm1.put("user_name", rs.getString("user_name"));
+				hm1.put("class_num", rs.getString("class_num"));
 				userList.add(hm1);
 			}
 			return userList;
