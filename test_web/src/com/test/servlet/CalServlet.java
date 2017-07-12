@@ -40,9 +40,7 @@ public class CalServlet extends HttpServlet{
 		}catch(Exception e){
 			resultStr = "너 임마!!! 숫자 제대로 입력하랬지!!!";
 		}
-		
 		doProcess(resq, resultStr);
-		
 	}
 	
 	public void dePost(HttpServletRequest req, HttpServletResponse reqs) throws IOException{
