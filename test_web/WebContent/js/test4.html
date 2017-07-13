@@ -18,7 +18,7 @@ function makeThing(btnObj){
 	 var divObj = document.getElementById("r_div");
 	 var inputStr = "";
 	for(var i=0;i<checkNum;i++){
-		inputStr += "<input type='text' id='mk'" + (i+1) + "/>";
+		inputStr += "<input type='text' id='mk" + (i+1) + "'/>";
 	}
 	inputStr += "<br/>찾을 값 : <input type='text' id='searchValue'/>";
 	inputStr += "<input type='button' value='값찾기' onclick='search()'/>";
