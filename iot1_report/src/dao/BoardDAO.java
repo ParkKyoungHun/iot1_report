@@ -41,11 +41,11 @@ public class BoardDAO {
 	public boolean updateBoard() throws SQLException {
 		String sql = "update board1 set title='으하하하하' where num='1'";
 
-		Statement st = con.createStatement();
-		int result = st.executeUpdate(sql);
+		PreparedStatement ps = con.prepareStatement(sql);
+		int result = ps.executeUpdate();
 		if (result == 1) {
-			st.close();
-			st = null;
+			ps.close();
+			ps = null;
 			return true;
 		}
 		return false;
@@ -80,10 +80,10 @@ public class BoardDAO {
 			CommentDAO dao = new CommentDAO();
 			for(Map m : boardList){
 				System.out.println(m);
-				List<Map> commentList = dao.getCommentList(Integer.parseInt((String)m.get("board_num")));
-				for(Map m2 : commentList){
-					System.out.println(m2);
-				}
+//				List<Map> commentList = dao.getCommentList(Integer.parseInt((String)m.get("board_num")));
+//				for(Map m2 : commentList){
+//					System.out.println(m2);
+//				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

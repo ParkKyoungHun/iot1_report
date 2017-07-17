@@ -79,7 +79,6 @@ foreign key (board_num) references board(board_num),
 foreign key (user_num) references user_info(user_num)
 );
 
-
 #유저 생성 명령어
 create user 'test'@'localhost' identified by 'test';
 
@@ -122,3 +121,34 @@ flush privileges;
 grant all privileges on iot_test to test@'%';
 #iot_Test 데이터 베이스의 모든 권한을 주었던 test@'%'부터 모든 권한을 박탈하겠다는 명령어
 revoke all on iot_test from test@'%';
+SELECT SUM(data_length+index_length)/1024/1024 used_MB FROM information_schema.tables
+where table_schema='iot_test';
+
+
+select * from information_schema.tables
+where table_schema='iot_test'
+;
+create table board2(
+board_num int(3) not null AUTO_INCREMENT primary key,
+board_title varchar(30) not null,
+user_num int(3) ,
+foreign key (user_num) references user_info2(user_num)
+)
+;
+show variables where Variable_name in('version','log','general_log');
+
+select @@general_log;
+select @@version;
+
+set global general_log=1;
+
+select * from mysql.user;
+
+ 1. user_info 테이블 생성
+    1) user_num int(3) 널 허용 불가, 자동 증가, 기본키
+    2) user_id varchar(30) 널 허용 불가, 유니크 인덱스
+    3) user_name varchar(30) 널 허용 불가
+ 2. board 테이블 생성
+    1) board_num int(3) 널 허용 불가, 자동 증가, 기본키
+    2) board_title varchar(30) 널 허용 불가
+    3) user_num int(3) 널 허용 불가, user_info테이블의 user_num과 외래키로 연결
