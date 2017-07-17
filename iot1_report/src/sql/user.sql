@@ -152,3 +152,9 @@ select * from mysql.user;
     1) board_num int(3) 널 허용 불가, 자동 증가, 기본키
     2) board_title varchar(30) 널 허용 불가
     3) user_num int(3) 널 허용 불가, user_info테이블의 user_num과 외래키로 연결
+1.모든사람의 age의 합과 평균을 구하는 sql문을 작성해주세요.
+2.Id와 pwd가 다른 사람을 검색하는 sql문을 작성해주세요.
+3.Class_num이 0보다 크고 2보다는 작은 사람을 검색하는 sql문을 작성해주세요.
+4.Id가 ‘b’로 시작하는 사람을 검색하는 sql문을 작성해주세요
+5.Age가 30보다 크거나 같고 40보다 작거나 같은 사람을 삭제하는 sql문을 작성해주세요.
+6. Class_num이 1 이거나 2면서 나이가 30보다 크거나 같은 사람을 검색하는 sql문을 작성해주세요
