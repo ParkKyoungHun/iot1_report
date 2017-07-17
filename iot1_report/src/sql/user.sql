@@ -158,3 +158,29 @@ select * from mysql.user;
 4.Id가 ‘b’로 시작하는 사람을 검색하는 sql문을 작성해주세요
 5.Age가 30보다 크거나 같고 40보다 작거나 같은 사람을 삭제하는 sql문을 작성해주세요.
 6. Class_num이 1 이거나 2면서 나이가 30보다 크거나 같은 사람을 검색하는 sql문을 작성해주세요
+DELIMITER $$
+DROP PROCEDURE P_INSERT_USER_INFO;
+CREATE PROCEDURE p_insert_user_info
+(IN loop_cnt int(1),OUT RESULT INT)
+/* 반복횟수를 파라메터로 받는다*/
+BEGIN 
+	DECLARE i INT DEFAULT 0;
+
+	/* 만약 SQL에러라면 ROLLBACK 처리한다. */
+	DECLARE exit handler for SQLEXCEPTION
+	  BEGIN
+		ROLLBACK;        
+		SET RESULT = -1;  
+	END;
+	/* 트랜젝션 시작 */
+	START TRANSACTION;
+	WHILE (i <= loop_cnt) DO
+        INSERT INTO user_info(user_id, user_pwd, user_name, class_num, age)
+        VALUES (concat('test',i), concat('test', i), concat('test', i), i,i);
+        SET i = i + 1;
+    END WHILE;
+	/* 커밋 */
+	COMMIT;
+	SET RESULT = 0;
+END$$
+DELIMITER ;
