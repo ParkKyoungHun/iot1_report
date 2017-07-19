@@ -77,6 +77,31 @@ public class UserService {
 		return false;
 	}
 	
+	public String checkPwd(String pwd1, String pwd2){
+		if(pwd1.equals(pwd2)){
+			return "로그인 성공";
+		}
+		return "비밀번호 틀렸어 임마!";
+	}
+	public String loginUser(HashMap<String, String> hm){
+		Connection con = null;
+		PreparedStatement ps = null;
+		try{
+			con = DBConn.getCon();
+			String sql = "select userpwd from user_info where userid=?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, hm.get("userid"));
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				String userpwd = rs.getString("userpwd");
+				return checkPwd(userpwd, hm.get("userpwd"));
+			}
+		}catch(Exception e){
+			
+		}
+		return "그런 아이디 없다잖아!!";
+		
+	}
 	public List<Map> selectUser(HashMap<String, String> hm){
 		Connection con = null;
 		PreparedStatement ps = null;
