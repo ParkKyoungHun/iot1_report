@@ -49,9 +49,13 @@ function doSignin(){
 	var url = "test.user";
 	var aSync = true;
 	xhr.onreadystatechange=function(){
-   		if (xhr.readyState==4 && xhr.status==200){
-   			var result = decodeURIComponent(xhr.responseText);
-   			alert(result);
+   		if (xhr.readyState==4){
+   			if(xhr.status==200){
+	   			var result = decodeURIComponent(xhr.responseText);
+	   			alert(result);
+   			}else{
+   				document.getElementById("bd_div").innerHTML += xhr.responseText;
+   			}
         }
     }
    	xhr.open(method, url+params, aSync);
