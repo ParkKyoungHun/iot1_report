@@ -13,9 +13,14 @@ function getHttpXmlObj(){
 	alert("해당 브라우져가  Ajax를 지원하지 않습니다.");
 }
 
-var str = "name,id,pwd";
+var str = "name,id,pwd,r,1,a,b,c";
+{"name","id","pwd"}
 var strs = str.split(",");
 var param = "";
+var strs = new Array();
+strs[strs.length] = "name";
+strs[strs.length] = "id";
+strs[strs.length] = "pwd";
 for(var i=0;i<strs.length;i++){
 	var value = document.getElementById(strs[i]).value;
 	param += "&" + strs[i] + "=" + value;
