@@ -39,10 +39,17 @@ public class UserServlet extends HttpServlet {
 		// UserService에 있는 insertUser(HashMap hm)이라는 함수를 호출하기 위해
 		// UserService로 us 레퍼런스 변수를 생성
 		UserService us = new UserService();
-		if (command.equals("SIGNIN")){
+		if (command.equals("LOGIN")){
 			String userId = req.getParameter("userid");
 			String userPwd = req.getParameter("userpwd");
-			//us.insertUser(hm)
+
+			HashMap hm = new HashMap();
+			// html화면에서 던진 id값을 "id"라는 키로 해쉬맵에 저장
+			hm.put("userid", userId);
+			// html화면에서 던진 pwd값을 "pwd"라는 키로 해쉬맵에 저장
+			hm.put("userpwd", userPwd);
+			String result = us.loginUser(hm);
+			doProcess(resq, result);
 		}else if (command.equals("SIGNIN")) {
 			String userId = req.getParameter("userid");
 			String userPwd = req.getParameter("userpwd");

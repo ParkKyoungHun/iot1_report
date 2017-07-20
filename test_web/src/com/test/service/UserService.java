@@ -18,15 +18,18 @@ public class UserService {
 		PreparedStatement ps = null;
 		try {
 			con = DBConn.getCon();
-			String sql = "insert into user_info(user_id, user_pwd, user_name, class_num, age)";
-			sql += " values(?,?,?,?,?)";
+			String sql = "insert into user_info(userid,username,age,address,hp1,hp2,hp3,userpwd)";
+			sql += " values(?,?,?,?,?,?,?,?)";
 			
 			ps = con.prepareStatement(sql);
-			ps.setString(1, hm.get("id"));
-			ps.setString(2, hm.get("pwd"));
-			ps.setString(3, hm.get("name"));
-			ps.setString(4, hm.get("class_num"));
-			ps.setString(5, hm.get("age"));
+			ps.setString(1, hm.get("userid"));
+			ps.setString(2, hm.get("username"));
+			ps.setString(3, hm.get("age"));
+			ps.setString(4, hm.get("address"));
+			ps.setString(5, hm.get("hp1"));
+			ps.setString(6, hm.get("hp2"));
+			ps.setString(7, hm.get("hp3"));
+			ps.setString(8, hm.get("userpwd"));
 			int result = ps.executeUpdate();
 			if(result==1){
 				con.commit();
