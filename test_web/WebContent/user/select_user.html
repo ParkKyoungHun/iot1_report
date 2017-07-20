@@ -13,6 +13,10 @@ function getHttpXmlObj(){
  	}
 	alert("해당 브라우져가  Ajax를 지원하지 않습니다.");
 }
+
+function doDelete(userNum){
+	alert(userNum);
+}
 function doSelect(){
 	var idStr = "username,command";
 	var lengthStr = "30,100";
@@ -60,7 +64,11 @@ function doSelect(){
 	   				}
 	   				tableStr += "<tr>";
 	   				var columns = rows[i].split("{/}");
+	   				var userNum;
 	   				for(var j=0;j<columns.length;j++){
+	   					if(j==0){
+	   						userNum = columns[j];
+	   					}
 	   					if(i==0){
 	   						tableStr += "<td>" + columns[j] + "</td>"
 	   					}else{
@@ -75,7 +83,7 @@ function doSelect(){
    						tableStr += "<td>삭제</td>";
    						tableStr += "<td>수정</td>";
    					}else{
-   						tableStr += "<td><input type='button' value='삭제'/></td>";
+   						tableStr += "<td><input type='button' value='삭제' onclick='doDelete(" + userNum + ")'/></td>";
    						tableStr += "<td><input type='button' value='수정'/></td>";
    					}
 	   				tableStr += "</tr>";
@@ -85,7 +93,6 @@ function doSelect(){
 	   			}
 	   			tableStr+="</table>";
 	   			document.getElementById("bd_div").innerHTML += tableStr;
-	   			alert(result);
    			}else{
    				document.getElementById("bd_div").innerHTML += xhr.responseText;
    			}
