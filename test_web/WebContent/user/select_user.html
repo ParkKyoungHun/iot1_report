@@ -15,7 +15,8 @@ function getHttpXmlObj(){
 }
 
 function doDelete(userNum){
-	alert(userNum);
+	var isDelete = confirm(userNum + "을 삭제할라고요~?");
+	alert(isDelete);
 }
 function doSelect(){
 	var idStr = "username,command";
