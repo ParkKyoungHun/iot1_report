@@ -116,37 +116,12 @@ public class UserServlet extends HttpServlet {
 			if (name != null && !name.equals("")) {
 				hm.put("name", "%" + name + "%");
 			}
-			List<Map> userList = us.selectUser(hm);
-			String result="<script>";
-
-			result += "function deleteUser(userNum){";
-			result += "location.href='delete.user?command=DELETE&user_num=' + userNum;";
-			result += "}";
-			result += "</script>";
-			result += "<form action='/test_web/sign.user'>";
-			result += "이름 : <input type='text' name='name' id='name'/> <input type='submit' value='검색'/>";
-			result += "<input type='hidden' name='command' value='SELECT'/>";
-			result += "</form>";
-			result += "<table border='1'>";
-			result += "<tr>";
-			result += "<td>유저번호</td>";
-			result += "<td>유저아이디</td>";
-			result += "<td>유저비밀번호</td>";
-			result += "<td>유저이름</td>";
-			result += "<td>클래스번호</td>";
-			result += "<td>삭제버튼</td>";
-			result += "</tr>";
-			for (Map m : userList) {
-				result += "<tr align='center'>";
-				result += "<td>" + m.get("user_num") + "</td>";
-				result += "<td>" + m.get("user_id") + "</td>";
-				result += "<td>" + m.get("user_pwd") + "</td>";
-				result += "<td>" + m.get("user_name") + "</td>";
-				result += "<td>" + m.get("class_num") + "</td>";
-				result += "<td><input type='button' value='삭제' onclick='deleteUser(" + m.get("user_num") + ")'/></td>";
-				result += "</tr>";
+			List<Map> userList  = us.selectUser(hm);
+			String result="";
+			for(Map m : userList){
+				result += m.get("username") + "{/}" + m.get("userid") + "{/}" + m.get("age") + "{+}"; 
 			}
-			result += "</table>";
+			result = result.substring(0, result.length()-3);
 			doProcess(resq, result);
 		}
 
