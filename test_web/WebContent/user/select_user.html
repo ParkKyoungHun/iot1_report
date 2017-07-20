@@ -70,12 +70,12 @@ function doSelect(){
 	   						userNum = columns[j];
 	   					}
 	   					if(i==0){
-	   						tableStr += "<td>" + columns[j] + "</td>"
+	   						tableStr += "<td>" + columns[j] + "</td>";
 	   					}else{
 	   						if(tdEnables[j]=="en"){
-	   							tableStr += "<td><input type='text' value='" + columns[j] + "'/></td>"
+	   							tableStr += "<td><input type='text' value='" + columns[j] + "'/></td>";
 	   						}else{
-		   						tableStr += "<td>" + columns[j] + "</td>"
+		   						tableStr += "<td>" + columns[j] + "</td>";
 	   						}
 	   					}
 	   				}
@@ -89,7 +89,7 @@ function doSelect(){
 	   				tableStr += "</tr>";
 	   			}
 	   			if(rows.length==1){
-	   				tableStr += "<tr><td colspan='3'>니가 검색한거 없어 임마</td></tr>"
+	   				tableStr += "<tr><td colspan='3'>니가 검색한거 없어 임마</td></tr>";
 	   			}
 	   			tableStr+="</table>";
 	   			document.getElementById("bd_div").innerHTML += tableStr;
