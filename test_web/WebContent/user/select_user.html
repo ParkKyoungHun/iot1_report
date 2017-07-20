@@ -57,10 +57,25 @@ function doSelect(){
 	   				tableStr += "<tr>";
 	   				var columns = rows[i].split("{/}");
 	   				for(var j=0;j<columns.length;j++){
-	   					tableStr += "<td>" + columns[j] + "</td>"
+	   					if(i==0){
+	   						tableStr += "<td>" + columns[j] + "</td>"
+	   					}else{
+	   						tableStr += "<td><input type='text' value='" + columns[j] + "'/></td>"
+	   					}
 	   				}
+   					if(i==0){
+   						tableStr += "<td>삭제</td>";
+   						tableStr += "<td>수정</td>";
+   					}else{
+   						tableStr += "<td><input type='button' value='삭제'/></td>";
+   						tableStr += "<td><input type='button' value='수정'/></td>";
+   					}
 	   				tableStr += "</tr>";
 	   			}
+	   			if(rows.length==1){
+	   				tableStr += "<tr><td colspan='3'>니가 검색한거 없어 임마</td></tr>"
+	   			}
+	   			tableStr+="</table>";
 	   			document.getElementById("bd_div").innerHTML += tableStr;
 	   			alert(result);
    			}else{

@@ -110,16 +110,16 @@ public class UserServlet extends HttpServlet {
 			// html화면에서 던진 age값을 "age"라는 키로 해쉬맵에 저장
 			hm.put("age", age);
 		} else if (command.equals("SELECT")) {
-			String name = req.getParameter("name");
+			String name = req.getParameter("username");
 			System.out.println("이름 : " + name);
 			HashMap hm = new HashMap();
 			if (name != null && !name.equals("")) {
 				hm.put("name", "%" + name + "%");
 			}
 			List<Map> userList  = us.selectUser(hm);
-			String result="";
+			String result="번호{/}이름{/}아이디{/}나이{+}";
 			for(Map m : userList){
-				result += m.get("username") + "{/}" + m.get("userid") + "{/}" + m.get("age") + "{+}"; 
+				result += m.get("usernum") + "{/}" + m.get("username") + "{/}" + m.get("userid") + "{/}" + m.get("age") + "{+}"; 
 			}
 			result = result.substring(0, result.length()-3);
 			doProcess(resq, result);
