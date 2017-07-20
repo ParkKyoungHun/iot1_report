@@ -118,6 +118,7 @@ public class UserServlet extends HttpServlet {
 			}
 			List<Map> userList  = us.selectUser(hm);
 			String result="번호{/}이름{/}아이디{/}나이{+}";
+			result+="dis{/}en{/}en{/}en{+}";
 			for(Map m : userList){
 				result += m.get("usernum") + "{/}" + m.get("username") + "{/}" + m.get("userid") + "{/}" + m.get("age") + "{+}"; 
 			}
