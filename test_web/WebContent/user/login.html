@@ -47,6 +47,7 @@ function doLogin(){
 	var method = "get";
 	var url = "test.user";
 	var aSync = true;
+	document.getElementById("userid").disabled = true;
 	xhr.onreadystatechange=function(){
    		if (xhr.readyState==4){
    			if(xhr.status==200){
