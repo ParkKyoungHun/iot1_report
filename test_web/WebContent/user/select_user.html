@@ -4,58 +4,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script src="/js/Ajax.js"></script>
 <script>
-function getHttpXmlObj(){
-	if(window.XMLHttpRequest){
-  		return new XMLHttpRequest();
- 	}else if(window.ActiveXObject){
-  		return new ActiveXObject("Microsoft.XMLHTTP");
- 	}
-	alert("해당 브라우져가  Ajax를 지원하지 않습니다.");
-}
 function doUpdate(userNum){
 	var userName = document.getElementById("r"+ userNum + 1).value;
 	var userId = document.getElementById("r"+ userNum + 2).value;
 	var age = document.getElementById("r"+ userNum + 3).value;
 	var command = "UPDATE"
 	params = "?usernum=" + userNum + "&username=" + userName + "&userid=" + userId + "&age=" + age + "&command=" + command;
-	
-	var xhr = getHttpXmlObj();
-	var method = "get";
-	var url = "test.user";
-	var aSync = true;
-	xhr.onreadystatechange=function(){
-   		if (xhr.readyState==4){
-   			if(xhr.status==200){
-	   			var result = decodeURIComponent(xhr.responseText);
-	   			alert(result);
-	   			doSelect();
-   			}
-   		}
-	}
-   	xhr.open(method, url+params, aSync);
-   	xhr.send();
+	var au = new AjaxUtil(params);
+	au.send();
 }
 function doDelete(userNum){
 	var isDelete = confirm(userNum + "을 삭제할라고요~?");
-	alert(isDelete);
-	var command = "DELETE"
-		params = "?usernum=" + userNum + "&command=" + command;
-		var xhr = getHttpXmlObj();
-		var method = "get";
-		var url = "test.user";
-		var aSync = true;
-		xhr.onreadystatechange=function(){
-	   		if (xhr.readyState==4){
-	   			if(xhr.status==200){
-		   			var result = decodeURIComponent(xhr.responseText);
-		   			alert(result);
-		   			doSelect();
-	   			}
-	   		}
-		}
-	   	xhr.open(method, url+params, aSync);
-	   	xhr.send();
+	if(isDelete){
+		var command = "DELETE";
+		var params = "?usernum=" + userNum + "&command=" + command;
+	}
+	var au = new AjaxUtil(params);
+	au.send();
 }
 function doSelect(){
 	var idStr = "username,command";
@@ -87,14 +54,12 @@ function doSelect(){
 		}
 		params += ids[i]+"="+ elObj.value +"&";
 	}
-	var xhr = getHttpXmlObj();
-	var method = "get";
-	var url = "test.user";
-	var aSync = true;
-	xhr.onreadystatechange=function(){
-   		if (xhr.readyState==4){
-   			if(xhr.status==200){
-	   			var result = decodeURIComponent(xhr.responseText);
+
+	var au = new AjaxUtil(params);
+	au.changeCallBack(function(){
+   		if (au.xhr.readyState==4){
+   			if(au.xhr.status==200){
+	   			var result = decodeURIComponent(au.xhr.responseText);
 	   			var rows = result.split("{+}");
 	   			var tdEnables = rows[1].split("{/}");
 	   			var tableStr ="<table border='1'>";
@@ -137,12 +102,8 @@ function doSelect(){
    				document.getElementById("bd_div").innerHTML = xhr.responseText;
    			}
         }
-    }
-   	xhr.open(method, url+params, aSync);
-   	if(method=="post"){
-   		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-   	}
-   	xhr.send();
+    });
+	au.send();
 }
 </script>
 <body>
