@@ -9,6 +9,10 @@
 <body>
 
 <%
+String id = (String) session.getAttribute("id");
+if(id!=null){
+	out.println(id + "님 환영해요~");
+}
 //out.println("아마추어같이 왜이래??");
 String guCnt = request.getParameter("gucnt");
 if(guCnt!=null){

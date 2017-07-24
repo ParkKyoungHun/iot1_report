@@ -11,45 +11,36 @@
 </head>
 <body>
 <%
-String id = request.getParameter("id");
-String pwd = request.getParameter("pwd");
-
-if(id!=null && pwd!=null){
-	UserInfo ui = new UserInfo();
-	ui.setUserId(id);
-	ui.setUserPwd(pwd);
-	
-	Connection con = null;
-	PreparedStatement ps = null;
-	String result = "";
-	try{
-		con = DBConn.getCon();
-		String sql = "select userpwd from user_info where userid=?";
-		ps = con.prepareStatement(sql);
-		ps.setString(1, ui.getUserId());
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()){
-			String userpwd = rs.getString("userpwd");
-	
-			if(userpwd.equals(ui.getUserPwd())){
-				result =  "로그인 성공";
-			}else{
-				result =  "비밀번호 틀렸어 임마!";
-			}
-		}
-	}catch(Exception e){
-		System.out.println(e);
-	}
-	if(result.equals("")){
-		result =  "그런 아이디 없다잖아!!";
-	}
-	out.println(result);
-}
+String userId = (String) session.getAttribute("userid");
+if(userId!=null){
+	String userName =  (String) session.getAttribute("username");
+	int age =  (int) session.getAttribute("age");
+	String address =  (String) session.getAttribute("address");
+	String hp1 =  (String) session.getAttribute("hp1");
+	String hp2 =  (String) session.getAttribute("hp2");
+	String hp3 =  (String) session.getAttribute("hp3");
+	out.println(userId + "님 환영해요~");
+	out.println("<br/>");
+	out.println("==" + userId + "님 의 정보 ==");
+	out.println("<br/>");
+	out.println("성명 : " + userName);
+	out.println("<br/>");
+	out.println("나이 : " + age);
+	out.println("<br/>");
+	out.println("주소 : " + address);
+	out.println("<br/>"); 
+	out.println("전화번호 : " + hp1 + hp2 + hp3);
+	out.println("<br/>"); 
+	out.println("<input type='button' value='로그아웃'/>");
+}else{
 %>
-<form action="/user/login.jsp">
+<form action="/user/login_ok.jsp">
 ID : <input type="text" name="id"/><br/>
 PWD : <input type="text" name="pwd"/><br/>
 <input type="submit" value="로그인!!"/>
 </form>
+<%
+}
+%>
 </body>
 </html>
