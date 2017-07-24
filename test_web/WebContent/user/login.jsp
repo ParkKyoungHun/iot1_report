@@ -9,6 +9,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<script>
+function doLogout(){
+	location.href="/user/login_ok.jsp";
+}
+</script>
 <body>
 <%
 String userId = (String) session.getAttribute("userid");
@@ -31,7 +36,7 @@ if(userId!=null){
 	out.println("<br/>"); 
 	out.println("전화번호 : " + hp1 + hp2 + hp3);
 	out.println("<br/>"); 
-	out.println("<input type='button' value='로그아웃'/>");
+	out.println("<input type='button' value='로그아웃' onclick='doLogout()'/>");
 }else{
 %>
 <form action="/user/login_ok.jsp">
