@@ -56,7 +56,10 @@ if(id!=null && pwd!=null){
 		result =  "그런 아이디 없다잖아!!";
 	}
 	out.println(result);
-} 
+}else{
+	// 세션 초기화
+	session.invalidate();
+}
 %>
 <script>
 var result = "<%=result%>";
