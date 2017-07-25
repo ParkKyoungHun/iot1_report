@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/common/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
