@@ -46,7 +46,7 @@ var rootPath = "<%=rootPath%>";
 function doMovePage(pageId){
 	var url = "";
 	if(pageId=="board"){
-		url = rootPath + "/board/board_insert.html";
+		url = rootPath + "/board/board_select.jsp";
 	}
 	location.href=url;
 }
