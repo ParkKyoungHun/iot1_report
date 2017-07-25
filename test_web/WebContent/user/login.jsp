@@ -32,7 +32,7 @@ if(login){
 	out.println("<input type='button' value='게시판가기' onclick='doMovePage(\"board\")'/>");
 }else{
 %>
-<form action="/user/login_ok.jsp">
+<form action="<%=rootPath%>/user/login_ok.jsp">
 ID : <input type="text" name="id"/><br/>
 PWD : <input type="text" name="pwd"/><br/>
 <input type="submit" value="로그인!!"/>

@@ -1,25 +1,47 @@
 package com.test.dto;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class BoardInfo {
-	Date date;
-	SimpleDateFormat sdf;
-	private int boardNum;
-	private String boardTitle;
-	public int getBoardNum() {
-		return boardNum;
-	}
-	public void setBoardNum(int boardNum) {
-		this.boardNum = boardNum;
-	}
-	public String getBoardTitle() {
-		return boardTitle;
-	}
-	public void setBoardTitle(String boardTitle) {
-		this.boardTitle = boardTitle;
-	}
+	private int binum; 
+	private String bititle; 
+	private String bicontent; 
+	private String bipwd; 
+	private String creusr; 
+	private String credat;
 	
-	
+	public int getBinum() {
+		return binum;
+	}
+	public void setBinum(int binum) {
+		this.binum = binum;
+	}
+	public String getBititle() {
+		return bititle;
+	}
+	public void setBititle(String bititle) {
+		this.bititle = bititle;
+	}
+	public String getBicontent() {
+		return bicontent;
+	}
+	public void setBicontent(String bicontent) {
+		this.bicontent = bicontent;
+	}
+	public String getBipwd() {
+		return bipwd;
+	}
+	public void setBipwd(String bipwd) {
+		this.bipwd = bipwd;
+	}
+	public String getCreusr() {
+		return creusr;
+	}
+	public void setCreusr(String creusr) {
+		this.creusr = creusr;
+	}
+	public String getCredat() {
+		return credat;
+	}
+	public void setCredat(String credat) {
+		this.credat = credat;
+	}
 }
