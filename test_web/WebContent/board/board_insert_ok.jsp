@@ -10,7 +10,7 @@ String biContent = request.getParameter("bicontent");
 String biPwd = request.getParameter("bipwd");
 String creusr = request.getParameter("creusr");
 String tableName = request.getParameter("tableName");
-String sql = "insert into " + tableName + "(bititle, bicontent, bipwd, creusr,credat)";
+String sql = "insert into board_info(bititle, bicontent, bipwd, creusr,credat)";
 sql += " values(?,?,?,?,now())";
 
 Connection con = null;
