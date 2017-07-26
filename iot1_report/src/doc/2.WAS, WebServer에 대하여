@@ -1,1 +1,15 @@
-1. WAS(Web Application Server)란?
+1. WebServer란?
+   1) HTML, Javascript, css, image등 정적인 리소스들을 http 프로토콜을 통해서 클라이언트로 전송해주는 역활을 하는 
+       서버 프로그램을 얘기한다.
+   2) 서버 프로그램이 설치된 하드웨어도 웹서버라고 부른다.
+   3) 종류로는 Apache, WebToB, NginX등이 있다.
+
+2. WAS(Web Application Server)란?
+   1) 일반적으로 WebServer의 기능을 내장하고 있으며 그와 별개로 서버 사이드 스크립트를 변환하여 html로 만들어
+       요청한 클라이언트에게 전송하는 기능을 가지고 있다.
+   2) 서버사이드스크립트는 ASP, JSP, PHP 등이 있으며 JSP의 경우 JAVA파일로 변경한뒤 Class파일로 컴파일 후 실행하는데
+       이작업을 해주는 것을 웹컨테이너라고 한다.
+   3) WAS의 종류로는 JEUS, Tomcat, Weblogic, Resin, Jboss등이 있다.
+   
+ 3. 왜 WAS와 WebServer를 분리하는가?
+    1) 

@@ -14,7 +14,6 @@ public void printStr(String str){
 }
 %>
 <%
-
 String userId = (String) session.getAttribute("userid");
 String userName = "";
 int age =  0;
@@ -22,7 +21,6 @@ String address =  "";
 String hp1 =  "";
 String hp2 =  "";
 String hp3 =  "";
-
 
 boolean login = false;
 if(userId!=null){
@@ -44,11 +42,13 @@ String toDateStr = sdf.format(toDate);
 var rootPath = "<%=rootPath%>";
 
 function doMovePage(pageId){
-	var url = "";
+	var url = "<%=rootPath%>";
 	if(pageId=="board"){
-		url = rootPath + "/board/board_select.jsp";
+		url += "/board/board_select.jsp";
 	}else if(pageId=="main"){
-		url = rootPath + "/";
+		url += "/";
+	}else if(pageId=="insertBoard"){
+		url += "/board/board_insert.jsp";
 	}
 	location.href=url;
 }

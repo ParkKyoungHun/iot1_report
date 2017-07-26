@@ -9,7 +9,7 @@
 </head>
 <body>
 <script>
-location.href=rootPath + "/user/login.jsp";
+location.href="<%=rootPath%>/user/login.jsp";
 </script>
 </body>
 </html>

@@ -12,7 +12,14 @@
 버튼2 : 메인가기 -> login.jsp화면으로 이동 하면 됩니다.
  -->
  <%
- 
+
+String someParam = request.getParameter("some");
+String someSession = (String)session.getAttribute("some");
+
+
+out.println("some 파라메터값 = " + someParam+"<br/>");
+out.println("some 세션값 = " + someSession);
+
 	Connection con = null;
 	PreparedStatement ps = null;
 	try{
@@ -29,7 +36,9 @@
 		tableStr += "<td>작성자</td>";
 		tableStr += "<td>작성일자</td>";
 		tableStr += "</tr>";
+		boolean existData = false;
 		while(rs.next()){
+			existData = true;
 			tableStr += "<tr>";
 			tableStr += "<td>"+rs.getInt("binum") + "</td>";
 			tableStr += "<td>"+rs.getString("bititle") + "</td>";
@@ -39,13 +48,24 @@
 			tableStr += "<td>"+rs.getString("credat") + "</td>";
 			tableStr += "</tr>";
 		}
+		if(!existData){
+			tableStr += "<tr>";
+			tableStr += "<td colspan='6'>데이터가 아무것도 없다!!!</td>";
+			tableStr += "</tr>";
+		}
 		tableStr += "</table>";
 		out.println(tableStr);
 	}catch(Exception e){
 		System.out.println(e);
+	}finally{
+		if(ps!=null){
+			ps.close();
+			ps = null;
+		}
+		DBConn.closeCon();
 	}
 	%>
-	<input type="button" value="게시글 작성"/>
+	<input type="button" value="게시글 작성" onclick="doMovePage('insertBoard')"/>
 	<input type="button" value="메인가기" onclick="doMovePage('main')"/>
 </body>
 </html>
