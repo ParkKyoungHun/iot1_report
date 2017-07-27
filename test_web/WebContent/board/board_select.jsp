@@ -43,13 +43,13 @@ function doSearch(){
 			}
 		}
 		ResultSet rs = ps.executeQuery();
-		String tableStr="<table border='1'>";
-		tableStr += "<tr>";
-		tableStr += "<td>번호</td>";
-		tableStr += "<td>제목</td>";
-		tableStr += "<td>비밀번호</td>";
-		tableStr += "<td>작성자</td>";
-		tableStr += "<td>작성일자</td>";
+		String tableStr="<table class='table table-bordered table-hover'>";
+		tableStr += "<tr align='center'>";
+		tableStr += "<th>번호</th>";
+		tableStr += "<th>제목</th>";
+		tableStr += "<th>비밀번호</th>";
+		tableStr += "<th>작성자</th>";
+		tableStr += "<th>작성일자</th>";
 		tableStr += "</tr>";
 		boolean existData = false;
 		while(rs.next()){
@@ -76,7 +76,7 @@ function doSearch(){
 			tableStr += "<option value='bicontitle'>제목 + 내용</option>";
 			tableStr += "</select> ";
 			tableStr += " <input type='text' name='searchStr' id='searchStr'/> ";
-			tableStr += " <input type='button' value='검색' onclick='doSearch()'/>";
+			tableStr += " <a href='#' class='btn btn-default' onclick='doSearch()'>검색</a>";
 			tableStr += "</td>";
 			tableStr += "</tr>";
 		}

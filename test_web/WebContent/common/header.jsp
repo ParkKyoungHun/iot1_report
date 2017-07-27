@@ -44,6 +44,8 @@ if(init==null && !login){
 }
 %>
 <script src="<%=rootPath%>/js/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="<%=rootPath%>/ui/btsp3.7.7/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="<%=rootPath%>/ui/btsp3.7.7/css/bootstrap.min.css"/>
 <script>
 var rootPath = "<%=rootPath%>";
 

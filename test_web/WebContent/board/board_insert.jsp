@@ -7,7 +7,18 @@
 내용 : <textarea name="bicontent" id="bicontent"></textarea><br/>
 글쓴이 : <input type="text" name="creusr" id="creusr" value="<%=userId%>"/><br/>
 비밀번호 : <input type="password" name="bipwd" id="bipwd" /><br/>
-<input type="submit" value="글쓰기"/>
+<input type="submit" value="글쓰기" onclick='test('abc')'/>
+
+<%
+
+out.println("<input type='button' onclick='test('abc')'/>");
+%>
+<script>
+alert("abc");
+function test(str){
+	alert(str);
+}
+</script>
 </form>
 </body>
 </html>
