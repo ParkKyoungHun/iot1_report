@@ -50,7 +50,7 @@
 	}
 %>
 
-번호 : <%=binum%></br>
+번호 : <%=binum%><br/>
 제목 : <%=bititle%><br/>
 내용 : <%=bicontent%><br/>
 글쓴이 : <%=creusr%><br/>
