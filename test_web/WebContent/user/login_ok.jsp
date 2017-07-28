@@ -16,6 +16,7 @@ String id = request.getParameter("id");
 String pwd = request.getParameter("pwd");
 
 String result = "";
+String url = rootPath + "/user/login.jsp";
 if(id!=null && pwd!=null){
 	UserInfo ui = new UserInfo();
 	ui.setUserId(id);
@@ -39,6 +40,7 @@ if(id!=null && pwd!=null){
 			String hp3 = rs.getString("hp3");
 			if(userPwd.equals(ui.getUserPwd())){
 				result =  "로그인 성공";
+				url = rootPath + "/main.jsp";
 				session.setAttribute("userid",ui.getUserId());
 				session.setAttribute("username",userName);
 				session.setAttribute("age",age);
@@ -63,7 +65,6 @@ if(id!=null && pwd!=null){
 	if(result.equals("")){
 		result =  "그런 아이디 없다잖아!!";
 	}
-	out.println(result);
 }else{
 	// 세션 초기화
 	result = "로그아웃 되셨습니다.";
@@ -80,7 +81,7 @@ if(id!=null && pwd!=null){
           <h4 class="modal-title">로그인 여부</h4>
         </div>
         <div class="modal-body">
-          <p>"<%=result%>"</p>
+          <p><%=result%></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -93,7 +94,7 @@ if(id!=null && pwd!=null){
 <script>
 $("#myModal").modal();
 $("#myModal").on("hidden.bs.modal", function () {
-	location.href="/user/login.jsp";
+	location.href="<%=url%>";
 });
 </script>
 </body>

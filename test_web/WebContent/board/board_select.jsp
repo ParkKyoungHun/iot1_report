@@ -5,6 +5,7 @@
 <%@ page import="com.test.common.DBConn" %>
 <%@ page import="com.test.dto.BoardInfo" %>
 <body>
+<jsp:include page="/common/top.jsp" flush="fasle"></jsp:include>
 <script>
 function goBoard(biNum,param2){
 	location.href ="<%=rootPath%>/board/board_view.jsp?binum=" + biNum;
@@ -15,6 +16,8 @@ function doSearch(){
 	location.href ="<%=rootPath%>/board/board_select.jsp?searchTarget=" + searchTarget + "&searchStr=" + searchStr;
 }
 </script>
+    <div class="container">
+      <div class="starter-template">
  <%
 	String searchTarget = request.getParameter("searchTarget");
 	String searchStr = request.getParameter("searchStr");
@@ -94,5 +97,7 @@ function doSearch(){
 	%>
 	<input type="button" value="게시글 작성" onclick="doMovePage('insertBoard')"/>
 	<input type="button" value="메인가기" onclick="doMovePage('main')"/>
+	</div>
+</div>
 </body>
 </html>
