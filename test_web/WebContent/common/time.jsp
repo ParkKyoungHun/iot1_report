@@ -2,18 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<form>
+<%!
+public String getStr(){
+	return "이게 되냐?";
+}
+%>
 <%
+
+
 Date toDate = new Date();
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 String toDateStr = sdf.format(toDate); 
 out.println(toDateStr);
-out.println("<input type='button' onclick='test(" + "abc" + ")' value='자살할까?'/>");
-%>  
-</form>
-<input type='button' onclick='test('abc')' value='자살할까?'/>
-<script> 
-function test(str){
-	alert(str);
-}
-</script>
+%> 
+<br/>간결하다 진짜

@@ -11,14 +11,9 @@ function doLogout(){
 	location.href="<%=rootPath%>/user/login_ok.jsp";
 }
 </script>
+<link rel="stylesheet" href="<%=rootPath%>/ui/signin.css"/>
 <body>
 <%
-String someParam = request.getParameter("some");
-out.println("some 파라메터값 = " + someParam+"<br/>");
-session.setAttribute("some","세션값");
-String someSession = (String)session.getAttribute("some");
-out.println("some 세션값 = " + someSession);
-
 if(login){
 	out.println("현재시간 : " + toDateStr);
 	out.println("<br/>");
@@ -38,11 +33,24 @@ if(login){
 	out.println("<input type='button' value='게시판가기' onclick='doMovePage(\"board\")'/>");
 }else{
 %>
-<form action="<%=rootPath%>/user/login_ok.jsp">
-ID : <input type="text" name="id"/><br/>
-PWD : <input type="text" name="pwd"/><br/>
-<input type="submit" value="로그인!!"/>
-</form>
+    <div class="container">
+
+      <form class="form-signin"  action="<%=rootPath%>/user/login_ok.jsp">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="id" name="id" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password"  name="pwd" id="pwd" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
 <%
 }
 %>
