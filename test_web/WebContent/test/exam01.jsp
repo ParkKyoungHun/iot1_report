@@ -55,17 +55,17 @@ var AjaxUtil = function(p_url, params){
    	}
 } 
 function doCheckValue(){
-	var name1 = document.getElementById("name1").value;
-	var name2 = document.getElementById("name2").value;
-	var name3 = document.getElementById("name3").value;
-	var name4 = document.getElementById("name4").value;
-	var name5 = document.getElementById("name5").value;
-	var name6 = document.getElementById("name6").value;
-	var name7 = document.getElementById("name7").value;
-	var name8 = document.getElementById("name8").value;
-	var name9 = document.getElementById("name9").value;
-	var name10 = document.getElementById("name10").value;
-	var params = ;
+	var test1 = document.getElementById("test1").value;
+	var test2 = document.getElementById("test2").value;
+	var test3 = document.getElementById("test3").value;
+	var test4 = document.getElementById("test4").value;
+	var test5 = document.getElementById("test5").value;
+	var test6 = document.getElementById("test6").value;
+	var test7 = document.getElementById("test7").value;
+	var test8 = document.getElementById("test8").value;
+	var test9 = document.getElementById("test9").value;
+	var test10 = document.getElementById("test10").value;
+	var params = "";
 	var au = new AjaxUtil("보낼페이지", params);
 	au.send();
 }
