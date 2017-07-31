@@ -33,8 +33,8 @@
 		var id = $("#id").val();
 		var pwd = $("#pwd").val();
 		var param = {};
-		param["id"] = id;
-		param["pwd"] = pwd;
+		param["userId"] = id;
+		param["userPwd"] = pwd;
 		param = JSON.stringify(param);
 		$.ajax({ 
 	        type     : "POST"
