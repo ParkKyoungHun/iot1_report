@@ -55,28 +55,29 @@ var AjaxUtil = function(p_url, params){
    	}
 } 
 function doCheckValue(){
-	var test1 = document.getElementById("test1").value;
-	var test2 = document.getElementById("test2").value;
-	var test3 = document.getElementById("test3").value;
-	var test4 = document.getElementById("test4").value;
-	var test5 = document.getElementById("test5").value;
-	var test6 = document.getElementById("test6").value;
-	var test7 = document.getElementById("test7").value;
-	var test8 = document.getElementById("test8").value;
-	var test9 = document.getElementById("test9").value;
-	var test10 = document.getElementById("test10").value;
+	var test1 = document.getElementById("id").value;
+	var test2 = document.getElementById("name").value;
+	var test3 = document.getElementById("age").value;
+	var test4 = document.getElementById("address").value;
+	var test5 = document.getElementById("address2").value;
+	var test6 = document.getElementById("hp1").value;
+	var test7 = document.getElementById("hp2").value;
+	var test8 = document.getElementById("hp3").value;
+	var test9 = document.getElementById("zipcode").value;
+	var test10 = document.getElementById("password").value;
 	var params = "?test01=" + test1; 
-	   params += "&test02=" + test2; 
-	   params += "&test03=" + test3; 
-	   params += "&test04=" + test4; 
-	   params += "&test05=" + test5; 
-	   params += "&test06=" + test6; 
-	   params += "&test07=" + test7; 
-	   params += "&test08=" + test8; 
-	   params += "&test09=" + test9; 
-	   params += "&test10=" + test10;
-	   var au = new AjaxUtil("/test/exam01_ok.jsp", params);
-	   au.send();
+	params += "&test02=" + test2; 
+	params += "&test03=" + test3; 
+	params += "&test04=" + test4; 
+	params += "&test05=" + test5; 
+	params += "&test06=" + test6; 
+	params += "&test07=" + test7; 
+	params += "&test08=" + test8; 
+	params += "&test09=" + test9; 
+	params += "&test10=" + test10;
+	
+	var au = AjaxUtil("exam01_ok.jsp", params);
+	au.send();
 } 
 </script>
 <div id="result_div"></div>

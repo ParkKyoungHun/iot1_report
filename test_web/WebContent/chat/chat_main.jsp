@@ -22,7 +22,7 @@ function doGetChat(){
 	au.setCallbackSuccess(callbackChat);
 	au.send();
 }
-function callbackChat(list){
+var callbackChat = function (list){
 	for(var i=0, max = list.length;i<max;i++){
 		var chat = list[i];
 		var str = chat.name + ":" + chat.content;
