@@ -8,16 +8,16 @@
 </head>
 <body>
 <form action="exam01_ok.jsp">
-<input type="text" name="test1" id="test1"/><br/>
-<input type="text" name="test2" id="test2"/><br/>
-<input type="text" name="test3" id="test3"/><br/>
-<input type="text" name="test4" id="test4"/><br/>
-<input type="text" name="test5" id="test5"/><br/>
-<input type="text" name="test6" id="test6"/><br/>
-<input type="text" name="test7" id="test7"/><br/>
-<input type="text" name="test8" id="test8"/><br/>
-<input type="text" name="test9" id="test9"/><br/>
-<input type="text" name="test10" id="test10"/><br/>
+<input type="text" name="id"  id="id"/><br/>
+<input type="text" name="name"  id="name"/><br/>
+<input type="text" name="age"  id="age"/><br/>
+<input type="text" name="address"  id="address"/><br/>
+<input type="text" name="address2"  id="address2"/><br/>
+<input type="text" name="hp1"  id="hp1"/><br/>
+<input type="text" name="hp2"  id="hp2"/><br/>
+<input type="text" name="hp3"  id="hp3"/><br/>
+<input type="text" name="zipcode"  id="zipcode"/><br/>
+<input type="text" name="password"  id="password"/><br/>
 <input type="button" value="값확인" onclick="doCheckValue()"/>
 </form>
 <script>
@@ -41,7 +41,7 @@ var AjaxUtil = function(p_url, params){
    		if (this.readyState==4){
    			if(this.status==200){
 	   			var result = decodeURIComponent(this.responseText);
-	   			alert(result);
+	   			document.getElementById("result_div").innerHTML = result;
    			}
    		}
 	}
@@ -65,10 +65,20 @@ function doCheckValue(){
 	var test8 = document.getElementById("test8").value;
 	var test9 = document.getElementById("test9").value;
 	var test10 = document.getElementById("test10").value;
-	var params = "";
-	var au = new AjaxUtil("보낼페이지", params);
-	au.send();
-}
+	var params = "?test01=" + test1; 
+	   params += "&test02=" + test2; 
+	   params += "&test03=" + test3; 
+	   params += "&test04=" + test4; 
+	   params += "&test05=" + test5; 
+	   params += "&test06=" + test6; 
+	   params += "&test07=" + test7; 
+	   params += "&test08=" + test8; 
+	   params += "&test09=" + test9; 
+	   params += "&test10=" + test10;
+	   var au = new AjaxUtil("/test/exam01_ok.jsp", params);
+	   au.send();
+} 
 </script>
+<div id="result_div"></div>
 </body>
 </html>
