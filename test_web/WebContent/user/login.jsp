@@ -6,7 +6,6 @@
 <%@ page import="com.test.dto.UserInfo"%>
 <link rel="stylesheet" href="<%=rootPath%>/ui/signin.css" />
 <body>
-	<jsp:include page="/common/top.jsp" flush="false">
 		<jsp:param name="login" value="<%=login%>"></jsp:param>
 	</jsp:include>
 	<div class="container">
