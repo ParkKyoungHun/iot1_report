@@ -21,63 +21,19 @@
 <input type="button" value="값확인" onclick="doCheckValue()"/>
 </form>
 <script>
-
-var AjaxUtil = function(p_url, params){
-	this.params = params;
-	
-	getHttpXmlObj = function(){
-		if(window.XMLHttpRequest){
-	  		return new XMLHttpRequest();
-	 	}else if(window.ActiveXObject){
-	  		return new ActiveXObject("Microsoft.XMLHTTP");
-	 	}
-		alert("해당 브라우져가  Ajax를 지원하지 않습니다.");
+var ABC = function(){
+	this.call = function(){
+		alert("원래 콜이라고 이것들아!!!");
 	}
-	this.xhr = getHttpXmlObj();
-	var method = "get";
-	var url = p_url;
-	var aSync = true;
-	this.xhr.onreadystatechange=function(){
-   		if (this.readyState==4){
-   			if(this.status==200){
-	   			var result = decodeURIComponent(this.responseText);
-	   			document.getElementById("result_div").innerHTML = result;
-   			}
-   		}
-	}
-	this.changeCallBack = function(func){
-		this.xhr.onreadystatechange = func;
-	}
-   	this.xhr.open(method, url+this.params, aSync);
-   	this.send = function(){
-   		this.xhr.send.arguments = this;
-   	   	this.xhr.send();
-   	}
-} 
+}
+function ddd(abc,a,b,c,d,e3,f,a){
+	alert(abc);
+}
 function doCheckValue(){
-	var test1 = document.getElementById("id").value;
-	var test2 = document.getElementById("name").value;
-	var test3 = document.getElementById("age").value;
-	var test4 = document.getElementById("address").value;
-	var test5 = document.getElementById("address2").value;
-	var test6 = document.getElementById("hp1").value;
-	var test7 = document.getElementById("hp2").value;
-	var test8 = document.getElementById("hp3").value;
-	var test9 = document.getElementById("zipcode").value;
-	var test10 = document.getElementById("password").value;
-	var params = "?test01=" + test1; 
-	params += "&test02=" + test2; 
-	params += "&test03=" + test3; 
-	params += "&test04=" + test4; 
-	params += "&test05=" + test5; 
-	params += "&test06=" + test6; 
-	params += "&test07=" + test7; 
-	params += "&test08=" + test8; 
-	params += "&test09=" + test9; 
-	params += "&test10=" + test10;
-	
-	var au = AjaxUtil("exam01_ok.jsp", params);
-	au.send();
+	var a = new ABC();
+	a.call(); 
+	a.call = ddd;
+	a.call("이거슨 파라메터입니다.");
 } 
 </script>
 <div id="result_div"></div>
