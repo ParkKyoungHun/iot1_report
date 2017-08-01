@@ -26,7 +26,6 @@
 	</div>
 	<!-- /container -->
 	<script>
-	
 	$("#btn2").click(function(){
 		var id = $("#id").val();
 		var pwd = $("#pwd").val();

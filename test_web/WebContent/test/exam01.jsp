@@ -22,8 +22,8 @@
 </form>
 <script>
 var ABC = function(){
-	this.call = function(){
-		alert("원래 콜이라고 이것들아!!!");
+	call : function (abc){
+		alert(abc);
 	}
 }
 function ddd(abc,a,b,c,d,e3,f,a){
@@ -31,9 +31,9 @@ function ddd(abc,a,b,c,d,e3,f,a){
 }
 function doCheckValue(){
 	var a = new ABC();
+	var abc["msg"] = "메세지";
+	var abc["list"] = "메세지";
 	a.call(); 
-	a.call = ddd;
-	a.call("이거슨 파라메터입니다.");
 } 
 </script>
 <div id="result_div"></div>
