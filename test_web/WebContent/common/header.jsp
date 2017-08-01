@@ -68,7 +68,7 @@ function doMovePage(pageId){
 	location.href=url;
 }
 </script>
-
+<body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -78,11 +78,11 @@ function doMovePage(pageId){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Project name</a>
+          <a class="navbar-brand" href="<%=rootPath%>">HOME</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/board/board_select.jsp">게시판가기</a></li>
+            <li><a href="/board/board_select.jsp">게시판가기</a></li>
             <li><a href="/user/user_info.jsp">유저정보가기</a></li>
             <li><a href="/role/role_select.jsp">권한정보가기</a></li>
             <li><a href="/user/logout_ok.jsp"><%=loginStr %></a></li>

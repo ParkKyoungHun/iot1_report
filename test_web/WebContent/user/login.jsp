@@ -6,8 +6,6 @@
 <%@ page import="com.test.dto.UserInfo"%>
 <link rel="stylesheet" href="<%=rootPath%>/ui/signin.css" />
 <body>
-		<jsp:param name="login" value="<%=login%>"></jsp:param>
-	</jsp:include>
 	<div class="container">
 		<form class="form-signin" action="<%=rootPath%>/user/login_ok.jsp">
 			<h2 class="form-signin-heading">Please login</h2>
@@ -29,7 +27,7 @@
 	<!-- /container -->
 	<script>
 	
-	$("button.btn").click(function(){
+	$("#btn2").click(function(){
 		var id = $("#id").val();
 		var pwd = $("#pwd").val();
 		var param = {};
