@@ -5,12 +5,11 @@
 <title>IOT MAIN</title>
 </head>
 <body>
-<jsp:include page="/common/top.jsp" flush="fasle"></jsp:include>
     <div class="container">
       <div class="starter-template">
         <h1>메인 화면</h1>
-        <p class="lead">이거슨 메인 화면입니다.</p>
-      </div>
+        <p class="lead"><%=rootPath%>이거슨 메인 화면입니다.</p>
+      </div> 
     </div><!-- /.container -->
 </body> 
 </html>

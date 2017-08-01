@@ -30,10 +30,6 @@
 	<!-- /container -->
 	<script>
 	
-	 callback = function(abc){
-		alert(abc);
-	}
-	callback("adfasdfsdfa");
 	$("button.btn").click(function(){
 		var id = $("#id").val();
 		var pwd = $("#pwd").val();
