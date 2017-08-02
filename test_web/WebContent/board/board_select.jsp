@@ -58,12 +58,12 @@ function doSearch(){
 		tableStr += " <a href='#' class='btn btn-default' onclick='doSearch()'>검색</a>";
 		tableStr += "</td>";
 		tableStr += "</tr>";
-		tableStr += "<tr align='center'>";
-		tableStr += "<td>번호</td>";
-		tableStr += "<td>제목</td>";
-		tableStr += "<td>비밀번호</td>";
-		tableStr += "<td>작성자</td>";
-		tableStr += "<td>작성일자</td>";
+		tableStr += "<tr>";
+		tableStr += "<th class='text-center'>번호</th>";
+		tableStr += "<th class='text-center'>제목</th>";
+		tableStr += "<th class='text-center'>비밀번호</th>";
+		tableStr += "<th class='text-center'>작성자</th>";
+		tableStr += "<th class='text-center'>작성일자</th>";
 		tableStr += "</tr>";
 		boolean existData = false;
 		while(rs.next()){
@@ -93,9 +93,8 @@ function doSearch(){
 		DBConn.closeCon();
 	}
 	%>
-	<input type="button" value="게시글 작성" onclick="doMovePage('insertBoard')"/>
+	<button type="button" style="color: red" onclick="doMovePage('insertBoard')">게시글 작성</button>
 	<input type="button" value="메인가기" onclick="doMovePage('main')"/>
 	</div>
 </div>
-</body>
-</html>
+<%@ include file="/common/bottom.jsp"%>
