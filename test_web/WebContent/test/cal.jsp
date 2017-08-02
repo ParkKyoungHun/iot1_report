@@ -50,12 +50,6 @@ $("#getCal").click(function(){
 	    	    }
 	    	    ,   data     : param
 	    	    ,   success : function(results){ 
-	    	    	/*
-	    			for(int i=0, max=calList.size();i<max;i++){
-	    			Map m = calList.get(i);
-	    			System.out.println(m.get("calnum") +"," + m.get("num1"));
-	    		}
-	    	    	*/
 	    	    	for(var i=0, max=results.length;i<max;i++){
 	    	    		var result = results[i]; 
 		    	    	$("#result_div").append(result.calnum + "," + result.num1 +","+result.op +","+ result.num2+"<br/>");
