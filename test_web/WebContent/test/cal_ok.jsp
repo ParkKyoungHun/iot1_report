@@ -12,8 +12,19 @@ int num2 = Integer.parseInt(numStr2);
 String op = hm.get("op");
 
 int result = 0;
-if(op.equals("+")){
+switch (op){
+case "+" : 
 	result = num1 + num2;
+	break;
+case "-" : 
+	result = num1 - num2;
+	break;
+case "*" : 
+	result = num1 * num2;
+	break;
+case "/" : 
+	result = num1 / num2;
+	break;
 }
 HashMap<String, Integer> resultMap = new HashMap<String,Integer>();
 resultMap.put("num", result);

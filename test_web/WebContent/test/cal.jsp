@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp"%>
-
 <input type="text" id="num1_1">
 +
 <input type="text" id="num1_2">
@@ -31,14 +30,17 @@
 <input type="button" value="계산"  id="cal4">
 <input type="text" id="result4">
 <script>
-$("#cal1").click(function(){
-	var num1 = $("#num1_1").val();
-	var num2 = $("#num1_2").val();
+var ops = ["","+","-","*","/"];
+$("input[id*='cal']").click(function(){
+	var id = this.id;
+	var idx = id.substring(id.length-1);
+	var num1 = $("#num"+ idx + "_1").val();
+	var num2 = $("#num"+ idx + "_2").val();
 
 	var param = {};
 	param["num1"] = num1;
 	param["num2"] = num2;
-	param["op"] = "+";
+	param["op"] = ops[idx];
 	param = JSON.stringify(param);
 	var a = { 
 	        type     : "POST"
@@ -49,10 +51,8 @@ $("#cal1").click(function(){
 	    	        xhr.setRequestHeader("Content-Type", "application/json");
 	    	    }
 	    	    ,   data     : param
-	    	    ,   success : function(result){
-	    	    	var results = result.split(":");
-	    	    	var re = results[1].replace("}","");
-	    	    	$("#result1").val(re);  
+	    	    ,   success : function(result){ 
+	    	    	$("#result" + idx).val(result.num);  
 	    	    }
 	    	    ,   error : function(xhr, status, e) {
 	    		    	alert("에러 : "+e);
