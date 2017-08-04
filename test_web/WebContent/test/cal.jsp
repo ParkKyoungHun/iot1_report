@@ -27,7 +27,30 @@
 <div id="result_div" class="container"></div>
 <script>
 $(document).ready(function(){
-	$("#s_vendor").append("<option value='1'>현대자동차</option>");
+
+	var a = { 
+	        		type     : "POST"
+	    	    ,   url      : "/test/vendor_select.jsp"
+	    	    ,   dataType : "json" 
+	    	    ,   beforeSend: function(xhr) {
+	    	        xhr.setRequestHeader("Accept", "application/json");
+	    	        xhr.setRequestHeader("Content-Type", "application/json");
+	    	    }
+	    	    ,   data     : null
+	    	    ,   success : function(results){
+	    	    	for(var i=0, max=results.length;i<max;i++){
+	    	    		var result = results[i];
+		    	    	$("#s_vendor").append("<option value='" +result.vinum +  "'>" + result.viname + "</option>");
+	    	    	}
+	    	    }
+	    	    ,   error : function(xhr, status, e) {
+	    		    	alert("에러 : "+e);
+	    		},
+	    		complete  : function() {
+	    			alert("실패던지 성공이던지 나랑 무슨상관이냐~ 난 실행할란다~");
+	    		}
+	    	};
+	$.ajax(a);
 })
 $("#getCal").click(function(){
 	var op = $("#op").val();
