@@ -1,33 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp"%>
 
-	<div class="container">
-		<table id="table" data-height="460"
-			class="table table-bordered table-hover">
-			<thead>
-				<tr>
-					<th data-field="calnum"  class="text-center">번호</th>
-					<th data-field="num1"  class="text-center">숫자1</th>
-					<th data-field="num2"  class="text-center">숫자2</th>
-					<th data-field="op"  class="text-center">연산자</th>
-					<th data-field="result"  class="text-center">결과값</th>
-				</tr>
-			</thead>
-			<tbody id="result_tbody">
-			</tbody>
-		</table>
-	</div>
-연산자 : <input type="text" id="op"/><input type="button" id="getCal" value="계산리스트호출"/>
+<div class="container">
+	<table id="table" data-height="460"
+		class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th data-field="calnum" class="text-center">번호</th>
+				<th data-field="num1" class="text-center">숫자1</th>
+				<th data-field="num2" class="text-center">숫자2</th>
+				<th data-field="op" class="text-center">연산자</th>
+				<th data-field="result" class="text-center">결과값</th>
+			</tr>
+		</thead>
+		<tbody id="result_tbody">
+		</tbody>
+	</table>
+</div>
+<select id="s_vendor">
+<option value="">회사선택</option>
+</select> 
+연산자 :
+<input type="text" id="op" />
+<input type="button" id="getCal" value="계산리스트호출" />
 <div id="result_div" class="container"></div>
 <script>
+$(document).ready(function(){
+	$("#s_vendor").append("<option value='1'>현대자동차</option>");
+})
 $("#getCal").click(function(){
 	var op = $("#op").val();
 	var param = {};
 	param["op"] = op;
 	param = JSON.stringify(param);
 	var a = { 
-	        type     : "POST"
+	        		type     : "POST"
 	    	    ,   url      : "/test/cal_select.jsp"
 	    	    ,   dataType : "json" 
 	    	    ,   beforeSend: function(xhr) {
@@ -43,11 +51,12 @@ $("#getCal").click(function(){
 	    	    ,   error : function(xhr, status, e) {
 	    		    	alert("에러 : "+e);
 	    		},
-	    		done : function(e) {
+	    		complete  : function() {
+	    			alert("실패던지 성공이던지 나랑 무슨상관이냐~ 난 실행할란다~");
 	    		}
-	    		};
+	    	};
 	$.ajax(a);
-});
+}); 
 
 $("input[id*='cal']").click(function(){
 	var id = this.id;

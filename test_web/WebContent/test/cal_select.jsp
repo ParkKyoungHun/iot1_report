@@ -4,12 +4,15 @@
 <%@ page import="com.test.common.DBConn"%>
 <%@ page import="com.google.gson.*"%>
 <%@ page import="java.util.*"%>
+<%@ page import="java.io.*"%>
+<%@ page import="com.test.dto.Cal"%>
+
 <%
 	 Gson g = new Gson();
-	 HashMap<String,String> hm = g.fromJson(request.getReader(), HashMap.class);
+	Cal hm = g.fromJson(request.getReader(), Cal.class);
 	String op = "";
 	if(hm!=null){
-		op = hm.get("op");
+		op = hm.getOp();
 	}
 	Connection con = null;
 	PreparedStatement ps = null;
