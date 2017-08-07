@@ -47,8 +47,10 @@
 		}
 		DBConn.closeCon();
 	}
+HashMap returnMap = new HashMap();
+returnMap.put("list", calList);
 
-String json = g.toJson(calList);
+String json = g.toJson(returnMap);
 System.out.println(json);
 out.print(json);
 	%>
