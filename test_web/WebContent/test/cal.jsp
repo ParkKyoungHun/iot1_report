@@ -30,7 +30,9 @@
 <input type="button" id="getCal" value="계산리스트호출" />
 <div id="result_div" class="container"></div>
 <script>
-
+var thisBlockCnt = 0;
+var thisNowPage = 0;
+var thisTotalPage = 0;
 function callback(results){
 	var vendorList = results.vendorList;
 	var goodsList = results.goodsList;
@@ -38,10 +40,13 @@ function callback(results){
 	
 	
 	var blockCnt = new Number(pageInfo.blockCnt);
+	thisBlockCnt = blockCnt;
 	var nowPage= new Number(pageInfo.nowPage);
+	thisNowPage = nowPage;
 	var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
 	var endBlock = startBlock+blockCnt-1;
 	var totalPageCnt = new Number(pageInfo.totalPageCnt);
+	thisTotalPage = totalPageCnt;
 	if(endBlock>totalPageCnt){
 		endBlock = totalPageCnt;
 	}
@@ -64,8 +69,26 @@ $(document).ready(function(){
 });
 function setEvent(){
 	$("ul[class='pagination']>li>a").click(function(){
+		var goPageNum = new Number(this.innerHTML);
+		if(isNaN(goPageNum)){
+			if(this.innerHTML=="◀"){
+				thisNowPage -= thisBlockCnt;
+			}else if(this.innerHTML=="◀◀"){
+				thisNowPage = 1;
+			}else if(this.innerHTML=="▶"){
+				thisNowPage += thisBlockCnt;
+			}else if(this.innerHTML=="▶▶"){
+				thisNowPage = thisTotalPage;
+			}
+			if(thisNowPage<=0){
+				thisNowPage = 1;
+			}else if(thisNowPage>thisTotalPage){
+				thisNowPage = thisTotalPage;
+			}
+			goPageNum = thisNowPage;
+		}
 		var params = {};
-		params["nowPage"] = this.innerHTML;
+		params["nowPage"] = "" + goPageNum;
 		goPage(params, "/test/vendor_select.jsp", callback);
 	})
 }
