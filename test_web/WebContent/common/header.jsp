@@ -74,6 +74,26 @@ function doMovePage(pageId){
 	}
 	location.href=url;
 }
+
+function goPage(pParams, pUrl, pCallBackFunc){
+	var params = JSON.stringify(pParams);
+	$.ajax({ 
+    		type     : "POST"
+	    ,   url      : pUrl
+	    ,   dataType : "json" 
+	    ,   beforeSend: function(xhr) {
+	        xhr.setRequestHeader("Accept", "application/json");
+	        xhr.setRequestHeader("Content-Type", "application/json");
+	    }
+	    ,   data     : params
+	    ,   success : pCallBackFunc
+	    ,   error : function(xhr, status, e) {
+		    	alert("에러 : "+e);
+		},
+		complete  : function() {
+		}
+	});
+}
 </script>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">

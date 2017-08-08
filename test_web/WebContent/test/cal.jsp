@@ -31,183 +31,53 @@
 <div id="result_div" class="container"></div>
 <script>
 
+function callback(results){
+	var vendorList = results.vendorList;
+	var goodsList = results.goodsList;
+	var pageInfo = results.pageInfo;
+	
+	var pageStr = "<li><a>◀◀</a></li>";
+	pageStr += "<li><a>◀</a></li>";
+	var blockCnt = new Number(pageInfo.blockCnt);
+	var nowPage= new Number(pageInfo.nowPage);
+	var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
+	var endBlock = startBlock+blockCnt-1;
+	var totalPageCnt = new Number(pageInfo.totalPageCnt);
+	if(endBlock>totalPageCnt){
+		endBlock = totalPageCnt;
+	}
+	for(var i=startBlock, max=endBlock;i<=max;i++){
+		if(i==pageInfo.nowPage){
+			pageStr += "<li class='active'><a>" + i + "</a></li>";
+		}else{
+			pageStr += "<li><a>" + i + "</a></li>";
+		}
+	}
+	pageStr += "<li><a>▶</a></li>";
+	pageStr += "<li><a>▶▶</a></li>";
+	
+	$("#page").html(pageStr);
+	for(var i=0, max=vendorList.length;i<max;i++){
+		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
+	}
+    $('#table').bootstrapTable('destroy');
+    $('#table').bootstrapTable({
+        data: goodsList
+    });
+    setEvent();
+}
 $(document).ready(function(){
 	var params = {};
-	params["nowPage"] = "1"; 
-	params = JSON.stringify(params);
-	var a = { 
-    		type     : "POST"
-	    ,   url      : "/test/vendor_select.jsp"
-	    ,   dataType : "json" 
-	    ,   beforeSend: function(xhr) {
-	        xhr.setRequestHeader("Accept", "application/json");
-	        xhr.setRequestHeader("Content-Type", "application/json");
-	    }
-	    ,   data     : params
-	    ,   success : function(results){
-	    	var vendorList = results.vendorList;
-	    	var goodsList = results.goodsList;
-			var pageInfo = results.pageInfo;
-			
-			var pageStr = "<li><a>◀◀</a></li>";
-			pageStr += "<li><a>◀</a></li>";
-			var blockCnt = new Number(pageInfo.blockCnt);
-			var nowPage= new Number(pageInfo.nowPage);
-			var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
-			var endBlock = startBlock+blockCnt-1;
-			var totalPageCnt = new Number(pageInfo.totalPageCnt);
-			if(endBlock>totalPageCnt){
-				endBlock = totalPageCnt;
-			}
-			for(var i=startBlock, max=endBlock;i<=max;i++){
-				if(i==pageInfo.nowPage){
-					pageStr += "<li class='active'><a>" + i + "</a></li>";
-				}else{
-					pageStr += "<li><a>" + i + "</a></li>";
-				}
-			}
-			pageStr += "<li><a>▶</a></li>";
-			pageStr += "<li><a>▶▶</a></li>";
-			
-			$("#page").html(pageStr);
-	    	for(var i=0, max=vendorList.length;i<max;i++){
-	    		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
-	    	}
-	        $('#table').bootstrapTable({
-	            data: goodsList
-	        });
-	        setEvent();
-	    }
-	    ,   error : function(xhr, status, e) {
-		    	alert("에러 : "+e);
-		},
-		complete  : function() {
-		}
-	};
-$.ajax(a);
+	params["nowPage"] = "1";
+	goPage(params, "/test/vendor_select.jsp", callback);
 });
-function goPage(page){
-	var params = {};
-	params["nowPage"] = page; 
-	params = JSON.stringify(params);
-	var a = { 
-    		type     : "POST"
-	    ,   url      : "/test/vendor_select.jsp"
-	    ,   dataType : "json" 
-	    ,   beforeSend: function(xhr) {
-	        xhr.setRequestHeader("Accept", "application/json");
-	        xhr.setRequestHeader("Content-Type", "application/json");
-	    }
-	    ,   data     : params
-	    ,   success : function(results){
-	    	var vendorList = results.vendorList;
-	    	var goodsList = results.goodsList;
-			var pageInfo = results.pageInfo;
-			
-			var pageStr = "<li><a>◀◀</a></li>";
-			pageStr += "<li><a>◀</a></li>";
-			var blockCnt = new Number(pageInfo.blockCnt);
-			var nowPage= new Number(pageInfo.nowPage);
-			var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
-			var endBlock = startBlock+blockCnt-1;
-			var totalPageCnt = new Number(pageInfo.totalPageCnt);
-			if(endBlock>totalPageCnt){
-				endBlock = totalPageCnt;
-			}
-			for(var i=startBlock, max=endBlock;i<=max;i++){
-				if(i==pageInfo.nowPage){
-					pageStr += "<li class='active'><a>" + i + "</a></li>";
-				}else{
-					pageStr += "<li><a>" + i + "</a></li>";
-				}
-			}
-			pageStr += "<li><a>▶</a></li>";
-			pageStr += "<li><a>▶▶</a></li>";
-			
-			$("#page").html(pageStr);
-	    	for(var i=0, max=vendorList.length;i<max;i++){
-	    		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
-	    	}
-	        $('#table').bootstrapTable('destroy');
-	        $('#table').bootstrapTable({
-	            data: goodsList
-	        });
-	        setEvent();
-	    }
-	    ,   error : function(xhr, status, e) {
-		    	alert("에러 : "+e);
-		},
-		complete  : function() {
-		}
-	};
-$.ajax(a);
-}
 function setEvent(){
 	$("ul[class='pagination']>li>a").click(function(){
-		goPage(this.innerHTML);
+		var params = {};
+		params["nowPage"] = this.innerHTML;
+		goPage(params, "/test/vendor_select.jsp", callback);
 	})
 }
-$("#getCal").click(function(){
-	var op = $("#op").val();
-	var param = {};
-	param["op"] = op;
-	param = JSON.stringify(param);
-	var a = { 
-	        		type     : "POST"
-	    	    ,   url      : "/test/cal_select.jsp"
-	    	    ,   dataType : "json" 
-	    	    ,   beforeSend: function(xhr) {
-	    	        xhr.setRequestHeader("Accept", "application/json");
-	    	        xhr.setRequestHeader("Content-Type", "application/json");
-	    	    }
-	    	    ,   data     : param
-	    	    ,   success : function(result){
-		    	        $('#table').bootstrapTable({
-		    	            data: result
-		    	        });
-	    	    }
-	    	    ,   error : function(xhr, status, e) {
-	    		    	alert("에러 : "+e);
-	    		},
-	    		complete  : function() {
-	    			alert("실패던지 성공이던지 나랑 무슨상관이냐~ 난 실행할란다~");
-	    		}
-	    	};
-	$.ajax(a);
-}); 
-
-$("input[id*='cal']").click(function(){
-	var id = this.id;
-	var idx = id.substring(id.length-1);
-	var num1 = $("#num"+ idx + "_1").val();
-	var num2 = $("#num"+ idx + "_2").val();
-
-	var param = {};
-	param["num1"] = num1;
-	param["num2"] = num2;
-	param["op"] = ops[idx];
-	param = JSON.stringify(param);
-	var a = { 
-	        type     : "POST"
-	    	    ,   url      : "/test/cal_ok.jsp"
-	    	    ,   dataType : "json" 
-	    	    ,   beforeSend: function(xhr) {
-	    	        xhr.setRequestHeader("Accept", "application/json");
-	    	        xhr.setRequestHeader("Content-Type", "application/json");
-	    	    }
-	    	    ,   data     : param
-	    	    ,   success : function(result){ 
-	    	    	alert(result.insert);
-	    	    	$("#result" + idx).val(result.num);  
-	    	    }
-	    	    ,   error : function(xhr, status, e) {
-	    		    	alert("에러 : "+e);
-	    		},
-	    		done : function(e) {
-	    		}
-	    		};
-	$.ajax(a);
-});
 </script>
 </body>
 </html>
