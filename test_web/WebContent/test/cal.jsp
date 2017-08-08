@@ -18,6 +18,10 @@
 		</tbody>
 	</table>
 </div>
+<div class="jb-center" style="text-align: center">
+	<ul class="pagination" id="page">
+	</ul>
+</div>
 <select id="s_vendor">
 <option value="">회사선택</option>
 </select> 
@@ -28,6 +32,9 @@
 <script>
 
 $(document).ready(function(){
+	var params = {};
+	params["nowPage"] = "1"; 
+	params = JSON.stringify(params);
 	var a = { 
     		type     : "POST"
 	    ,   url      : "/test/vendor_select.jsp"
@@ -36,17 +43,40 @@ $(document).ready(function(){
 	        xhr.setRequestHeader("Accept", "application/json");
 	        xhr.setRequestHeader("Content-Type", "application/json");
 	    }
-	    ,   data     : null
+	    ,   data     : params
 	    ,   success : function(results){
 	    	var vendorList = results.vendorList;
 	    	var goodsList = results.goodsList;
-
+			var pageInfo = results.pageInfo;
+			
+			var pageStr = "<li><a>◀◀</a></li>";
+			pageStr += "<li><a>◀</a></li>";
+			var blockCnt = new Number(pageInfo.blockCnt);
+			var nowPage= new Number(pageInfo.nowPage);
+			var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
+			var endBlock = startBlock+blockCnt-1;
+			var totalPageCnt = new Number(pageInfo.totalPageCnt);
+			if(endBlock>totalPageCnt){
+				endBlock = totalPageCnt;
+			}
+			for(var i=startBlock, max=endBlock;i<=max;i++){
+				if(i==pageInfo.nowPage){
+					pageStr += "<li class='active'><a>" + i + "</a></li>";
+				}else{
+					pageStr += "<li><a>" + i + "</a></li>";
+				}
+			}
+			pageStr += "<li><a>▶</a></li>";
+			pageStr += "<li><a>▶▶</a></li>";
+			
+			$("#page").html(pageStr);
 	    	for(var i=0, max=vendorList.length;i<max;i++){
 	    		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
 	    	}
 	        $('#table').bootstrapTable({
 	            data: goodsList
 	        });
+	        setEvent();
 	    }
 	    ,   error : function(xhr, status, e) {
 		    	alert("에러 : "+e);
@@ -56,10 +86,68 @@ $(document).ready(function(){
 	};
 $.ajax(a);
 });
-
+function goPage(page){
+	var params = {};
+	params["nowPage"] = page; 
+	params = JSON.stringify(params);
+	var a = { 
+    		type     : "POST"
+	    ,   url      : "/test/vendor_select.jsp"
+	    ,   dataType : "json" 
+	    ,   beforeSend: function(xhr) {
+	        xhr.setRequestHeader("Accept", "application/json");
+	        xhr.setRequestHeader("Content-Type", "application/json");
+	    }
+	    ,   data     : params
+	    ,   success : function(results){
+	    	var vendorList = results.vendorList;
+	    	var goodsList = results.goodsList;
+			var pageInfo = results.pageInfo;
+			
+			var pageStr = "<li><a>◀◀</a></li>";
+			pageStr += "<li><a>◀</a></li>";
+			var blockCnt = new Number(pageInfo.blockCnt);
+			var nowPage= new Number(pageInfo.nowPage);
+			var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
+			var endBlock = startBlock+blockCnt-1;
+			var totalPageCnt = new Number(pageInfo.totalPageCnt);
+			if(endBlock>totalPageCnt){
+				endBlock = totalPageCnt;
+			}
+			for(var i=startBlock, max=endBlock;i<=max;i++){
+				if(i==pageInfo.nowPage){
+					pageStr += "<li class='active'><a>" + i + "</a></li>";
+				}else{
+					pageStr += "<li><a>" + i + "</a></li>";
+				}
+			}
+			pageStr += "<li><a>▶</a></li>";
+			pageStr += "<li><a>▶▶</a></li>";
+			
+			$("#page").html(pageStr);
+	    	for(var i=0, max=vendorList.length;i<max;i++){
+	    		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
+	    	}
+	        $('#table').bootstrapTable('destroy');
+	        $('#table').bootstrapTable({
+	            data: goodsList
+	        });
+	        setEvent();
+	    }
+	    ,   error : function(xhr, status, e) {
+		    	alert("에러 : "+e);
+		},
+		complete  : function() {
+		}
+	};
+$.ajax(a);
+}
+function setEvent(){
+	$("ul[class='pagination']>li>a").click(function(){
+		goPage(this.innerHTML);
+	})
+}
 $("#getCal").click(function(){
-	alert($("#s_vendor").val());
-	return;
 	var op = $("#op").val();
 	var param = {};
 	param["op"] = op;

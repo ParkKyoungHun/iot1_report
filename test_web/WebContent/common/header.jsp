@@ -47,7 +47,7 @@ String loginStr = "로그인";
 if(login){
 	loginStr = "로그아웃";
 }
-String version = "1.2";
+String version = "1.3.2";
 %>
 <script src="<%=rootPath%>/js/jquery-3.2.1.js?version=<%=version%>"></script>
 <script src="<%=rootPath%>/ui/btsp3.7.7/js/bootstrap.min.js?version=<%=version%>"></script>

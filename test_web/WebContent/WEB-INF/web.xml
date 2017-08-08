@@ -8,6 +8,9 @@
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	<session-config> 
+	    <session-timeout>0</session-timeout> 
+	</session-config>
 	<servlet>
 		<servlet-name>UserServlet</servlet-name>
 		<servlet-class>com.test.servlet.UserServlet</servlet-class>
