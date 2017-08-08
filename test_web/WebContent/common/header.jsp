@@ -57,6 +57,23 @@ String version = "1.3.2";
 <link rel="stylesheet" href="<%=rootPath%>/ui/btsp3.7.7/css/bootstrap-table.css?version=<%=version%>"/>
 <link rel="stylesheet" href="<%=rootPath%>/ui/common.css?version=<%=version%>"/>
 <script>
+var sBlockStr = "<li><a>◀◀</a></li>";
+sBlockStr += "<li><a>◀</a></li>";
+var eBlockStr = "<li><a>▶</a></li>";
+eBlockStr += "<li><a>▶▶</a></li>";
+
+function setPagination(sNum, eNum, nPage, objId){
+	var pageStr = sBlockStr;
+	for(var i=sNum, max=eNum;i<=max;i++){
+		if(i==nPage){
+			pageStr += "<li class='active'><a>" + i + "</a></li>";
+		}else{
+			pageStr += "<li><a>" + i + "</a></li>";
+		}
+	}
+	pageStr += eBlockStr;
+	$("#" + objId).html(pageStr);
+}
 
 var rootPath = "<%=rootPath%>";
 $(document).ready(function(){
@@ -75,6 +92,9 @@ function doMovePage(pageId){
 	location.href=url;
 }
 
+function alertOp(){
+	alert($("#op").val());
+}
 function goPage(pParams, pUrl, pCallBackFunc){
 	var params = JSON.stringify(pParams);
 	$.ajax({ 

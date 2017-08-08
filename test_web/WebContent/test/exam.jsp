@@ -6,18 +6,8 @@
 <div id="result_div" class="container"></div>
 <script>
 
-var strut = {
-		a : 1,
-		b : function(){
-			alert("123");
-		}
-}
+$("#getCal").click(alertOp);
 
-$("#getCal").click(function(){
-	var t = strut.b
-	t();
-	
-});
 </script>
 </body>
 </html>

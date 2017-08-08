@@ -36,8 +36,7 @@ function callback(results){
 	var goodsList = results.goodsList;
 	var pageInfo = results.pageInfo;
 	
-	var pageStr = "<li><a>◀◀</a></li>";
-	pageStr += "<li><a>◀</a></li>";
+	
 	var blockCnt = new Number(pageInfo.blockCnt);
 	var nowPage= new Number(pageInfo.nowPage);
 	var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
@@ -46,17 +45,9 @@ function callback(results){
 	if(endBlock>totalPageCnt){
 		endBlock = totalPageCnt;
 	}
-	for(var i=startBlock, max=endBlock;i<=max;i++){
-		if(i==pageInfo.nowPage){
-			pageStr += "<li class='active'><a>" + i + "</a></li>";
-		}else{
-			pageStr += "<li><a>" + i + "</a></li>";
-		}
-	}
-	pageStr += "<li><a>▶</a></li>";
-	pageStr += "<li><a>▶▶</a></li>";
 	
-	$("#page").html(pageStr);
+	setPagination(startBlock, endBlock, pageInfo.nowPage,"page");
+	
 	for(var i=0, max=vendorList.length;i<max;i++){
 		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
 	}
