@@ -28,15 +28,13 @@ public class GoodsServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		request.setCharacterEncoding("UTF-8");
-	    Gson g = new Gson();
-	    Type listType = new TypeToken<ArrayList<Goods>>(){}.getType();
-	    
-	    List<Goods> goodsList = g.fromJson(request.getReader(), listType);
-	    for(Goods gs : goodsList){
-	    	System.out.println(gs);
+	    Gson g = new Gson();	    
+	    Goods goods = g.fromJson(request.getReader(), Goods.class);
+	    System.out.println(goods);
+	    String command = goods.getCommand();
+	    if(command.equals("list")){
+	    	
 	    }
-	    String jsonStr = g.toJson(goodsList);
-	    doProcess(response, jsonStr);
 	}
 	
 	public void doProcess(HttpServletResponse response, String writeStr) throws IOException {

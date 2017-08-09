@@ -58,6 +58,13 @@ String version = "1.3.2";
 <link rel="stylesheet" href="<%=rootPath%>/ui/common.css?version=<%=version%>"/>
 <script>
 
+Number.prototype.equals = function(obj){
+	if(obj instanceof Number){
+		return this.toString() == obj.toString();
+	}
+	return this==obj;
+}
+
 function setPagination(sNum, eNum, nPage, nTotal, objId){
 	var pageStr = "";
 	if(nPage==1){
@@ -74,7 +81,7 @@ function setPagination(sNum, eNum, nPage, nTotal, objId){
 			pageStr += "<li><a>" + i + "</a></li>";
 		}
 	}
-	if(nPage==nTotal){
+	if(nPage.equals(nTotal)){
 		pageStr += "<li class='disabled'><a>▶</a></li>";
 		pageStr += "<li class='disabled'><a>▶▶</a></li>";
 	}else{ 

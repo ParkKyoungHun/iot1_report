@@ -62,9 +62,13 @@ function callback(results){
     setEvent();
 }
 $(document).ready(function(){
+	var page = {};
+	page["nowPage"] = "1";
 	var params = {};
-	params["nowPage"] = "1";
-	goPage(params, "/test/vendor_select.jsp", callback);
+	params["page"] = page;
+	params["command"] = "list";
+	
+	goPage(params, "/list.goods", callback);
 });
 function setEvent(){
 	$("ul[class='pagination']>li:not([class='disabled'])>a").click(function(){
@@ -88,6 +92,7 @@ function setEvent(){
 		}
 		var params = {};
 		params["nowPage"] = "" + goPageNum;
+		params["command"] = "list";
 		goPage(params, "/test/vendor_select.jsp", callback);
 	})
 }
