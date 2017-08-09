@@ -7,11 +7,11 @@
 		class="table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th data-field="ginum" class="text-center">상품번호</th>
-				<th data-field="giname" class="text-center">상품이름</th>
-				<th data-field="gidesc" class="text-center">상품설명</th>
-				<th data-field="vinum" class="text-center">생산자번호</th>
-				<th data-field="viname" class="text-center">생산자이름</th>
+				<th data-field="giNum" class="text-center">상품번호</th>
+				<th data-field="giName" class="text-center">상품이름</th>
+				<th data-field="giDesc" class="text-center">상품설명</th>
+				<th data-field="viNum" class="text-center">생산자번호</th>
+				<th data-field="viName" class="text-center">생산자이름</th>
 			</tr>
 		</thead>
 		<tbody id="result_tbody">
@@ -34,32 +34,11 @@ var thisBlockCnt = 0;
 var thisNowPage = 0;
 var thisTotalPage = 0;
 function callback(results){
-	var vendorList = results.vendorList;
-	var goodsList = results.goodsList;
-	var pageInfo = results.pageInfo;
-	
-	
-	var blockCnt = new Number(pageInfo.blockCnt);
-	thisBlockCnt = blockCnt;
-	var nowPage= new Number(pageInfo.nowPage);
-	thisNowPage = nowPage;
-	var startBlock = Math.floor((nowPage-1)/blockCnt) * 10+1;
-	var endBlock = startBlock+blockCnt-1;
-	var totalPageCnt = new Number(pageInfo.totalPageCnt);
-	thisTotalPage = totalPageCnt;
-	if(endBlock>totalPageCnt){
-		endBlock = totalPageCnt;
-	}
-	setPagination(startBlock, endBlock, nowPage, totalPageCnt, "page");
-	
-	for(var i=0, max=vendorList.length;i<max;i++){
-		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")
-	}
+	var goodsList = results;
     $('#table').bootstrapTable('destroy');
     $('#table').bootstrapTable({
         data: goodsList
     });
-    setEvent();
 }
 $(document).ready(function(){
 	var page = {};

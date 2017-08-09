@@ -13,7 +13,7 @@ import com.test.dto.UserInfo;
 
 public class GoodsService {
 
-	public List<Goods> selectGoods(Goods pGoods){
+	public List<Goods> selectGoodsList(Goods pGoods){
 		Connection con = null;
 		PreparedStatement ps = null;
 		try {
@@ -27,6 +27,11 @@ public class GoodsService {
 			List<Goods> goodsList = new ArrayList<Goods>();
 			while(rs.next()){
 				Goods goods = new Goods();
+				goods.setGiNum(rs.getInt("ginum"));
+				goods.setGiName(rs.getString("giname"));
+				goods.setGiDesc(rs.getString("gidesc"));
+				goods.setViNum(rs.getInt("vinum"));
+				goods.setViName(rs.getString("viname"));
 				goodsList.add(goods);
 			}
 			return goodsList;
