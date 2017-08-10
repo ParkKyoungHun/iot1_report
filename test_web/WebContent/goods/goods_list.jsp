@@ -42,7 +42,7 @@ function callback(results){
 }
 $(document).ready(function(){
 	var page = {};
-	page["nowPage"] = "1";
+	page["nowPage"] = "11";
 	var params = {};
 	params["page"] = page;
 	params["command"] = "list";
