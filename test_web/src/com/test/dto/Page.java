@@ -1,6 +1,6 @@
 package com.test.dto;
 
-public class Page {
+public class Page{
 
 	private int totalCnt = 0;			// 전체 데이터 로우 갯수
 	private int rowCnt = 10;			// 한페이지에 보이는 로우 갯수
@@ -10,7 +10,7 @@ public class Page {
 	private int totalBlockCnt = 0;	// 전체 블락 갯수
 
 	public int getStartBlock(){
-		return getStartRow()/blockCnt;
+		return (getStartRow()/blockCnt)+1;
 	}
 	
 	public int getStartRow(){
@@ -32,6 +32,7 @@ public class Page {
 
 	public void setTotalCnt(int totalCnt) {
 		this.totalCnt = totalCnt;
+		this.totalPageCnt = (this.totalCnt/this.rowCnt)+1;
 	}
 
 	public int getRowCnt() {
@@ -72,5 +73,11 @@ public class Page {
 
 	public void setNowPage(int nowPage) {
 		this.nowPage = nowPage;
+	}
+
+	@Override
+	public String toString() {
+		return "Page [totalCnt=" + totalCnt + ", rowCnt=" + rowCnt + ", nowPage=" + nowPage + ", blockCnt=" + blockCnt
+				+ ", totalPageCnt=" + totalPageCnt + ", totalBlockCnt=" + totalBlockCnt + "]";
 	}	
 }

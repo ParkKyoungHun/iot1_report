@@ -55,4 +55,33 @@ public class GoodsService {
 		}
 		return null;
 	}
+
+	public int getTotalCount(Goods pGoods){
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			String sql = "select count(1) "
+					+ " from goods_info as gi, vendor_info as vi "
+					+ " where gi.vinum=vi.vinum";
+			con = DBConn.getCon();
+			ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			List<Goods> goodsList = new ArrayList<Goods>();
+			while(rs.next()){
+				return rs.getInt(1);
+			}
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				ps.close();
+				DBConn.closeCon();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 }
