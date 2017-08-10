@@ -27,7 +27,7 @@ public class GoodsService {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, page.getStartRow());
 			System.out.println(page.getStartRow());
-			ps.setInt(2, page.getBlockCnt());
+			ps.setInt(2, page.getRowCnt());
 			System.out.println(page.getBlockCnt());
 			ResultSet rs = ps.executeQuery();
 			List<Goods> goodsList = new ArrayList<Goods>();

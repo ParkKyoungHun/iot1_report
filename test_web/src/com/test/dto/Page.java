@@ -14,7 +14,7 @@ public class Page {
 	}
 	
 	public int getStartRow(){
-		return (nowPage-1) * blockCnt;
+		return (nowPage-1) * rowCnt;
 	}
 	
 	public int getEndBlock(){
