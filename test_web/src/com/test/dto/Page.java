@@ -7,21 +7,40 @@ public class Page{
 	private int nowPage = 1; 			// 현재 페이지
 	private int blockCnt = 10;			// 한페이지에 보이는 블락 갯수
 	private int totalPageCnt = 0;		// 전체 페이지 갯수
-	private int totalBlockCnt = 0;	// 전체 블락 갯수
+	private int startBlock;
+	private int startRow;
+	private int endBlock;
+	
+	public void setStartBlock(int startBlock) {
+		this.startBlock = startBlock;
+	}
 
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+
+	public void setEndBlock(int endBlock) {
+		this.endBlock = endBlock;
+	}
+
+	private void calPage(){
+		this.totalPageCnt = (this.totalCnt/this.rowCnt)+1;
+		this.startRow = (nowPage-1) * rowCnt;
+		this.startBlock = (int)Math.ceil(((double)this.startRow/blockCnt))+1;
+		endBlock = getStartBlock()+blockCnt-1;
+		if(endBlock>totalPageCnt){
+			endBlock = totalPageCnt;
+		}
+	}
 	public int getStartBlock(){
-		return (getStartRow()/blockCnt)+1;
+		return this.startBlock;
 	}
 	
 	public int getStartRow(){
-		return (nowPage-1) * rowCnt;
+		return this.startRow  ;
 	}
 	
 	public int getEndBlock(){
-		int endBlock = getStartBlock()+blockCnt;
-		if(endBlock<totalBlockCnt){
-			endBlock = totalBlockCnt;
-		}
 		return endBlock;
 	}
 	
@@ -32,7 +51,7 @@ public class Page{
 
 	public void setTotalCnt(int totalCnt) {
 		this.totalCnt = totalCnt;
-		this.totalPageCnt = (this.totalCnt/this.rowCnt)+1;
+		calPage();
 	}
 
 	public int getRowCnt() {
@@ -59,14 +78,6 @@ public class Page{
 		this.totalPageCnt = totalPageCnt;
 	}
 
-	public int getTotalBlockCnt() {
-		return totalBlockCnt;
-	}
-
-	public void setTotalBlockCnt(int totalBlockCnt) {
-		this.totalBlockCnt = totalBlockCnt;
-	}
-
 	public int getNowPage() {
 		return nowPage;
 	}
@@ -78,6 +89,8 @@ public class Page{
 	@Override
 	public String toString() {
 		return "Page [totalCnt=" + totalCnt + ", rowCnt=" + rowCnt + ", nowPage=" + nowPage + ", blockCnt=" + blockCnt
-				+ ", totalPageCnt=" + totalPageCnt + ", totalBlockCnt=" + totalBlockCnt + "]";
-	}	
+				+ ", totalPageCnt=" + totalPageCnt + ", startBlock=" + startBlock + ", startRow=" + startRow
+				+ ", endBlock=" + endBlock + "]";
+	}
+
 }

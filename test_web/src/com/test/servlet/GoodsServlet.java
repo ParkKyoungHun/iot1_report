@@ -42,6 +42,7 @@ public class GoodsServlet extends HttpServlet{
 	    	resultMap.put("page", page);
 	    	resultMap.put("list", list);
 	    	String jsonStr = g.toJson(resultMap);
+	    	System.out.println(jsonStr);
 	    	doProcess(response, jsonStr);
 	    }
 	}
