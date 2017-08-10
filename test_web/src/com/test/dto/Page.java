@@ -26,11 +26,11 @@ public class Page{
 	private void calPage(){
 		this.totalPageCnt = (this.totalCnt/this.rowCnt)+1;
 		this.startRow = (nowPage-1) * rowCnt;
-		this.startBlock = (int)Math.ceil(((double)this.startRow/blockCnt))+1;
+		this.startBlock =((int)((double) (nowPage-1)/blockCnt))*blockCnt+1;
 		endBlock = getStartBlock()+blockCnt-1;
 		if(endBlock>totalPageCnt){
 			endBlock = totalPageCnt;
-		}
+		} 
 	}
 	public int getStartBlock(){
 		return this.startBlock;

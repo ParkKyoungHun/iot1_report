@@ -34,7 +34,10 @@ var thisBlockCnt = 0;
 var thisNowPage = 0;
 var thisTotalPage = 0;
 function callback(results){
-	var goodsList = results;
+	var goodsList = results.list;
+	var pageInfo = results.page;
+	setPagination(pageInfo, "page");
+	setEvent(pageInfo);
     $('#table').bootstrapTable('destroy');
     $('#table').bootstrapTable({
         data: goodsList
@@ -42,37 +45,41 @@ function callback(results){
 }
 $(document).ready(function(){
 	var page = {};
-	page["nowPage"] = "11";
+	page["nowPage"] = "1";
 	var params = {};
 	params["page"] = page;
 	params["command"] = "list";
 	
 	goPage(params, "/list.goods", callback);
 });
-function setEvent(){
+function setEvent(pageInfo){
 	$("ul[class='pagination']>li:not([class='disabled'])>a").click(function(){
+		var thisNowPage = pageInfo.nowPage;
 		var goPageNum = new Number(this.innerHTML);
 		if(isNaN(goPageNum)){
 			if(this.innerHTML=="◀"){
-				thisNowPage -= thisBlockCnt;
+				thisNowPage -= pageInfo.blockCnt;
 			}else if(this.innerHTML=="◀◀"){
 				thisNowPage = 1;
 			}else if(this.innerHTML=="▶"){
-				thisNowPage += thisBlockCnt;
+				thisNowPage += pageInfo.blockCnt;
 			}else if(this.innerHTML=="▶▶"){
-				thisNowPage = thisTotalPage;
+				thisNowPage = pageInfo.totalPageCnt;
 			}
 			if(thisNowPage<=0){
 				thisNowPage = 1;
-			}else if(thisNowPage>thisTotalPage){
-				thisNowPage = thisTotalPage;
+			}else if(thisNowPage>pageInfo.totalPageCnt){
+				thisNowPage = pageInfo.totalPageCnt;
 			}
 			goPageNum = thisNowPage;
 		}
+
+		var page = {};
+		page["nowPage"] = "" + goPageNum;
 		var params = {};
-		params["nowPage"] = "" + goPageNum;
+		params["page"] = page;
 		params["command"] = "list";
-		goPage(params, "/test/vendor_select.jsp", callback);
+		goPage(params, "/list.goods", callback);
 	})
 }
 </script>

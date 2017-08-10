@@ -1,8 +1,5 @@
 package com.test.dto;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class Goods{
 
 	private int giNum;
