@@ -50,7 +50,7 @@ function callback(results){
 	if(endBlock>totalPageCnt){
 		endBlock = totalPageCnt;
 	}
-	setPagination(startBlock, endBlock, nowPage, totalPageCnt, "page");
+	makePaginationstartBlock, endBlock, nowPage, totalPageCnt, "page");
 	
 	for(var i=0, max=vendorList.length;i<max;i++){
 		$("#s_vendor").append("<option value='" + vendorList[i].vinum + "'>"+vendorList[i].viname +"</option>")

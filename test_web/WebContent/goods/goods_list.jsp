@@ -37,7 +37,7 @@ $("#searchGoods").click(function(){
 function callback(results){
 	var goodsList = results.list;
 	pageInfo = results.page;
-	setPagination(pageInfo, "page");
+	makePagination(pageInfo, "page");
 	setEvent(pageInfo, "/list.goods");
     $('#table').bootstrapTable('destroy');
     $('#table').bootstrapTable({

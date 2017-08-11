@@ -63,3 +63,36 @@ function setEvent(pageInfo, pUrl){
 		movePageWithAjax(params, pUrl, callback);
 	})
 }
+
+//하단 페이지 블락을 자동으로 만들어주는 공통함수
+//param : pageInfo => 페이지 정보
+//param : objId => 생성한 페이지 블락을 넣어줄 객체 아이디
+function makePagination(pageInfo, objId){
+	var sNum = pageInfo.startBlock;
+	var eNum = pageInfo.endBlock;
+	var nPage = pageInfo.nowPage;
+	var nTotal = pageInfo.totalPageCnt;
+	var pageStr = "";
+	if(nPage==1){
+		pageStr += "<li class='disabled'><a >◀◀</a></li>";
+		pageStr += "<li class='disabled' ><a >◀</a></li>";
+	}else{ 
+		pageStr += "<li><a>◀◀</a></li>";
+		pageStr += "<li><a>◀</a></li>";
+	}
+	for(var i=sNum, max=eNum;i<=max;i++){
+		if(i==nPage){
+			pageStr += "<li class='active'><a>" + i + "</a></li>";
+		}else{
+			pageStr += "<li><a>" + i + "</a></li>";
+		}
+	}
+	if(nPage.equals(nTotal)){
+		pageStr += "<li class='disabled'><a>▶</a></li>";
+		pageStr += "<li class='disabled'><a>▶▶</a></li>";
+	}else{ 
+		pageStr += "<li><a>▶</a></li>";
+		pageStr += "<li><a>▶▶</a></li>";
+	}
+	$("#" + objId).html(pageStr);
+}
