@@ -25,19 +25,20 @@
 <select id="s_vendor">
 <option value="">회사선택</option>
 </select> 
-연산자 :
-<input type="text" id="op" />
-<input type="button" id="getCal" value="계산리스트호출" />
+검색어
+<input type="text" id="giName" />
+<input type="button" id="searchGoods" value="제품명검색" />
 <div id="result_div" class="container"></div>
 <script>
-var thisBlockCnt = 0;
-var thisNowPage = 0;
-var thisTotalPage = 0;
+var pageInfo = {};
+$("#searchGoods").click(function(){
+	
+})
 function callback(results){
 	var goodsList = results.list;
-	var pageInfo = results.page;
+	pageInfo = results.page;
 	setPagination(pageInfo, "page");
-	setEvent(pageInfo);
+	setEvent(pageInfo, "/list.goods");
     $('#table').bootstrapTable('destroy');
     $('#table').bootstrapTable({
         data: goodsList
@@ -49,39 +50,8 @@ $(document).ready(function(){
 	var params = {};
 	params["page"] = page;
 	params["command"] = "list";
-	
-	goPage(params, "/list.goods", callback);
+	movePageWithAjax(params, "/list.goods", callback);
 });
-function setEvent(pageInfo){
-	$("ul[class='pagination']>li:not([class='disabled'])>a").click(function(){
-		var thisNowPage = pageInfo.nowPage;
-		var goPageNum = new Number(this.innerHTML);
-		if(isNaN(goPageNum)){
-			if(this.innerHTML=="◀"){
-				thisNowPage -= pageInfo.blockCnt;
-			}else if(this.innerHTML=="◀◀"){
-				thisNowPage = 1;
-			}else if(this.innerHTML=="▶"){
-				thisNowPage += pageInfo.blockCnt;
-			}else if(this.innerHTML=="▶▶"){
-				thisNowPage = pageInfo.totalPageCnt;
-			}
-			if(thisNowPage<=0){
-				thisNowPage = 1;
-			}else if(thisNowPage>pageInfo.totalPageCnt){
-				thisNowPage = pageInfo.totalPageCnt;
-			}
-			goPageNum = thisNowPage;
-		}
-
-		var page = {};
-		page["nowPage"] = "" + goPageNum;
-		var params = {};
-		params["page"] = page;
-		params["command"] = "list";
-		goPage(params, "/list.goods", callback);
-	})
-}
 </script>
 </body>
 </html>

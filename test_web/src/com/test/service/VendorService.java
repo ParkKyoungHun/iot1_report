@@ -11,7 +11,7 @@ import com.test.common.DBConn;
 import com.test.dto.Goods;
 import com.test.dto.Page;
 
-public class GoodsService {
+public class VendorService {
 
 	public List<Goods> selectGoodsList(Goods pGoods){
 		Connection con = null;
@@ -26,7 +26,9 @@ public class GoodsService {
 			con = DBConn.getCon();
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, page.getStartRow());
+			System.out.println(page.getStartRow());
 			ps.setInt(2, page.getRowCnt());
+			System.out.println(page.getBlockCnt());
 			ResultSet rs = ps.executeQuery();
 			List<Goods> goodsList = new ArrayList<Goods>();
 			while(rs.next()){

@@ -64,7 +64,7 @@ function callback(results){
 $(document).ready(function(){
 	var params = {};
 	params["nowPage"] = "1";
-	goPage(params, "/test/vendor_select.jsp", callback);
+	movePageWithAjax(params, "/test/vendor_select.jsp", callback);
 });
 function setEvent(){
 	$("ul[class='pagination']>li:not([class='disabled'])>a").click(function(){
@@ -88,7 +88,7 @@ function setEvent(){
 		}
 		var params = {};
 		params["nowPage"] = "" + goPageNum;
-		goPage(params, "/test/vendor_select.jsp", callback);
+		movePageWithAjax(params, "/test/vendor_select.jsp", callback);
 	})
 }
 </script>
