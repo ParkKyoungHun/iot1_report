@@ -49,14 +49,32 @@ public class GoodsService {
 		try {
 			String sql = "select gi.ginum, gi.giname, gi.gidesc, vi.vinum, vi.viname "
 					+ " from goods_info as gi, vendor_info as vi "
-					+ " where gi.vinum=vi.vinum"
-					+ " order by gi.ginum"
-					+ " limit ?,?";
+					+ " where gi.vinum=vi.vinum";
+
+			int idx=0;
+			if(pGoods.getViNum()!=0){
+				sql += " and gi.vinum=?";
+				idx++;
+			}
+			if(pGoods.getGiName()!=null){
+				sql += " and gi.giname=?";
+				idx++;
+			}
+			sql += " order by gi.ginum";
+			sql += " limit ?,?";
 			Page page = pGoods.getPage();
 			con = DBConn.getCon();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, page.getStartRow()); 
-			ps.setInt(2, page.getRowCnt());
+			if(pGoods.getViNum()!=0 && pGoods.getGiName()==null){
+				ps.setInt(1, pGoods.getViNum());
+			}else if(pGoods.getGiName()!=null && pGoods.getViNum()==0){
+				ps.setString(1, pGoods.getGiName());
+			}else if(pGoods.getGiName()!=null && pGoods.getViNum()!=0 ){
+				ps.setInt(1, pGoods.getViNum());
+				ps.setString(2, pGoods.getGiName());
+			}
+			ps.setInt(++idx, page.getStartRow()); 
+			ps.setInt(++idx, page.getRowCnt());
 			ResultSet rs = ps.executeQuery();
 			List<Goods> goodsList = new ArrayList<Goods>();
 			while(rs.next()){
@@ -109,7 +127,6 @@ public class GoodsService {
 			}
 			
 			ResultSet rs = ps.executeQuery();
-			List<Goods> goodsList = new ArrayList<Goods>();
 			while(rs.next()){
 				return rs.getInt(1);
 			}
