@@ -1,5 +1,6 @@
 package com.test.servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.test.dto.Goods;
 import com.test.dto.Page;
+import com.test.dto.Vendor;
 import com.test.service.GoodsService;
 
 public class GoodsServlet extends HttpServlet{
@@ -29,7 +31,8 @@ public class GoodsServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		request.setCharacterEncoding("UTF-8");
-	    Gson g = new Gson();	    
+	    Gson g = new Gson();	
+	    
 	    Goods goods = g.fromJson(request.getReader(), Goods.class);
 	    System.out.println(goods);
 	    String command = goods.getCommand();
@@ -38,11 +41,12 @@ public class GoodsServlet extends HttpServlet{
 	    	Page page = goods.getPage();
 	    	page.setTotalCnt(totalCnt);
 	    	List<Goods> list = gs.selectGoodsList(goods);
+	    	List<Vendor> vendorList = gs.selectVendorsList();
 	    	HashMap resultMap = new HashMap();
 	    	resultMap.put("page", page);
 	    	resultMap.put("list", list);
+	    	resultMap.put("vendorList", vendorList);
 	    	String jsonStr = g.toJson(resultMap);
-	    	System.out.println(jsonStr);
 	    	doProcess(response, jsonStr);
 	    }
 	}

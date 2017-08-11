@@ -11,6 +11,9 @@ public class Page {
 	private int startRow;
 	private int endBlock;
 
+	public Page(){
+		calPage();
+	}
 	public void setStartBlock(int startBlock) {
 		this.startBlock = startBlock;
 	}
