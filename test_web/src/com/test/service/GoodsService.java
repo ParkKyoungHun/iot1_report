@@ -102,6 +102,31 @@ public class GoodsService {
 		return null;
 	}
 
+	public int deleteGoods(Goods pGoods){
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			String sql = "delete from goods_info where  ginum=?";
+			con = DBConn.getCon(); 
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, pGoods.getGiNum());
+			int result = ps.executeUpdate();
+			con.commit();
+			return result;
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				ps.close();
+				DBConn.closeCon();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 	public Goods selectGoods(Goods pGoods){
 		Connection con = null;
 		PreparedStatement ps = null;

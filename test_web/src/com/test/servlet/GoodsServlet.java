@@ -55,6 +55,18 @@ public class GoodsServlet extends HttpServlet{
 	    	resultMap.put("url", "/goods/goods_view.jsp");
 	    	String jsonStr = g.toJson(resultMap);
 	    	doProcess(response, jsonStr);
+	    }else if(command.equals("delete")){
+	    	int result = gs.deleteGoods(goods);
+	    	HashMap resultMap = new HashMap();
+	    	resultMap.put("page", page);
+	    	resultMap.put("msg", "삭제가 완료 되었습니다.");
+	    	resultMap.put("url", "/goods/goods_list.jsp");
+	    	if(result!=1){
+		    	resultMap.put("msg", "삭제가 실패하였습니다.");
+		    	resultMap.put("url", "");
+	    	}
+	    	String jsonStr = g.toJson(resultMap);
+	    	doProcess(response, jsonStr);
 	    }
 	}
 	
