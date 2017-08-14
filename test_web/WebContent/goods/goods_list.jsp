@@ -29,6 +29,8 @@
 	<ul class="pagination" id="page">
 	</ul>
 </div>
+<textarea  id="div_result">
+</textarea >
 <script>
 	var pageInfo = {};
 	$("#searchGoods").click(function() {
@@ -78,9 +80,31 @@
 		makePagination(pageInfo,"page");
 		setEvent(pageInfo,params , "/list.goods");
 		$('#table').bootstrapTable('destroy');
-		$('#table').bootstrapTable({
-			data : goodsList
-		});
+		var resultStr = "";
+		for(var i=0, max=goodsList.length;i<max;i++){
+			var goods = goodsList[i];
+			resultStr += "<tr data-view='" + goods.giNum + "'>";
+			resultStr +="<td class='text-center'>" + goods.giNum + "</td>";
+			resultStr +="<td class='text-center'>" + goods.giName + "</td>";
+			resultStr +="<td class='text-center'>" + goods.giDesc + "</td>";
+			resultStr +="<td class='text-center'>" + goods.viNum + "</td>";
+			resultStr +="<td class='text-center'>" + goods.viName + "</td>";
+			resultStr +="</tr>";
+		}
+		$('#result_tbody').html(resultStr);
+		$("tbody[id='result_tbody']>tr[data-view]").click(function(){
+			var params = {};
+			params["giNum"] = this.getAttribute("data-view");
+			params["command"] = "view";
+			var page = {};
+			page["nowPage"] = pageInfo.nowPage;
+			params["page"] = page;
+			movePageWithAjax(params, "/list.goods", callBackView);
+		})
+	}
+	function callBackView(result){
+		var url = result.url + "?nowPage=" + result.page.nowPage + "&giNum=" + result.goods.giNum;
+		location.href=url;
 	}
 	
 	$(document).ready(function() {
