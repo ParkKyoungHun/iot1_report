@@ -15,13 +15,19 @@ import com.test.dto.Vendor;
 public class VendorService {
 
 
-	public List<Vendor> selectVendorsList(){
+	public List<Vendor> selectVendorsList(String viName){
 		Connection con = null;
 		PreparedStatement ps = null;
 		try {
-			String sql = "select vinum, viname, videsc, viaddress, viphone from vendor_info";
+			String sql = "select vinum, viname, videsc, viaddress, viphone from vendor_info where 1=1";
+			if(viName!=null){
+				sql += " and viname like ?";
+			}
 			con = DBConn.getCon();
 			ps = con.prepareStatement(sql);
+			if(viName!=null){
+				ps.setString(1, "%" + viName + "%");
+			}
 			ResultSet rs = ps.executeQuery();
 			List<Vendor> vendorList = new ArrayList<Vendor>();
 			while(rs.next()){

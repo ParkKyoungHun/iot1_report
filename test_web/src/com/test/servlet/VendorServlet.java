@@ -31,7 +31,8 @@ public class VendorServlet extends HttpServlet{
 	    System.out.println(command);
 	    String result = "";
 	    if(command.equals("list")){
-	    	List<Vendor> vendorList = vs.selectVendorsList();
+	    	String viName = request.getParameter("viName");
+	    	List<Vendor> vendorList = vs.selectVendorsList(viName);
 	    	for(Vendor v : vendorList){
 	    		result += "<tr>";
 	    		result += "<td>" + v.getViNum() + "</td>";
