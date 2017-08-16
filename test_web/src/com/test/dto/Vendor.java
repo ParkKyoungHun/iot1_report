@@ -9,6 +9,12 @@ public class Vendor {
 	private String viPhone;
 	private String viCredat;
 	private String viCretim;
+	
+	@Override
+	public String toString() {
+		return "Vendor [viNum=" + viNum + ", viName=" + viName + ", viDesc=" + viDesc + ", viAddress=" + viAddress
+				+ ", viPhone=" + viPhone + ", viCredat=" + viCredat + ", viCretim=" + viCretim + "]";
+	}
 	public int getViNum() {
 		return viNum;
 	}
