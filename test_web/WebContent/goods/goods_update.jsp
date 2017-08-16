@@ -21,7 +21,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<button id="btnUpdate" class="btn btn-primary" 	type="button">상품등록</button>
+					<button id="btnUpdate" class="btn btn-primary" 	type="button">상품수정</button>
 					<button id="goList" class="btn" 	type="button">취소</button>
 				</td>
 			</tr>
@@ -36,6 +36,7 @@
 		params["giDesc"] = $("#giDesc").val();
 		params["giName"] = $("#giName").val();
 		params["viNum"] = $("#s_vendor").val();
+		params["giNum"] = "<%=request.getParameter("giNum")%>";
 		movePageWithAjax(params, "/list.goods", callbackInsert);
 	})
 	

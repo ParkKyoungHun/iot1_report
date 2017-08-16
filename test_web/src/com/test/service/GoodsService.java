@@ -156,6 +156,39 @@ public class GoodsService {
 		}
 		return 0;
 	}
+
+	public int updateGoods(Goods pGoods){
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			String sql = "update goods_info";
+			sql += " set giname=?,";
+			sql += " gidesc=?,";
+			sql += " vinum=?";
+			sql += " where ginum=?";
+			con = DBConn.getCon(); 
+			ps = con.prepareStatement(sql);
+			ps.setString(1, pGoods.getGiName());
+			ps.setString(2, pGoods.getGiDesc());
+			ps.setInt(3, pGoods.getViNum());
+			ps.setInt(4, pGoods.getGiNum());
+			int result = ps.executeUpdate();
+			con.commit();
+			return result;
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				ps.close();
+				DBConn.closeCon();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 	public Goods selectGoods(Goods pGoods){
 		Connection con = null;
 		PreparedStatement ps = null;

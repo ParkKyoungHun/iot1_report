@@ -101,6 +101,18 @@ public class GoodsServlet extends HttpServlet{
 	    	}
 	    	String jsonStr = g.toJson(resultMap);
 	    	doProcess(response, jsonStr);
+	    }else if(command.equals("update")){
+	    	int result = gs.updateGoods(goods);
+	    	HashMap resultMap = new HashMap();
+	    	resultMap.put("msg", "수정이 완료 되었습니다.");
+	    	resultMap.put("url", "/goods/goods_list.jsp");
+	    	if(result!=1){
+		    	resultMap.put("msg", "수정이 실패하였습니다.");
+		    	resultMap.put("url", "");
+	    	}
+	    	String jsonStr = g.toJson(resultMap);
+	    	doProcess(response, jsonStr);
+	    	
 	    }
 	}
 	
