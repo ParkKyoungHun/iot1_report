@@ -28,20 +28,20 @@ public class VendorServlet extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 
 	    String command = request.getParameter("command");
-	    System.out.println(command);
 	    String result = "";
 	    if(command.equals("list")){
 	    	String viName = request.getParameter("viName");
 	    	List<Vendor> vendorList = vs.selectVendorsList(viName);
-	    	for(Vendor v : vendorList){
-	    		result += "<tr>";
-	    		result += "<td>" + v.getViNum() + "</td>";
-	    		result += "<td>" + v.getViName() + "</td>";
-	    		result += "<td>" + v.getViDesc() + "</td>";
-	    		result += "<td>" + v.getViAddress() + "</td>";
-	    		result += "<td>" + v.getViPhone() + "</td>";
-	    		result += "</tr>";
-	    	}
+	    	result = g.toJson(vendorList);
+//	    	for(Vendor v : vendorList){
+//	    		result += "<tr>";
+//	    		result += "<td>" + v.getViNum() + "</td>";
+//	    		result += "<td>" + v.getViName() + "</td>";
+//	    		result += "<td>" + v.getViDesc() + "</td>";
+//	    		result += "<td>" + v.getViAddress() + "</td>";
+//	    		result += "<td>" + v.getViPhone() + "</td>";
+//	    		result += "</tr>";
+//	    	}
 	    }else if(command.equals("view")){
 	    }else if(command.equals("delete")){
 	    }else if(command.equals("insert")){

@@ -41,10 +41,22 @@
 		$.ajax({ 
 	    		type     : "POST"
 		    ,   url      : "/list.vendor"
-		    ,   dataType : "text" 
+		    ,   dataType : "json" 
 		    ,   data     : params
 		    ,   success : function(result){
-		    	$("#result_tbody").html(result);
+				$('#table').bootstrapTable('destroy');
+				var resultStr = "";
+				for(var i=0, max=result.length;i<max;i++){
+					var vendor = result[i];
+					resultStr += "<tr data-view='" + vendor.viNum + "'>";
+					resultStr +="<td class='text-center'>" + vendor.viNum + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viName + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viDesc + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viAddress + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viPhone + "</td>";
+					resultStr +="</tr>";
+				}
+				$('#result_tbody').html(resultStr);
 		    }
 		    ,   error : function(xhr, status, e) {
 			    	alert("에러 : "+e);
@@ -62,10 +74,22 @@
 		$.ajax({ 
 	    		type     : "POST"
 		    ,   url      : "/list.vendor"
-		    ,   dataType : "text" 
+		    ,   dataType : "json" 
 		    ,   data     : params
 		    ,   success : function(result){
-		    	$("#result_tbody").html(result);
+				$('#table').bootstrapTable('destroy');
+				var resultStr = "";
+				for(var i=0, max=result.length;i<max;i++){
+					var vendor = result[i];
+					resultStr += "<tr data-view='" + vendor.viNum + "'>";
+					resultStr +="<td class='text-center'>" + vendor.viNum + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viName + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viDesc + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viAddress + "</td>";
+					resultStr +="<td class='text-center'>" + vendor.viPhone + "</td>";
+					resultStr +="</tr>";
+				}
+				$('#result_tbody').html(resultStr);
 		    }
 		    ,   error : function(xhr, status, e) {
 			    	alert("에러 : "+e);
