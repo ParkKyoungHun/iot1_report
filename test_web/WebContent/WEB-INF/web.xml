@@ -44,6 +44,14 @@
 		<url-pattern>*.goods</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.test.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>*.test</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>VendorServlet</servlet-name>
 		<servlet-class>com.test.servlet.VendorServlet</servlet-class>
 	</servlet>
