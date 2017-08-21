@@ -9,7 +9,15 @@ public class Goods{
 	private String viName;
 	private String command;
 	private Page page;
+	private String test;
 
+	public void setPest1(String test){
+		this.test = test;
+	}
+	
+	public String getPest1(){
+		return test;
+	}
 	public Page getPage() {
 		return page;
 	}
@@ -56,9 +64,10 @@ public class Goods{
 	public void setViName(String viName) {
 		this.viName = viName;
 	}
+
 	@Override
 	public String toString() {
 		return "Goods [giNum=" + giNum + ", giName=" + giName + ", giDesc=" + giDesc + ", viNum=" + viNum + ", viName="
-				+ viName + ", command=" + command + ", page=" + page + "]";
+				+ viName + ", command=" + command + ", page=" + page + ", test=" + test + "]";
 	}
 }

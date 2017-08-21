@@ -84,6 +84,7 @@ public class GoodsService {
 				goods.setGiDesc(rs.getString("gidesc"));
 				goods.setViNum(rs.getInt("vinum"));
 				goods.setViName(rs.getString("viname"));
+				goods.setPest1("test");
 				goodsList.add(goods);
 			}
 			return goodsList;

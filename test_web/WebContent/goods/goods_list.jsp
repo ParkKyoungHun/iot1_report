@@ -56,6 +56,7 @@
 		var page = {};
 		page["nowPage"] = nowPage;
 		params["page"] = page;
+		params["test"] = "test"
 		movePageWithAjax(params, "/list.goods", callback);
 	});
 	

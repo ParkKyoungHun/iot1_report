@@ -1,5 +1,6 @@
 package com.test.servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -45,11 +46,18 @@ public class GoodsServlet extends HttpServlet{
 			}
 	    }
 	}
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		request.setCharacterEncoding("UTF-8");
 	    
-	    Goods goods = g.fromJson(request.getReader(), Goods.class);
+		BufferedReader br = request.getReader();
+		String param = "";
+		String s = null;
+		while((s = br.readLine())!=null){
+			param += s;
+		}
+		System.out.println(param);
+	    Goods goods = g.fromJson(param, Goods.class);
+	    System.out.println(goods); 
 	    String command = goods.getCommand();
     	Page page = goods.getPage();
 	    if(command.equals("list")){
@@ -63,6 +71,7 @@ public class GoodsServlet extends HttpServlet{
 	    	resultMap.put("search", goods);
 	    	resultMap.put("vendorList", vendorList);
 	    	String jsonStr = g.toJson(resultMap);
+	    	System.out.println(jsonStr);
 	    	doProcess(response, jsonStr);
 	    }else if(command.equals("view")){
 	    	Goods resultGoods = gs.selectGoods(goods);

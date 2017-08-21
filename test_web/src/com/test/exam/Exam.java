@@ -20,6 +20,10 @@ public class Exam {
 		System.out.println(goods.getPage().getNowPage());
 		System.out.println(page2.getNowPage());
 		
+		int a = 102;
+		int b = 10;
+		
+		System.out.println((int)(Math.ceil((double)a/b)));
 	}
 }
 ;
