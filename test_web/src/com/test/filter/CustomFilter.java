@@ -15,7 +15,6 @@ public class CustomFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		request.setCharacterEncoding("utf-8");
-		System.out.println("모든 서블릿은 여기를 거칩니다.");
 		response.setContentType("text/html; charset = UTF-8");
 		chain.doFilter(request, response);
 	}
