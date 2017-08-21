@@ -22,11 +22,11 @@ public class TestServlet extends HttpServlet{
 		System.out.println("pwd : " + pwd);
 		String result = "니가 입력한 아이디 는 " + id;
 		result += "니가 입력한 비밀번호 는 " + pwd;
-		String str = request.getQueryString();
-		str = URLDecoder.decode(str, "UTF-8");
-		HashMap hm = g.fromJson(str, HashMap.class);
-		System.out.println(hm); 
-		
+//		String str = request.getQueryString();
+//		str = URLDecoder.decode(str, "UTF-8");
+//		HashMap hm = g.fromJson(str, HashMap.class);
+//		System.out.println(hm); 
+		 
 		doProcess(response, result);
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{	
@@ -57,7 +57,6 @@ public class TestServlet extends HttpServlet{
 	}
 
 	public void doProcess(HttpServletResponse resq, String writeStr) throws IOException {
-		resq.setContentType("text/html; charset = UTF-8");
 		PrintWriter out = resq.getWriter();
 		out.print(writeStr);
 	}

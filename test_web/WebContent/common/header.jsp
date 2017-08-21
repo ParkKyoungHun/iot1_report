@@ -51,6 +51,9 @@ if(login){
 String version = "1.3.2";
 %>
 <script src="<%=rootPath%>/js/jquery-3.2.1.js?version=<%=version%>"></script>
+<script src="<%=rootPath%>/js/jquery-ui-1.9.2.custom.js?version=<%=version%>"></script>
+<script src="<%=rootPath%>/js/jquery.fileupload.js?version=<%=version%>"></script>
+<script src="<%=rootPath%>/js/jquery.iframe-transport.js?version=<%=version%>"></script>
 <script src="<%=rootPath%>/ui/common.js?version=<%=version%>"></script>
 <script src="<%=rootPath%>/ui/btsp3.7.7/js/bootstrap.min.js?version=<%=version%>"></script>
 <script src="<%=rootPath%>/ui/btsp3.7.7/js/bootstrap-table.js?version=<%=version%>"></script>
