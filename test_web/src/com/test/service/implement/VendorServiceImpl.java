@@ -13,7 +13,6 @@ import com.test.service.VendorService;
 
 public class VendorServiceImpl implements VendorService {
 
-
 	public List<Vendor> selectVendorsList(String viName){
 		Connection con = null;
 		PreparedStatement ps = null;

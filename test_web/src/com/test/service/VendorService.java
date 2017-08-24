@@ -5,5 +5,5 @@ import java.util.List;
 import com.test.dto.Vendor;
 
 public interface VendorService {
-	List<Vendor> selectVendorsList(String viName);
+	public List<Vendor> selectVendorsList(String viName);
 }

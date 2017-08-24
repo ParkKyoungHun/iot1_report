@@ -1,10 +1,6 @@
-
 <%@ include file="/common/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="com.test.common.DBConn"%>
-<%@ page import="com.test.dto.UserInfo"%>
 <link rel="stylesheet" href="<%=rootPath%>/ui/signin.css" />
 <body>
 	<div class="container">
